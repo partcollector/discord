@@ -1,6 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-partcollector.wixsite.com	TRUE	/	FALSE	1999999999	ssr-caching	cache#desc=hit#varnish=hit#dc#desc=ireland-pub_g
-partcollector.wixsite.com	TRUE	/	FALSE	1999999999	XSRF-TOKEN	1765059652|j1ZHeqW8Vj98
-partcollector.wixsite.com	TRUE	/	FALSE	1999999999	SameSite	None
-

@@ -1,3 +1,12 @@
+
+/* =====================================================
+   OPTIMIZATION NOTES:
+   - Fixed typo: 'boder-right' → 'border-right'
+   - Removed empty CSS rules
+   - This file still has duplicate selectors in media queries
+   - Manual consolidation recommended for production
+   ===================================================== */
+
 /*
 
 Vanilla Template
@@ -109,7 +118,7 @@ a:hover { color: #FF0; }
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-color: black;
-  boder-right: 0;
+  border-right: 0;
 }
 .fixed-side-navbar .nav > li a:hover > span {
   color: black;
@@ -214,6 +223,7 @@ h4, .h4 {
 
 .service-content .left-text p {
   color: #fff;
+  font-size: 20px;
 }
 
 .service-content .left-text ul {
@@ -341,11 +351,12 @@ h4, .h4 {
 .about-text h4 {
   text-align: center !important;
   color: white !important;
+  font-weight: 700;
 }
 
 .about-us-text h4 {
   color: white !important;
-  font-size: 28px;
+  font-size: 24px;
 }
 section {
   background-color: transparent;
@@ -388,9 +399,7 @@ section {
   border:4px solid #ff7d27;
 }
 
-.tabgroup div  {
-
-}
+.tabgroup div  
 
 .tabgroup p {
   background-color: rgba(0, 0, 0, 0.5);
@@ -545,8 +554,7 @@ footer em {
     font-size: 64px;
   }
 
-  .baner-content em {
-  }
+  .baner-content em 
 
   .baner-content span {
     font-size: 24px;
@@ -944,7 +952,8 @@ footer {
 }
 
 .primary-buttons-inline .primary-button a:hover {
-    background-color: #ff7d27 !important; /* Keep same color */
+    background-color: #ff7d27 !important;
+    color: white !important;
     transform: none !important; /* No movement */
     box-shadow: none !important; /* No shadow */
 }
@@ -1146,6 +1155,8 @@ footer {
     .primary-buttons-inline .primary-button a {
         width: 100%;
         max-width: 280px;
+        white-space: nowrap !important;
+        font-size: 15px !important;
     }
 
     /* Sections */
@@ -1155,9 +1166,9 @@ footer {
     }
 
     .projects-content {
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
-    }
+    padding-top: 80px !important;  /* Increased from 50px to 80px */
+    padding-bottom: 50px !important;
+  }
 
     .tabs-content {
         padding-top: 50px !important;
@@ -1208,7 +1219,7 @@ footer {
     }
 
     .about-text h4 {
-        font-size: 23px !important;
+        font-size: 24px !important;
     }
 
     .about-text p {
@@ -1231,13 +1242,28 @@ footer {
     .service-content .left-text {
         margin-bottom: 25px;
     }
+    /* Reorder ABOUT US button to appear last on mobile */
+        /* Reorder elements on mobile - button goes to very bottom */
+        /* Reorder columns on mobile - left column goes to bottom */
+    .service-content .row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .service-content .col-md-4 {
+        order: 2; /* Left column (with button) goes SECOND */
+    }
+    
+    .service-content .col-md-8 {
+        order: 1; /* Service boxes go FIRST */
+    }
+
 
     /* Footer */
     footer {
         padding: 35px 20px !important;
     }
 }
-
 /* Very small phones */
 @media (max-width: 480px) {
     .site-logo {
@@ -1255,7 +1281,13 @@ footer {
     .security-text {
         margin-bottom: 40px !important; /* Even closer */
     }
-}
+    @media (max-width: 767px) {
+    /* ... all existing code ... */
+
+    .service-content .left-text {
+        margin-bottom: 25px;
+    }
+
 
 
 

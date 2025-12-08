@@ -944,9 +944,9 @@ footer {
 }
 
 .primary-buttons-inline .primary-button a:hover {
-    background-color: #ff8e43 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 5px 15px rgba(255,125,39,0.4) !important;
+    background-color: #ff7d27 !important; /* Keep same color */
+    transform: none !important; /* No movement */
+    box-shadow: none !important; /* No shadow */
 }
 
 /* ==========================================
@@ -1167,9 +1167,9 @@ footer {
     .security-content {
     padding-top: 40px !important;
     padding-bottom: 10px !important;
-    background-size: 75% auto !important;
-    background-position: center 60% !important; /* ← KEY: moves image UP */
-    min-height: 75vh !important;
+    background-size: 95% auto !important;
+    background-position: 55% 65% !important; /* ← KEY: moves image UP */
+    min-height: 80vh !important;
 }
 
     .security-text {
@@ -1190,9 +1190,11 @@ footer {
 
     /* Contact */
     .contact-content-new {
-    padding-top: 10px !important;
+    padding-top: 30px !important; /* ← Button moved down */
     padding-bottom: 40px !important;
-    margin-top: -180px !important; /* ← KEY: pulls button UP */
+    margin-top: -70px !important; /* ← Less pull up */
+    min-height: auto !important;
+    background: #000 !important;
 }
 
     .get-in-touch-btn {

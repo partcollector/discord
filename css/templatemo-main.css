@@ -154,6 +154,8 @@ a:hover { color: #FF0; }
 
 .baner-content {
   padding-top: 30vh;
+  padding-bottom: 15vh;
+  min-height: 120vh;
   text-align: center;
   background-image: 
     linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
@@ -815,21 +817,22 @@ body.lb-disable-scrolling {
   opacity: 1;
 }
 .security-content {
-  padding-top: 0vh;                    /* text near top */
+  padding-top: 10vh;                    /* text near top */
   background-color: #000;
   background-image: url('../img/security.jpg');
-  background-position: 55% 80% !important;  /* image at bottom */
+  background-position: 55% 95% !important;  /* image at bottom */
   background-repeat: no-repeat;
   background-size: 70% auto;           /* ← smaller image (50% width) */
-  min-height: 110vh;                   /* less vertical space */
+  min-height: 130vh;                   /* less vertical space */
 }
 
 .security-text {
-  margin-top: 0 !important;             /* stick near top */
+  margin-top: 10vh !important;             /* stick near top */
   text-align: center;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 80px !important;
   padding: 40px;
   background: rgba(0,0,0,0.5);
   border-radius: 20px;

@@ -818,7 +818,7 @@ body.lb-disable-scrolling {
   padding-top: 0vh;                    /* text near top */
   background-color: #000;
   background-image: url('../img/security.jpg');
-  background-position: 55% 80% !important;  /* image at bottom */
+  background-position: 55% 150% !important;  /* image at bottom */
   background-repeat: no-repeat;
   background-size: 70% auto;           /* ← smaller image (50% width) */
   min-height: 110vh;                   /* less vertical space */

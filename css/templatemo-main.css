@@ -154,15 +154,15 @@ a:hover { color: #FF0; }
 
 .baner-content {
   padding-top: 30vh;
-  padding-bottom: 15vh;
-  min-height: 120vh;
+  padding-bottom: 12vh; /* ← ADD THIS */
+  min-height: 115vh; /* ← ADD THIS */
   text-align: center;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
+  background-image:
+    linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)),
     url(../img/1st-section.jpg);
   background-size: cover;
   background-position: center;
-}
+}}
 
 .baner-content h1 {
   margin-top: 0px;
@@ -817,22 +817,22 @@ body.lb-disable-scrolling {
   opacity: 1;
 }
 .security-content {
-  padding-top: 10vh;                    /* text near top */
+  padding-top: 0vh;
   background-color: #000;
   background-image: url('../img/security.jpg');
-  background-position: 55% 95% !important;  /* image at bottom */
+  background-position: 55% 88% !important; /* ← Changed from 80% */
   background-repeat: no-repeat;
-  background-size: 70% auto;           /* ← smaller image (50% width) */
-  min-height: 130vh;                   /* less vertical space */
+  background-size: 60% auto; /* ← Slightly smaller for large screens */
+  min-height: 120vh; /* ← Changed from 110vh */
 }
 
 .security-text {
-  margin-top: 10vh !important;             /* stick near top */
+  margin-top: 0 !important;
+  margin-bottom: 120px !important; /* ← ADD THIS */
   text-align: center;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 80px !important;
   padding: 40px;
   background: rgba(0,0,0,0.5);
   border-radius: 20px;
@@ -991,18 +991,23 @@ footer {
         font-size: 26px;
     }
 
+    .baner-content {
+    min-height: 112vh !important;
+    padding-bottom: 10vh !important;
+}
+
     /* Reduce section heights */
     .security-content {
-    min-height: 100vh !important;
-    background-size: 45% auto !important;
-    background-position: center 85% !important;
+    min-height: 115vh !important;
+    background-size: 50% auto !important;
+    background-position: center 86% !important; /* ← Adjusted */
     padding-bottom: 80px !important;
-}
+  }
 
 .security-text {
     max-width: 700px;
     padding: 25px !important;
-    margin-bottom: 180px !important; /* ← Better spacing */
+    margin-bottom: 160px !important; /* ← Better spacing */
 }
 
     .security-text h4 {
@@ -1037,16 +1042,16 @@ footer {
     }
 
     .security-content {
-    min-height: 105vh !important;
-    background-size: 42% auto !important;
-    background-position: center 85% !important;
+    min-height: 110vh !important;
+    background-size: 45% auto !important;
+    background-position: center 84% !important; /* ← Adjusted */
     padding-bottom: 80px !important;
-}
+  }
 
 .security-text {
     max-width: 600px;
     padding: 20px !important;
-    margin-bottom: 200px !important; /* ← Better spacing */
+    margin-bottom: 180px !important; /* ← Better spacing */
 }
 
     .security-text h4 {

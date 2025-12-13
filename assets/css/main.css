@@ -1673,7 +1673,7 @@ input, select, textarea {
     }
 
     #header .logo img {
-        width: 90%;     /* scale logo up inside the box */
+        width: 75%;     /* scale logo up inside the box */
     }
 }
 @media screen and (max-width: 360px) {
@@ -1683,6 +1683,6 @@ input, select, textarea {
     }
 
     #header .logo img {
-        width: 90%;     /* scale logo up inside the box */
+        width: 75%;     /* scale logo up inside the box */
     }
 }

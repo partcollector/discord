@@ -1666,3 +1666,8 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+		#main article .close,
+		#main article .close:before {
+		    display: none !important;
+		}
+

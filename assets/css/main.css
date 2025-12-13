@@ -1302,7 +1302,7 @@ input, select, textarea {
 			background: transparent
 		}
 			#header .logo img {
-				width: 130%;
+				width: 100%;
 				height: auto;
 				object-fit: contain;
 				display: block;

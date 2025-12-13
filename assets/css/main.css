@@ -1666,3 +1666,23 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+@media screen and (max-width: 736px) {
+    #header .logo {
+        width: 20rem;   /* bigger box on mobile */
+        height: 7rem;
+    }
+
+    #header .logo img {
+        width: 90%;     /* scale logo up inside the box */
+    }
+}
+@media screen and (max-width: 360px) {
+    #header .logo {
+        width: 20rem;   /* bigger box on mobile */
+        height: 7rem;
+    }
+
+    #header .logo img {
+        width: 90%;     /* scale logo up inside the box */
+    }
+}

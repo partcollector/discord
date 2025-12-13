@@ -291,12 +291,7 @@
 
 				var $this = $(this);
 
-				// Close.
-					$('<div class="close">Close</div>')
-						.appendTo($this)
-						.on('click', function() {
-							location.hash = '';
-						});
+				
 
 				// Prevent clicks from inside article from bubbling.
 					$this.on('click', function(event) {

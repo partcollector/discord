@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Join Part Collector Discord</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* ── Page layout ── */
+			body, html { height: 100%; }
+
+			.join-page {
+				position: relative;
+				z-index: 3;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				padding: 4rem 2rem;
+				width: 100%;
+			}
+
+			/* ── Card container ── */
+			.join-card {
+				background-color: rgba(27, 31, 34, 0.92);
+				border-radius: 6px;
+				border: solid 1px rgba(255,255,255,0.3);
+				padding: 3rem 2.5rem;
+				max-width: 700px;
+				width: 100%;
+				margin: 0 auto;
+			}
+
+			/* ── Logo area ── */
+			.join-logo {
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+			.join-logo img {
+				max-width: 220px;
+				height: auto;
+			}
+
+			/* ── Section title ── */
+			.join-card h2.major {
+				text-align: center;
+				font-size: 1.4rem;
+				letter-spacing: 0.45rem;
+				border-bottom: solid 1px #ffffff;
+				padding-bottom: 0.5rem;
+				margin-bottom: 2rem;
+				display: block;
+				width: 100%;
+				text-transform: uppercase;
+			}
+
+			/* ── Why banner ── */
+			.why-banner {
+				background: rgba(255, 73, 3, 0.12);
+				border: 1px solid rgba(255, 73, 3, 0.4);
+				border-radius: 4px;
+				padding: 1rem 1.25rem;
+				margin-bottom: 2rem;
+				font-size: 0.85rem;
+				line-height: 1.75;
+				letter-spacing: 0.05rem;
+			}
+			.why-banner strong { color: #ff4903; }
+
+			/* ── Step blocks ── */
+			.step-block {
+				margin-bottom: 2rem;
+			}
+			.step-block h3 {
+				font-size: 0.85rem;
+				letter-spacing: 0.3rem;
+				text-transform: uppercase;
+				color: #ff4903;
+				margin-bottom: 0.75rem;
+				display: flex;
+				align-items: center;
+				gap: 0.6rem;
+			}
+			.step-block h3 .step-num {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 1.6rem;
+				height: 1.6rem;
+				border-radius: 50%;
+				border: 1px solid #ff4903;
+				font-size: 0.75rem;
+				font-weight: 600;
+				flex-shrink: 0;
+				color: #ff4903;
+			}
+
+			/* ── Platform tabs ── */
+			.platform-tabs {
+				display: flex;
+				gap: 0;
+				border: solid 1px rgba(255,255,255,0.3);
+				border-radius: 4px;
+				overflow: hidden;
+				margin-bottom: 1rem;
+			}
+			.platform-tabs button {
+				flex: 1;
+				background: transparent;
+				border: none;
+				border-left: solid 1px rgba(255,255,255,0.3);
+				color: rgba(255,255,255,0.5);
+				font-family: "Source Sans Pro", sans-serif;
+				font-size: 0.7rem;
+				letter-spacing: 0.18rem;
+				text-transform: uppercase;
+				font-weight: 300;
+				height: 2.5rem;
+				cursor: pointer;
+				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+				box-shadow: none;
+				outline: none;
+				line-height: 2.5rem;
+				padding: 0 0.5rem;
+			}
+			.platform-tabs button:first-child { border-left: none; }
+			.platform-tabs button:hover { background-color: rgba(255,255,255,0.06); color: #fff; }
+			.platform-tabs button.active { background-color: rgba(255,255,255,0.12); color: #ffffff; font-weight: 600; }
+
+			/* ── Instruction panels ── */
+			.tab-panel { display: none; }
+			.tab-panel.active { display: block; }
+
+			.instruction-steps {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				counter-reset: inst;
+			}
+			.instruction-steps li {
+				counter-increment: inst;
+				display: flex;
+				align-items: flex-start;
+				gap: 0.75rem;
+				padding: 0.6rem 0;
+				border-top: solid 1px rgba(255,255,255,0.08);
+				font-size: 0.88rem;
+				line-height: 1.6;
+				letter-spacing: 0.04rem;
+			}
+			.instruction-steps li:first-child { border-top: none; }
+			.instruction-steps li::before {
+				content: counter(inst);
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				min-width: 1.5rem;
+				height: 1.5rem;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.1);
+				font-size: 0.7rem;
+				font-weight: 600;
+				flex-shrink: 0;
+				margin-top: 0.05rem;
+			}
+			.instruction-steps li .path {
+				color: #ff4903;
+				font-weight: 600;
+			}
+			.instruction-steps li .key {
+				background: rgba(255,255,255,0.1);
+				border-radius: 3px;
+				padding: 0 0.4rem;
+				font-size: 0.78rem;
+				letter-spacing: 0.05rem;
+				white-space: nowrap;
+			}
+
+			/* ── Divider ── */
+			.join-divider {
+				border: none;
+				border-top: solid 1px rgba(255,255,255,0.15);
+				margin: 2rem 0;
+			}
+
+			/* ── CTA ── */
+			.cta-section {
+				text-align: center;
+			}
+			.cta-section p {
+				font-size: 0.82rem;
+				letter-spacing: 0.1rem;
+				opacity: 0.7;
+				margin-bottom: 1.5rem;
+				text-transform: uppercase;
+			}
+			.btn-join {
+				display: inline-block;
+				background-color: #ff4903;
+				color: #ffffff !important;
+				font-family: "Source Sans Pro", sans-serif;
+				font-size: 0.85rem;
+				font-weight: 600;
+				letter-spacing: 0.25rem;
+				text-transform: uppercase;
+				text-decoration: none;
+				border: none;
+				border-radius: 4px;
+				height: 3rem;
+				line-height: 3rem;
+				padding: 0 2rem;
+				cursor: pointer;
+				transition: background-color 0.2s ease-in-out;
+				box-shadow: none;
+			}
+			.btn-join:hover { background-color: #e04000; border-bottom: none; }
+			.btn-join:active { background-color: #c43800; }
+
+			/* ── Back button ── */
+			.back-wrap {
+				text-align: center;
+				margin-top: 1.75rem;
+			}
+
+			/* ── Footer ── */
+			.join-footer {
+				margin-top: 2.5rem;
+				text-align: center;
+				letter-spacing: 0.2rem;
+				font-size: 0.6rem;
+				opacity: 0.75;
+				text-transform: uppercase;
+				z-index: 3;
+				position: relative;
+			}
+
+			@media screen and (max-width: 600px) {
+				.join-card { padding: 2rem 1.25rem; }
+				.platform-tabs button { font-size: 0.6rem; letter-spacing: 0.1rem; }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- BG -->
+		<div id="bg"></div>
+
+		<div class="join-page">
+
+			<div class="join-card">
+
+				<!-- Logo -->
+				<div class="join-logo">
+					<img src="images/logo.png" alt="Part Collector" />
+				</div>
+
+				<h2 class="major">Before You Join</h2>
+
+				<!-- Why section -->
+				<div class="why-banner">
+					<strong>Why do we ask for PayPal?</strong><br>
+					Our platform processes all payments through <strong>PayPal</strong> for buyer &amp; seller protection.
+					Linking it to your Discord account proves you have an active PayPal — <strong>no money is taken, no data is stored by us.</strong>
+					This is a standard Discord account connection, exactly like linking Spotify or Steam.
+				</div>
+
+				<!-- Step 1 -->
+				<div class="step-block">
+					<h3><span class="step-num">1</span>Link PayPal to your Discord account</h3>
+
+					<div class="platform-tabs">
+						<button class="active" onclick="showTab('desktop', this)">Desktop App</button>
+						<button onclick="showTab('mobile', this)">Mobile App</button>
+						<button onclick="showTab('browser', this)">Web Browser</button>
+					</div>
+
+					<!-- Desktop -->
+					<div id="tab-desktop" class="tab-panel active">
+						<ul class="instruction-steps">
+							<li>Open the <span class="key">Discord Desktop App</span> on your computer.</li>
+							<li>Click the <span class="path">⚙ gear icon</span> (User Settings) at the bottom left, next to your username.</li>
+							<li>In the left sidebar scroll down and click <span class="path">Connections</span>.</li>
+							<li>Click <span class="path">Add</span> — you will see a grid of services.</li>
+							<li>Find and click <span class="key">PayPal</span>. A browser window opens asking you to log in to PayPal.</li>
+							<li>Log in and click <span class="key">Agree</span>. You will be redirected back to Discord.</li>
+							<li>Done — you should now see PayPal listed under your Connections.</li>
+						</ul>
+					</div>
+
+					<!-- Mobile -->
+					<div id="tab-mobile" class="tab-panel">
+						<ul class="instruction-steps">
+							<li>Open the <span class="key">Discord Mobile App</span> on your phone.</li>
+							<li>Tap your <span class="path">profile picture</span> at the bottom right.</li>
+							<li>Tap the <span class="path">⚙ gear icon</span> at the top right to open Settings.</li>
+							<li>Scroll down and tap <span class="path">Connections</span>.</li>
+							<li>Tap <span class="path">Add</span> (top right corner).</li>
+							<li>Find and tap <span class="key">PayPal</span>. Your browser will open the PayPal login page.</li>
+							<li>Log in and tap <span class="key">Agree</span>. Return to Discord — PayPal should now appear in your Connections.</li>
+						</ul>
+					</div>
+
+					<!-- Browser -->
+					<div id="tab-browser" class="tab-panel">
+						<ul class="instruction-steps">
+							<li>Go to <span class="path">discord.com</span> in your browser and log in.</li>
+							<li>Click the <span class="path">⚙ gear icon</span> (User Settings) at the bottom left.</li>
+							<li>In the left sidebar click <span class="path">Connections</span>.</li>
+							<li>Click <span class="path">Add</span> and select <span class="key">PayPal</span>.</li>
+							<li>Complete the PayPal login in the pop-up window and click <span class="key">Agree</span>.</li>
+							<li>PayPal now appears in your Connections list — you're all set.</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="step-block">
+					<h3><span class="step-num">2</span>Join the server</h3>
+					<p style="font-size:0.88rem; line-height:1.65; opacity:0.85; margin-bottom:0;">
+						Once PayPal is linked, click the button below. Discord will ask you to authorise our app —
+						this grants us permission to verify your connections and add you to the server automatically.
+						<strong style="color:#ff4903;">No password or payment information is ever shared with us.</strong>
+					</p>
+				</div>
+
+				<hr class="join-divider" />
+
+				<!-- CTA -->
+				<div class="cta-section">
+					<p>Ready? Your PayPal is linked — let's go.</p>
+					<a href="https://discord.com/oauth2/authorize?client_id=1489871883062087831&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.partcollector.com%2Fdiscord%2Fcallback&scope=identify+connections+guilds.join"
+					   class="btn-join">
+						Ready? Join!
+					</a>
+				</div>
+
+				<!-- Back button -->
+				<div class="back-wrap">
+					<a href="index.html" class="button" style="font-size:0.72rem;">&#8592; Back to Home</a>
+				</div>
+
+			</div>
+
+			<p class="join-footer">&copy; 2025 Part Collector LTD. Powered by <a href="https://html5up.net">HTML5 UP</a>.</p>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<script>
+			function showTab(name, btn) {
+				document.querySelectorAll('.tab-panel').forEach(function(p) {
+					p.classList.remove('active');
+				});
+				btn.closest('.platform-tabs').querySelectorAll('button').forEach(function(b) {
+					b.classList.remove('active');
+				});
+				document.getElementById('tab-' + name).classList.add('active');
+				btn.classList.add('active');
+			}
+
+			/* ── Handle post-OAuth redirect status ── */
+			(function () {
+				var params = new URLSearchParams(window.location.search);
+				var status = params.get('status');
+				if (!status) return;
+
+				var card = document.querySelector('.join-card');
+
+				if (status === 'joined') {
+					card.innerHTML = [
+						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<h2 class="major" style="color:#4caf50;">Welcome Aboard!</h2>',
+						'<div class="why-banner" style="border-color:rgba(76,175,80,0.5);background:rgba(76,175,80,0.1);">',
+						'  <strong style="color:#4caf50;">You have been added to the Part Collector Discord server.</strong><br>',
+						'  Open Discord and you should already be inside. Start exploring the platform!',
+						'</div>',
+						'<div class="back-wrap">',
+						'  <a href="https://discord.com/channels/1129070835932610672" class="button primary" target="_blank" rel="noopener">Open Discord</a>',
+						'</div>',
+						'<div class="back-wrap" style="margin-top:1rem;">',
+						'  <a href="index.html" class="button" style="font-size:0.72rem;">&#8592; Back to Home</a>',
+						'</div>'
+					].join('');
+
+				} else if (status === 'no_paypal') {
+					card.innerHTML = [
+						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<h2 class="major" style="color:#ff4903;">PayPal Not Found</h2>',
+						'<div class="why-banner">',
+						'  <strong>We could not detect a PayPal connection on your Discord account.</strong><br>',
+						'  Please follow the instructions below, link PayPal in Discord, then try again.',
+						'</div>',
+						'<div class="back-wrap">',
+						'  <a href="success.html" class="button primary">&#8592; Back to Instructions</a>',
+						'</div>',
+						'<div class="back-wrap" style="margin-top:1rem;">',
+						'  <a href="index.html" class="button" style="font-size:0.72rem;">&#8592; Back to Home</a>',
+						'</div>'
+					].join('');
+
+				} else if (status === 'error') {
+					card.innerHTML = [
+						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<h2 class="major" style="color:#ff4903;">Something Went Wrong</h2>',
+						'<div class="why-banner">',
+						'  <strong>The authorisation could not be completed.</strong><br>',
+						'  Please try again. If the issue persists, contact support in our Discord server.',
+						'</div>',
+						'<div class="back-wrap">',
+						'  <a href="success.html" class="button primary">Try Again</a>',
+						'</div>',
+						'<div class="back-wrap" style="margin-top:1rem;">',
+						'  <a href="index.html" class="button" style="font-size:0.72rem;">&#8592; Back to Home</a>',
+						'</div>'
+					].join('');
+				}
+			})();
+		</script>
+
+	</body>
+</html>

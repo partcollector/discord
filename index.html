@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 	</head>
 	<body class="is-preload">
 
@@ -28,7 +29,7 @@
 							<ul>
 								<li><a href="#intro">Intro</a></li>
 								<li><a href="#services">Services</a></li>
-								<li><a href="#about">About</a></li>
+								<li><a href="#contact">Contact</a></li>
 								<li><a href="#security">Security</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -143,45 +144,66 @@
 
 							</article>
 
-						<!-- About -->
-						<article id="about">
-							<h2 class="major align-center">About</h2>
+						<!-- Contact -->
+						<article id="contact">
+							<h2 class="major align-center">Contact</h2>
 							<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
 						
-							<h2 class="align-center">Get to Know Us</h2>
+							<h2 class="align-center" style="margin-bottom:0.3rem;">Get in Touch</h2>
+							<p class="align-center" style="font-size:0.8rem;letter-spacing:0.18rem;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:0;margin-bottom:2rem;">Select a subject to begin</p>
 						
-							<h4 class="align-center">
-								Starting in 2005 as eBay Sellers, we supplied spare parts for motorcycles. Later, we increased our product range
-								and started offering auto, marine, and truck vehicle parts. This is when we changed the name of our company to
-								Part Collector.
-							</h4>
+							<!-- Subject selector -->
+							<div id="c-subject-field" style="margin-bottom:0.5rem;">
+								<label for="c-subject" style="display:block;font-size:0.8rem;letter-spacing:0.15rem;text-transform:uppercase;margin-bottom:0.5rem;">Subject</label>
+								<select id="c-subject" onchange="onSubjectChange(this.value)" style="width:100%;padding:0.75rem 1rem;background:#1d2124;border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:0.95rem;border-radius:5px;cursor:pointer;outline:none;">
+									<option value="">— Select a Subject —</option>
+									<option value="Problems Joining">Problems Joining</option>
+									<option value="Marketing Proposal">Marketing Proposal</option>
+									<option value="Corporation Proposal">Corporation Proposal</option>
+									<option value="General Help">General Help</option>
+								</select>
+							</div>
 						
-							<h4 class="align-center">
-								Located in Petrich, Bulgaria, we serve thousands of customers worldwide. Within our online store,
-								<a href="https://www.partcollector.org/" target="_blank" rel="noopener"
-									style="color:#ff4903; border-bottom-color:rgba(255,204,102,0.7);">
-									www.partcollector.org
-								</a>,
-								you can find spare parts for multiple models dating back to 1970.
-							</h4>
+							<!-- General Help redirect panel -->
+							<div id="c-general-help" style="display:none;margin-top:1.75rem;">
+								<div style="border:2px solid #ff4903;border-radius:8px;padding:2rem 1.75rem;text-align:center;background:rgba(255,73,3,0.05);">
+									<p style="font-size:2rem;margin:0 0 0.75rem;">&#128172;</p>
+									<h3 style="color:#ff4903;font-size:1rem;letter-spacing:0.25rem;text-transform:uppercase;margin:0 0 1rem;">General Help — Discord Only</h3>
+									<p style="color:rgba(255,255,255,0.7);line-height:1.85;margin:0 0 0.5rem;font-size:0.95rem;">We <strong>do not accept</strong> General Help enquiries via this contact form. All support requests must be submitted through our dedicated <strong>ticket system</strong> directly on the Part Collector Discord server.</p>
+									<p style="color:rgba(255,255,255,0.4);font-size:0.8rem;margin:0 0 1.75rem;line-height:1.75;">Any message submitted here under General Help will <strong>never be received</strong> by our team.<br />Our support team responds on Discord 24/7 — please use the ticket channel.</p>
+									<a href="https://discord.partcollector.com" class="button primary" target="_blank" rel="noopener" style="letter-spacing:0.18rem;font-size:0.9rem;">Open Ticket on Discord</a>
+								</div>
+							</div>
 						
-							<h4 class="align-center">
-								Today, we decided to offer any private or business the opportunity to sell or buy parts across the world from
-								our Discord Server Platform. We are in position to introduce a new low-cost, efficient, and stable trade
-								platform for everyone's needs.
-							</h4>
+							<!-- Subject-specific notice -->
+							<div id="c-warning" style="display:none;margin-top:1.25rem;"></div>
 						
-							<h4 class="align-center">
-								Join our Discussion Platform to experience the new age of trading.
-							</h4>
+							<!-- Contact form body -->
+							<div id="c-form" style="display:none;margin-top:0.25rem;">
+								<div style="margin-bottom:1.4rem;">
+									<label for="c-message" style="display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;letter-spacing:0.15rem;text-transform:uppercase;margin-bottom:0.5rem;"><span>Message</span><span id="c-counter" style="color:rgba(255,255,255,0.3);font-size:0.75rem;letter-spacing:0.04rem;text-transform:none;font-weight:normal;">0 / 2,000</span></label>
+									<textarea id="c-message" maxlength="2000" rows="7" placeholder="Describe your enquiry in detail…" oninput="document.getElementById('c-counter').textContent=this.value.length+' / 2,000'" style="width:100%;padding:0.85rem 1rem;background:#1d2124;border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:0.95rem;border-radius:5px;resize:vertical;font-family:inherit;line-height:1.65;outline:none;box-sizing:border-box;"></textarea>
+								</div>
+								<div style="margin-bottom:1.75rem;">
+									<label for="c-email" style="display:block;font-size:0.8rem;letter-spacing:0.15rem;text-transform:uppercase;margin-bottom:0.5rem;">Your Email Address</label>
+									<input type="email" id="c-email" placeholder="your@email.com" style="width:100%;padding:0.75rem 1rem;background:#1d2124;border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:0.95rem;border-radius:5px;font-family:inherit;outline:none;box-sizing:border-box;" />
+								</div>
+								<div style="margin:1.5rem 0;display:flex;justify-content:center;">
+									<div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark"></div>
+								</div>
+								<ul class="actions special" style="margin-top:1.25rem;margin-bottom:0.5rem;">
+									<li>
+										<button id="c-send" class="button primary" onclick="sendContactForm(event)" style="letter-spacing:0.18rem;min-width:190px;font-size:0.95rem;">Send Message</button>
+									</li>
+								</ul>
+							</div>
 						
-							<ul class="actions special">
+							<div id="c-result" style="margin-top:0.75rem;"></div>
+						
+							<ul class="actions special" style="margin-top:1.5rem;">
 								<li>
-									<a href="#" class="button close-article-button">
-										Back to Home
-									</a>
+									<a href="#" class="button close-article-button" style="letter-spacing:0.15rem;">Back to Home</a>
 								</li>
-							
 							</ul>
 						</article>
 
@@ -507,6 +529,102 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+			(function () {
+				'use strict';
+
+				var WARNINGS = {
+					'Problems Joining': {
+						border: '#ff4903', bg: 'rgba(255,73,3,0.06)',
+						html: '<strong>Important:</strong> This form is <strong>only</strong> for reporting a technical issue that is directly preventing you from joining our Discord platform. Submissions unrelated to a joining problem will be disregarded without reply.'
+					},
+					'Marketing Proposal': {
+						border: '#4a9eff', bg: 'rgba(74,158,255,0.06)',
+						html: '<strong>Please note:</strong> Submit <strong>only</strong> if you represent a legitimate organisation with a genuine marketing collaboration proposal. Off-topic or unsolicited submissions will be disregarded.'
+					},
+					'Corporation Proposal': {
+						border: '#4a9eff', bg: 'rgba(74,158,255,0.06)',
+						html: '<strong>Please note:</strong> This channel is <strong>exclusively</strong> for verified corporate or business partnership enquiries. Personal, unrelated, or speculative messages will receive no response.'
+					}
+				};
+
+				function showResult(type, msg) {
+					var el    = document.getElementById('c-result');
+					var color = type === 'error' ? '#ff5c5c' : '#4caf50';
+					var bg    = type === 'error' ? 'rgba(255,92,92,0.07)' : 'rgba(76,175,80,0.07)';
+					el.innerHTML = '<div style="padding:0.85rem 1.25rem;background:' + bg + ';border-left:4px solid ' + color + ';border-radius:0 6px 6px 0;font-size:0.88rem;color:' + color + ';line-height:1.7;">' + msg + '</div>';
+				}
+
+				window.onSubjectChange = function (val) {
+					var gh     = document.getElementById('c-general-help');
+					var form   = document.getElementById('c-form');
+					var warn   = document.getElementById('c-warning');
+					var result = document.getElementById('c-result');
+					gh.style.display   = 'none';
+					form.style.display = 'none';
+					warn.style.display = 'none';
+					warn.innerHTML     = '';
+					result.innerHTML   = '';
+					if (!val) return;
+					if (val === 'General Help') { gh.style.display = 'block'; return; }
+					var w = WARNINGS[val];
+					if (w) {
+						warn.innerHTML = '<div style="border-left:4px solid ' + w.border + ';background:' + w.bg + ';padding:0.9rem 1.25rem;border-radius:0 6px 6px 0;font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.75;">' + w.html + '</div>';
+						warn.style.display = 'block';
+					}
+					form.style.display = 'block';
+				};
+
+				window.sendContactForm = async function (e) {
+					e.preventDefault();
+					var subject = document.getElementById('c-subject').value;
+					var message = document.getElementById('c-message').value.trim();
+					var email   = document.getElementById('c-email').value.trim();
+					var tsEl    = document.querySelector('[name="cf-turnstile-response"]');
+					var token   = tsEl ? tsEl.value : '';
+					var btn     = document.getElementById('c-send');
+					var result  = document.getElementById('c-result');
+					result.innerHTML = '';
+					if (!message)              { showResult('error', 'Please enter your message.'); return; }
+					if (message.length > 2000) { showResult('error', 'Message must not exceed 2,000 characters.'); return; }
+					if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showResult('error', 'Please enter a valid email address.'); return; }
+					if (!token)                { showResult('error', 'Please complete the CAPTCHA verification before sending.'); return; }
+					btn.disabled    = true;
+					btn.textContent = 'Sending\u2026';
+					try {
+						var resp = await fetch('https://discord.partcollector.com/contact', {
+							method:  'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body:    JSON.stringify({ subject: subject, message: message, email: email, turnstile_token: token })
+						});
+						if (resp.ok) {
+							document.getElementById('c-subject-field').style.display = 'none';
+							document.getElementById('c-warning').style.display        = 'none';
+							document.getElementById('c-form').style.display           = 'none';
+							var safeEmail = email.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+							result.innerHTML =
+								'<div style="text-align:center;padding:2rem 1.25rem;border:2px solid #4caf50;border-radius:8px;background:rgba(76,175,80,0.06);">'
+								+ '<p style="font-size:2rem;margin:0 0 0.6rem;">&#10003;</p>'
+								+ '<h3 style="color:#4caf50;font-size:0.95rem;letter-spacing:0.25rem;text-transform:uppercase;margin:0 0 0.85rem;">Message Sent</h3>'
+								+ '<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.8;margin:0;">Your message has been received. We will review it and reply to <strong style="color:rgba(255,255,255,0.85);">' + safeEmail + '</strong> if it qualifies for the selected subject.</p>'
+								+ '</div>';
+						} else {
+							var data = {};
+							try { data = await resp.json(); } catch (ex) {}
+							showResult('error', data.detail || 'Something went wrong. Please try again.');
+							btn.disabled    = false;
+							btn.textContent = 'Send Message';
+							if (window.turnstile) window.turnstile.reset();
+						}
+					} catch (err) {
+						showResult('error', 'Network error. Please check your connection and try again.');
+						btn.disabled    = false;
+						btn.textContent = 'Send Message';
+					}
+				};
+			}());
+			</script>
 
 	</body>
 </html>

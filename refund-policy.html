@@ -66,9 +66,9 @@
 			font-size: 0.85rem;
 			letter-spacing: 0.3rem;
 			text-transform: uppercase;
-			color: #ff4903;
+			color: rgba(255,255,255,0.88);
 			margin: 2rem 0 0.75rem;
-			border-bottom: solid 1px rgba(255,73,3,0.25);
+			border-bottom: solid 1px rgba(255,255,255,0.12);
 			padding-bottom: 0.4rem;
 		}
 
@@ -111,8 +111,8 @@
 		}
 
 		.legal-highlight {
-			background: rgba(255,73,3,0.08);
-			border: 1px solid rgba(255,73,3,0.3);
+			background: rgba(255,255,255,0.04);
+			border: 1px solid rgba(255,255,255,0.14);
 			border-radius: 4px;
 			padding: 1rem 1.25rem;
 			margin-bottom: 1.5rem;
@@ -120,7 +120,7 @@
 			line-height: 1.75;
 			letter-spacing: 0.04rem;
 		}
-		.legal-highlight strong { color: #ff4903; }
+		.legal-highlight strong { color: rgba(255,255,255,0.95); }
 
 		.info-grid {
 			display: grid;
@@ -421,8 +421,9 @@
 		</div>
 	</div>
 
-	<!-- Scripts -->
-	<script src="/assets/js/main.js"></script>
+	<!-- BG -->
+	<div id="bg"></div>
+	<script>document.body.classList.remove('is-preload');</script>
 
 </body>
 </html>

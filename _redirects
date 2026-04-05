@@ -1,0 +1,6 @@
+# Cloudflare Pages rewrite rules for clean legal page URLs
+/buyer-terms    /buyer-terms.html    200
+/terms          /terms.html          200
+/privacy        /privacy.html        200
+/seller-rules   /seller-rules.html   200
+/refund-policy  /refund-policy.html  200

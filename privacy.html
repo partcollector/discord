@@ -227,6 +227,7 @@
 
 	<!-- Page -->
 	<div class="legal-page">
+
 		<div class="legal-card">
 
 			<!-- Logo -->
@@ -239,7 +240,7 @@
 			<p class="legal-meta">Last updated: April 2026 &nbsp;&middot;&nbsp; Part Collector Ltd</p>
 
 			<div class="legal-highlight">
-				<strong>Your privacy matters.</strong> This Policy explains what personal data we collect, why we collect it, how we use it, and what rights you have under UK GDPR and the EU General Data Protection Regulation (GDPR).
+				<strong>Your privacy matters.</strong> This Policy explains what personal data we collect, why we collect it, how we use it, and what rights you have under the EU General Data Protection Regulation (GDPR).
 			</div>
 
 			<!-- 1 -->
@@ -248,57 +249,66 @@
 			<p><strong>Part Collector Ltd</strong><br />
 			Bulgaria<br />
 			Contact: <a href="https://partcollector.com/#contact">partcollector.com/#contact</a> &mdash; select <strong>Legal &amp; Privacy</strong></p>
-			<p>If you are located in the EU and have concerns about how we handle your data, you may also submit a request via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>).</p>
+			<p>For any privacy or GDPR-related requests, please use our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>).</p>
 
 			<!-- 2 -->
 			<h2>2. Data We Collect</h2>
+			<p>Part Collector operates exclusively within Discord. We collect the minimum data required to operate the Platform. <strong>No buyer personal data is stored by Part Collector</strong> &mdash; buyers search and communicate through native Discord features; all buyer&ndash;seller DM messages are stored by Discord, not by us.</p>
 			<table class="legal-table">
 				<thead>
 					<tr>
 						<th>Category</th>
 						<th>Data Points</th>
 						<th>Source</th>
+						<th>Who</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><strong>Account Identity</strong></td>
-						<td>Discord user ID, username, discriminator, avatar hash</td>
-						<td>Discord OAuth2 at registration</td>
+						<td><strong>Discord Identity</strong></td>
+						<td>Discord user ID, username</td>
+						<td>Discord bot interaction at server entry</td>
+						<td>Sellers</td>
 					</tr>
 					<tr>
-						<td><strong>Payment Identity</strong></td>
-						<td>PayPal account status (verified/unverified), PayPal email (connection confirmation only)</td>
-						<td>Discord Connections (PayPal link check)</td>
+						<td><strong>Seller Payment Email</strong></td>
+						<td>PayPal email address (manually entered by the seller and verified via OTP)</td>
+						<td>Seller-provided; OTP delivered via Brevo email</td>
+						<td>Sellers only</td>
 					</tr>
 					<tr>
-						<td><strong>Transaction Data</strong></td>
-						<td>Order IDs, listing IDs, prices, transaction status, timestamps</td>
-						<td>Platform bot interactions</td>
+						<td><strong>Business / Tax Identity</strong></td>
+						<td>VAT registration number, company name (as validated by VIES)</td>
+						<td>Seller-provided; validated in real-time via EU VIES system</td>
+						<td>EU business sellers only</td>
 					</tr>
 					<tr>
-						<td><strong>Delivery Data</strong></td>
-						<td>Full name, postal address, country (buyers only, per order)</td>
-						<td>Provided by buyer on checkout</td>
+						<td><strong>Seller Profile</strong></td>
+						<td>Shipping origin country, preferred currency, weight unit, custom shipping rates</td>
+						<td>Seller-provided during Shipping Setup in Discord</td>
+						<td>Sellers only</td>
 					</tr>
 					<tr>
-						<td><strong>Communications</strong></td>
-						<td>Messages sent via the bot, dispute submissions, support tickets</td>
-						<td>Discord bot interactions</td>
-					</tr>
-					<tr>
-						<td><strong>Usage Data</strong></td>
-						<td>Command usage logs, interaction timestamps, error reports</td>
-						<td>Automatically on platform use</td>
+						<td><strong>Subscription Records</strong></td>
+						<td>Subscription tier, billing cycle, PayPal subscription ID, payment amounts, payment dates</td>
+						<td>PayPal subscription webhooks</td>
+						<td>Sellers only</td>
 					</tr>
 					<tr>
 						<td><strong>Seller Listing Data</strong></td>
-						<td>Images, descriptions, prices, shipping terms of listed parts</td>
-						<td>Provided by seller on listing</td>
+						<td>Part descriptions, photographs, prices, shipping terms of listed items</td>
+						<td>Seller-provided when creating listings</td>
+						<td>Sellers only</td>
+					</tr>
+					<tr>
+						<td><strong>Consent Records</strong></td>
+						<td>Record of Terms of Service and Marketplace Rules acceptance (timestamp, version)</td>
+						<td>Platform bot interactions</td>
+						<td>Sellers only</td>
 					</tr>
 				</tbody>
 			</table>
-			<p>We do <strong>not</strong> collect or store full PayPal account credentials, credit card numbers, or banking details. All payments are processed by PayPal directly.</p>
+			<p>We do <strong>not</strong> collect or store PayPal OAuth credentials, credit card numbers, banking details, or any buyer personal data. All payment processing is handled directly by PayPal.</p>
 
 			<!-- 3 -->
 			<h2>3. Lawful Basis for Processing</h2>
@@ -311,31 +321,27 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Account creation and identity verification</td>
-						<td>Contract performance (Art. 6(1)(b))</td>
-					</tr>
-					<tr>
-						<td>Processing and fulfilling orders</td>
-						<td>Contract performance (Art. 6(1)(b))</td>
-					</tr>
-					<tr>
-						<td>Dispute resolution and fraud prevention</td>
-						<td>Legitimate interests (Art. 6(1)(f))</td>
-					</tr>
-					<tr>
-						<td>Legal compliance (audit trails, tax records)</td>
-						<td>Legal obligation (Art. 6(1)(c))</td>
-					</tr>
-					<tr>
-						<td>Platform safety and abuse prevention</td>
-						<td>Legitimate interests (Art. 6(1)(f))</td>
-					</tr>
-					<tr>
-						<td>Consent-gated features (e.g., ToS acceptance record)</td>
+						<td>Verifying seller PayPal email ownership via OTP</td>
 						<td>Consent (Art. 6(1)(a))</td>
 					</tr>
 					<tr>
-						<td>Service improvement and analytics</td>
+						<td>Processing seller subscriptions and maintaining platform access</td>
+						<td>Contract performance (Art. 6(1)(b))</td>
+					</tr>
+					<tr>
+						<td>EU VAT validation via VIES for accurate invoicing</td>
+						<td>Contract performance (Art. 6(1)(b))</td>
+					</tr>
+					<tr>
+						<td>Retaining subscription payment records</td>
+						<td>Legal obligation (Art. 6(1)(c)) &mdash; Bulgarian Accounting Act</td>
+					</tr>
+					<tr>
+						<td>Fraud prevention and platform integrity</td>
+						<td>Legitimate interests (Art. 6(1)(f))</td>
+					</tr>
+					<tr>
+						<td>Recording Terms of Service and Rules acceptance</td>
 						<td>Legitimate interests (Art. 6(1)(f))</td>
 					</tr>
 				</tbody>
@@ -344,34 +350,32 @@
 			<!-- 4 -->
 			<h2>4. How We Use Your Data</h2>
 			<ul>
-				<li>To verify eligibility and onboard you to the Platform;</li>
-				<li>To process, confirm, and fulfil your orders or listings;</li>
-				<li>To detect, investigate, and prevent fraudulent or abusive conduct;</li>
-				<li>To communicate with you about your account, orders, or disputes;</li>
-				<li>To comply with legal obligations including tax, accounting, and regulatory requirements;</li>
-				<li>To maintain platform security and integrity;</li>
-				<li>To improve the Platform based on aggregated usage patterns.</li>
+				<li>To verify that your PayPal email address is valid and belongs to you (OTP verification process);</li>
+				<li>To create PayPal payment links for your subscription billing;</li>
+				<li>To automatically calculate and remove VAT from invoices for EU VAT-registered sellers (via VIES);</li>
+				<li>To display and manage your seller shipping profile, rates, and active listings;</li>
+				<li>To maintain subscription and payment records as required by Bulgarian accounting legislation;</li>
+				<li>To enforce platform rules, resolve disputes, and prevent abuse;</li>
+				<li>To respond to your support requests and legal rights enquiries.</li>
 			</ul>
 
 			<!-- 5 -->
 			<h2>5. Data Sharing</h2>
-			<p>We share personal data only as necessary:</p>
+			<p>We share personal data only as strictly necessary:</p>
 			<ul>
-				<li><strong>Seller &harr; Buyer:</strong> Delivery address and name shared between counterparties solely to fulfil a completed order;</li>
-				<li><strong>PayPal:</strong> We use PayPal's API to verify connection status; actual payment processing is governed by PayPal's own privacy policy;</li>
-				<li><strong>Hosting &amp; Infrastructure:</strong> Our Platform runs on OCI (Oracle Cloud Infrastructure) and Cloudflare; both process data as sub-processors under appropriate DPA agreements;</li>
+				<li><strong>PayPal:</strong> We use the PayPal Orders API to create subscription payment links. Payment capture and processing is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
+				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
+				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Platform data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>Cloudflare:</strong> Our website (partcollector.com) is served via Cloudflare for security and CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Legal Authorities:</strong> Where we are legally obliged to disclose data (e.g., court orders, government requests).</li>
 			</ul>
-			<p>We do <strong>not</strong> sell your personal data to third parties, nor do we use it for advertising profiling.</p>
+			<p>We do <strong>not</strong> sell your personal data to third parties, use it for advertising profiling, or share it with any other party.</p>
 
 			<!-- 6 -->
-			<h2>6. International Data Transfers</h2>
-			<p>Our infrastructure may process data outside the European Economic Area (EEA). Where such transfers occur, we ensure they are protected by:</p>
-			<ul>
-				<li>Standard Contractual Clauses (SCCs) approved by the European Commission; or</li>
-				<li>An adequacy decision by the European Commission; or</li>
-				<li>Other appropriate safeguards under Chapter V of the EU GDPR.</li>
-			</ul>
+			<h2>6. Data Storage &amp; Location</h2>
+			<p>All personal data collected by Part Collector is stored exclusively on servers located within the <strong>European Economic Area</strong> (OCI Turin, Italy). We do not transfer your personal data outside the EEA for our own processing purposes.</p>
+			<p>PayPal, Brevo, and VIES operate as independent data controllers under their own privacy policies; please refer to those policies for information about their own data storage and international transfer practices.</p>
 
 			<!-- 7 -->
 			<h2>7. Data Retention</h2>
@@ -384,36 +388,32 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Account and identity data</td>
-						<td>Duration of account + 12 months after closure</td>
+						<td>Seller profile (PayPal email, VAT details, shipping profile, listings)</td>
+						<td>Until seller deletes their account via the &ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo; feature in Discord, or upon written request</td>
 					</tr>
 					<tr>
-						<td>Transaction records</td>
-						<td>7 years (UK tax and accounting obligations)</td>
+						<td>Subscription and payment records</td>
+						<td>10 years (Bulgarian Accounting Act, Art. 38 &mdash; accounting documents retention obligation)</td>
 					</tr>
 					<tr>
-						<td>Delivery addresses</td>
-						<td>90 days after order completion</td>
+						<td>Terms of Service consent records</td>
+						<td>5 years after account deletion</td>
 					</tr>
 					<tr>
-						<td>Dispute records</td>
-						<td>3 years from dispute resolution</td>
+						<td>Discord identity (user ID, username)</td>
+						<td>Until account deletion request is processed</td>
 					</tr>
 					<tr>
-						<td>Consent records</td>
-						<td>Until superseded or account deletion + 2 years</td>
-					</tr>
-					<tr>
-						<td>Bot interaction logs</td>
-						<td>90 days rolling</td>
+						<td>OTP verification logs</td>
+						<td>30 days</td>
 					</tr>
 				</tbody>
 			</table>
-			<p>After the applicable retention period, data is securely deleted or anonymised.</p>
+			<p>When a seller deletes their account via the Discord bot (&ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo;), all seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. Subscription payment records are retained solely to satisfy our legal obligations under Bulgarian accounting law and are not used for any other purpose.</p>
 
 			<!-- 8 -->
 			<h2>8. Your Rights</h2>
-			<p>Under UK GDPR and EU GDPR you have the following rights:</p>
+			<p>Under EU GDPR you have the following rights:</p>
 			<div class="rights-grid">
 				<div class="rights-item">
 					<strong>Right of Access (Art. 15)</strong>
@@ -425,7 +425,7 @@
 				</div>
 				<div class="rights-item">
 					<strong>Right to Erasure (Art. 17)</strong>
-					<p>Request deletion of your data where there is no overriding legal basis for retention.</p>
+					<p>Delete your data. Use &ldquo;Delete Account&rdquo; in the bot for self-service, or contact us for data not covered by the bot.</p>
 				</div>
 				<div class="rights-item">
 					<strong>Right to Restriction (Art. 18)</strong>
@@ -433,11 +433,11 @@
 				</div>
 				<div class="rights-item">
 					<strong>Right to Portability (Art. 20)</strong>
-					<p>Receive your data in a machine-readable format for transfer elsewhere.</p>
+					<p>Receive your listing and seller data in a machine-readable format. Use the Export feature in the bot or contact us.</p>
 				</div>
 				<div class="rights-item">
 					<strong>Right to Object (Art. 21)</strong>
-					<p>Object to processing based on legitimate interests or for direct marketing.</p>
+					<p>Object to processing based on legitimate interests.</p>
 				</div>
 				<div class="rights-item">
 					<strong>Withdraw Consent (Art. 7(3))</strong>
@@ -448,24 +448,24 @@
 					<p>Lodge a complaint with the CPDP (Bulgaria) or your national supervisory authority (EU).</p>
 				</div>
 			</div>
-			<p>To exercise any of the above rights, submit a request via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>). We will respond within <strong>30 days</strong>.</p>
+			<p>To exercise any of the above rights, use the self-service &ldquo;Delete Account&rdquo; feature in the Discord bot, or submit a request via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>). We will respond within <strong>30 days</strong>.</p>
 
 			<!-- 9 -->
 			<h2>9. Cookies and Tracking</h2>
 			<p>The Part Collector website (partcollector.com) uses minimal, essential-only cookies:</p>
 			<ul>
 				<li><strong>Session cookies:</strong> Temporary cookies for secure navigation; deleted when you close your browser.</li>
-				<li><strong>Cloudflare security cookies:</strong> Set by our CDN provider for DDoS protection and security; see <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.</li>
+				<li><strong>Cloudflare security cookies:</strong> Set by our CDN provider for DDoS protection and security; see <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>.</li>
 			</ul>
 			<p>We do not use advertising, tracking, or analytics cookies. No third-party tracking scripts are deployed on our site.</p>
 
 			<!-- 10 -->
-			<h2>10. Children's Privacy</h2>
+			<h2>10. Children&rsquo;s Privacy</h2>
 			<p>Our Platform is not directed at persons under the age of <strong>18</strong>. We do not knowingly collect personal data from minors. If you believe a minor has provided us with data, please contact us via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>) and we will delete it promptly.</p>
 
 			<!-- 11 -->
 			<h2>11. Security</h2>
-			<p>We employ industry-standard security measures including encrypted data storage, access controls, regular security audits, and strict internal data handling policies. While we take all reasonable precautions, no system is completely immune to breach. In the event of a notifiable data breach, we will inform the relevant supervisory authority within 72 hours and notify affected individuals where required.</p>
+			<p>We employ industry-standard security measures including encrypted data storage, access controls, and strict internal data handling policies. While we take all reasonable precautions, no system is completely immune to breach. In the event of a notifiable data breach, we will inform the relevant supervisory authority within 72 hours and notify affected individuals where required by law.</p>
 
 			<!-- 12 -->
 			<h2>12. Changes to This Policy</h2>
@@ -475,7 +475,7 @@
 			<h2>13. Contact &amp; Supervisory Authority</h2>
 			<p>For privacy-related enquiries: <a href="https://partcollector.com/#contact">partcollector.com/#contact</a> &mdash; select <strong>Legal &amp; Privacy</strong></p>
 			<p>As a Bulgaria-registered company, our lead data protection supervisory authority is the <strong>Commission for Personal Data Protection (CPDP)</strong>. If you believe your rights have been violated, you may contact the CPDP at <a href="https://www.cpdp.bg" target="_blank" rel="noopener">cpdp.bg</a>.</p>
-			<p>If you are in the <strong>European Union</strong>, you may contact your national data protection authority. A list of EU authorities is available at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">edpb.europa.eu</a>.</p>
+			<p>If you are in the <strong>European Union</strong>, you may also contact your national data protection authority. A list of EU authorities is available at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank" rel="noopener">edpb.europa.eu</a>.</p>
 
 			<!-- Footer -->
 			<hr class="legal-divider" />
@@ -499,10 +499,5 @@
 		</div>
 	</div>
 
-	<!-- BG -->
-	<div id="bg"></div>
-	<script>document.body.classList.remove('is-preload');</script>
-
 </body>
 </html>
-

@@ -253,7 +253,7 @@
 
 			<!-- 2 -->
 			<h2>2. Data We Collect</h2>
-			<p>Part Collector operates exclusively within Discord. We collect the minimum data required to operate the Platform. <strong>No buyer personal data is stored by Part Collector</strong> &mdash; buyers search and communicate through native Discord features; all buyer&ndash;seller DM messages are stored by Discord, not by us.</p>
+			<p>Part Collector operates exclusively within Discord. We collect the minimum data required to operate the Platform. Buyers&rsquo; search activity, messages, and communications are handled entirely through Discord and are not stored by us. However, to enforce the Platform Terms of Service and maintain a complete legal record for dispute resolution, we record the minimum data listed below for all users (both buyers and sellers) who interact with the Platform.</p>
 			<table class="legal-table">
 				<thead>
 					<tr>
@@ -302,13 +302,19 @@
 					</tr>
 					<tr>
 						<td><strong>Consent Records</strong></td>
-						<td>Record of Terms of Service and Marketplace Rules acceptance (timestamp, policy version, Discord user ID)</td>
-						<td>Platform bot interactions</td>
-						<td>All platform users (buyers and sellers)</td>
+							<td>Discord user ID; Discord username at the time of acceptance; exact UTC timestamp of acceptance; policy version accepted; URLs of all policy documents presented at the time of acceptance; and &mdash; where available following a completed payment &mdash; the verified PayPal email address associated with the account. Per-transaction non-refundable payment acknowledgements are recorded separately for each subscription purchase.</td>
+							<td>Platform bot interactions (TOS acceptance button); PayPal payment confirmation webhook (PayPal email, retroactively linked after first completed payment)</td>
+							<td>All platform users (buyers and sellers)</td>
+						</tr>
+						<tr>
+							<td><strong>Buyer Payment Email</strong></td>
+							<td>PayPal email address of the buyer, obtained from the PayPal payment confirmation when an invoice is paid</td>
+							<td>PayPal Orders API payment confirmation; stored into the buyer&rsquo;s Terms of Service consent record for dispute resolution purposes</td>
+							<td>Buyers who have completed at least one payment</td>
 					</tr>
 				</tbody>
 			</table>
-			<p style="color:#ff4903;">We do <strong>not</strong> collect or store PayPal OAuth credentials, credit card numbers, banking details, or any buyer personal data. All payment processing is handled directly by PayPal.</p>
+			<p style="color:#ff4903;">We do <strong>not</strong> collect or store PayPal OAuth credentials, credit card numbers, or banking details. All payment processing is handled directly by PayPal. The only buyer personal data we collect is the minimum necessary to record Terms of Service acceptance and, after a completed payment, to link it to the PayPal account used for that payment &mdash; solely for dispute resolution purposes.</p>
 
 			<!-- 3 -->
 			<h2>3. Lawful Basis for Processing</h2>
@@ -341,9 +347,12 @@
 						<td>Legitimate interests (Art. 6(1)(f))</td>
 					</tr>
 					<tr>
-						<td>Recording Terms of Service and Rules acceptance</td>
-						<td>Legitimate interests (Art. 6(1)(f))</td>
-					</tr>
+							<td>Recording Terms of Service and Rules acceptance for all platform users</td>
+							<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing proof that users agreed to Platform Terms before transacting, and maintaining an evidence record for dispute resolution</td>
+						</tr>
+						<tr>
+							<td>Linking a buyer&rsquo;s PayPal email to their Platform Terms acceptance record (obtained from invoice payment confirmation)</td>
+							<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing a complete identity evidence chain for dispute resolution; the buyer&rsquo;s interest in not having this data processed does not override the legitimate interest given the minimal scope of data and legal purpose</td>
 				</tbody>
 			</table>
 
@@ -356,7 +365,8 @@
 				<li>To display and manage your seller shipping profile, rates, and active listings;</li>
 				<li>To maintain subscription and payment records as required by Bulgarian accounting legislation;</li>
 				<li>To enforce platform rules, resolve disputes, and prevent abuse;</li>
-				<li>To respond to your support requests and legal rights enquiries.</li>
+				<li>To respond to your support requests and legal rights enquiries;</li>
+				<li>For buyers who complete a payment: to link the PayPal email address from the payment confirmation to your Platform Terms acceptance record, solely for the purpose of dispute resolution and enforcement of the Terms of Service you accepted.</li>
 			</ul>
 
 			<!-- 5 -->
@@ -396,8 +406,12 @@
 						<td>10 years (Bulgarian Accounting Act, Art. 38 &mdash; accounting documents retention obligation)</td>
 					</tr>
 					<tr>
-						<td>Terms of Service consent records</td>
-						<td>5 years after account deletion</td>
+						<td>Terms of Service consent records &mdash; sellers (Discord ID, username, timestamp, policy version, PayPal email)</td>
+						<td>5 years after account deletion or written erasure request; may be retained beyond this period under Art. 17(3)(e) GDPR where necessary to establish, exercise, or defend legal claims</td>
+					</tr>
+					<tr>
+						<td>Terms of Service consent records &mdash; buyers (Discord ID, username, timestamp, policy version; PayPal email if a payment was completed)</td>
+						<td>5 years from the date of last transaction, or 5 years from date of acceptance where no transaction was completed; erasure requests accepted via our <a href="https://partcollector.com/#contact">contact form</a>; may be retained under Art. 17(3)(e) GDPR where necessary to defend legal claims</td>
 					</tr>
 					<tr>
 						<td>Discord identity (user ID, username)</td>
@@ -425,7 +439,7 @@
 				</div>
 				<div class="rights-item">
 					<strong>Right to Erasure (Art. 17)</strong>
-					<p>Delete your data. Use &ldquo;Delete Account&rdquo; in the bot for self-service, or contact us for data not covered by the bot.</p>
+					<p><strong>Sellers:</strong> Use &ldquo;Delete Account&rdquo; in the Discord bot for immediate self-service deletion of all profile, listing, and PayPal data. <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy). Note: Terms of Service consent records may be retained for up to 5 years under Art. 17(3)(e) GDPR where necessary to establish or defend legal claims, regardless of an erasure request.</p>
 				</div>
 				<div class="rights-item">
 					<strong>Right to Restriction (Art. 18)</strong>

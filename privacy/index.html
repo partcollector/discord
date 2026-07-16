@@ -10,7 +10,6 @@
 	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 	<style>
 		body, html { height: 100%; }
-
 		.legal-page {
 			position: relative;
 			z-index: 3;
@@ -22,7 +21,6 @@
 			padding: 3rem 2rem 4rem;
 			width: 100%;
 		}
-
 		.legal-card {
 			background-color: rgba(27, 31, 34, 0.93);
 			border-radius: 6px;
@@ -32,17 +30,9 @@
 			width: 100%;
 			margin: 0 auto;
 		}
-
-		.legal-logo {
-			text-align: center;
-			margin-bottom: 2rem;
-		}
-		.legal-logo img {
-			max-width: 180px;
-			height: auto;
-		}
+		.legal-logo { text-align: center; margin-bottom: 2rem; }
+		.legal-logo img { max-width: 180px; height: auto; }
 		.legal-logo a { border-bottom: none; }
-
 		.legal-card h1 {
 			font-size: 1.6rem;
 			letter-spacing: 0.5rem;
@@ -52,7 +42,6 @@
 			padding-bottom: 0.75rem;
 			margin-bottom: 0.5rem;
 		}
-
 		.legal-meta {
 			text-align: center;
 			font-size: 0.7rem;
@@ -61,7 +50,6 @@
 			opacity: 0.55;
 			margin-bottom: 2.5rem;
 		}
-
 		.legal-card h2 {
 			font-size: 0.85rem;
 			letter-spacing: 0.3rem;
@@ -71,9 +59,7 @@
 			border-bottom: solid 1px rgba(255,255,255,0.12);
 			padding-bottom: 0.4rem;
 		}
-
 		.legal-card h2:first-of-type { margin-top: 0; }
-
 		.legal-card h3 {
 			font-size: 0.78rem;
 			letter-spacing: 0.2rem;
@@ -81,7 +67,6 @@
 			color: rgba(255,255,255,0.85);
 			margin: 1.25rem 0 0.5rem;
 		}
-
 		.legal-card p {
 			font-size: 0.88rem;
 			line-height: 1.8;
@@ -89,7 +74,6 @@
 			opacity: 0.9;
 			margin: 0 0 1rem 0;
 		}
-
 		.legal-card ul {
 			list-style: disc;
 			padding-left: 1.4rem;
@@ -103,7 +87,6 @@
 			padding-left: 0.4rem;
 			margin-bottom: 0.25rem;
 		}
-
 		.legal-table {
 			width: 100%;
 			border-collapse: collapse;
@@ -129,7 +112,6 @@
 		.legal-table tr:nth-child(odd) td {
 			background: rgba(255,255,255,0.03);
 		}
-
 		.rights-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -155,7 +137,6 @@
 			opacity: 0.8;
 			line-height: 1.65;
 		}
-
 		.legal-highlight {
 			background: rgba(255,255,255,0.04);
 			border: 1px solid rgba(255,255,255,0.14);
@@ -167,13 +148,11 @@
 			letter-spacing: 0.04rem;
 		}
 		.legal-highlight strong { color: rgba(255,255,255,0.95); }
-
 		.legal-divider {
 			border: none;
 			border-top: solid 1px rgba(255,255,255,0.12);
 			margin: 2rem 0;
 		}
-
 		.legal-footer {
 			text-align: center;
 			margin-top: 2.5rem;
@@ -186,7 +165,6 @@
 			height: 2.4rem;
 			line-height: 2.4rem;
 		}
-
 		.policy-links {
 			display: flex;
 			flex-wrap: wrap;
@@ -204,7 +182,6 @@
 			transition: color 0.2s;
 		}
 		.policy-links a:hover { color: #ffffff; border-bottom-color: transparent; }
-
 		.page-copyright {
 			margin-top: 1.5rem;
 			font-size: 0.62rem;
@@ -212,7 +189,6 @@
 			text-transform: uppercase;
 			opacity: 0.45;
 		}
-
 		@media screen and (max-width: 600px) {
 			.legal-card { padding: 2rem 1.25rem; }
 			.legal-card h1 { font-size: 1.2rem; }
@@ -237,7 +213,7 @@
 
 			<!-- Title -->
 			<h1>Privacy Policy</h1>
-			<p class="legal-meta">Last updated: April 2026 &nbsp;&middot;&nbsp; Part Collector Ltd</p>
+			<p class="legal-meta">Last updated: July 2026 &nbsp;&middot;&nbsp; Part Collector Ltd</p>
 
 			<div class="legal-highlight">
 				<strong>Your privacy matters.</strong> This Policy explains what personal data we collect, why we collect it, how we use it, and what rights you have under the EU General Data Protection Regulation (GDPR).
@@ -278,9 +254,9 @@
 					</tr>
 					<tr>
 						<td><strong>Business / Tax Identity</strong></td>
-						<td>VAT registration number, company name (as validated by VIES)</td>
-						<td>Seller-provided; validated in real-time via EU VIES system</td>
-						<td>EU business sellers only</td>
+						<td>VAT/MVA registration number, company name, VAT country code; seller type classification (Company or Private); tax scheme flags (OSS, IOSS, UK VAT, VOEC)</td>
+						<td>Seller-provided; validated in real-time via EU VIES, UK HMRC, or Norwegian Brreg systems</td>
+						<td>Business sellers (EU, UK, Norway &mdash; as applicable)</td>
 					</tr>
 					<tr>
 						<td><strong>Seller Profile</strong></td>
@@ -302,19 +278,31 @@
 					</tr>
 					<tr>
 						<td><strong>Consent Records</strong></td>
-							<td>Discord user ID; Discord username at the time of acceptance; exact UTC timestamp of acceptance; policy version accepted; URLs of all policy documents presented at the time of acceptance; and &mdash; where available following a completed payment &mdash; the verified PayPal email address associated with the account. Per-transaction non-refundable payment acknowledgements are recorded separately for each subscription purchase.</td>
-							<td>Platform bot interactions (TOS acceptance button); PayPal payment confirmation webhook (PayPal email, retroactively linked after first completed payment)</td>
-							<td>All platform users (buyers and sellers)</td>
-						</tr>
-						<tr>
-							<td><strong>Buyer Payment Email</strong></td>
-							<td>PayPal email address of the buyer, obtained from the PayPal payment confirmation when an invoice is paid</td>
-							<td>PayPal Orders API payment confirmation; stored into the buyer&rsquo;s Terms of Service consent record for dispute resolution purposes</td>
-							<td>Buyers who have completed at least one payment</td>
+						<td>Discord user ID; Discord username at the time of acceptance; exact UTC timestamp of acceptance; policy version accepted; URLs of all policy documents presented at the time of acceptance; and &mdash; where available following a completed payment &mdash; the verified PayPal email address associated with the account. Per-transaction non-refundable payment acknowledgements are recorded separately for each subscription purchase.</td>
+						<td>Platform bot interactions (TOS acceptance button); PayPal payment confirmation webhook (PayPal email, retroactively linked after first completed payment)</td>
+						<td>All platform users (buyers and sellers)</td>
+					</tr>
+					<tr>
+						<td><strong>Buyer Payment Email</strong></td>
+						<td>PayPal email address of the buyer, obtained from the PayPal payment confirmation when an invoice is paid</td>
+						<td>PayPal Orders API payment confirmation; stored into the buyer&rsquo;s Terms of Service consent record for dispute resolution purposes</td>
+						<td>Buyers who have completed at least one payment</td>
+					</tr>
+					<tr>
+						<td><strong>Buyer Tax Data</strong></td>
+						<td>VAT/MVA registration number, VAT country code, company name (for B2B reverse-charge transactions)</td>
+						<td>Buyer-provided during checkout or Setup My Country; used to validate B2B VAT exemptions</td>
+						<td>Buyers who opt to provide VAT details for business-to-business purchases</td>
+					</tr>
+					<tr>
+						<td><strong>Tax Audit Log</strong></td>
+						<td>Per-order: invoice ID, seller and buyer IDs and countries, tax scheme applied, VAT rate, VAT amount, subtotal, shipping cost, total, currency, exemption reason, IOSS/VOEC threshold check results</td>
+						<td>Generated automatically at checkout for every transaction; stored for compliance and dispute resolution</td>
+						<td>All platform users (buyers and sellers) &mdash; per-transaction</td>
 					</tr>
 				</tbody>
 			</table>
-			<p style="color:#ff4903;">We do <strong>not</strong> collect or store PayPal OAuth credentials, credit card numbers, or banking details. All payment processing is handled directly by PayPal. The only buyer personal data we collect is the minimum necessary to record Terms of Service acceptance and, after a completed payment, to link it to the PayPal account used for that payment &mdash; solely for dispute resolution purposes.</p>
+			<p style="color:#ff4903;">We do <strong>not</strong> collect or store PayPal OAuth credentials, credit card numbers, or banking details. All payment processing is handled directly by PayPal.</p>
 
 			<!-- 3 -->
 			<h2>3. Lawful Basis for Processing</h2>
@@ -339,6 +327,18 @@
 						<td>Contract performance (Art. 6(1)(b))</td>
 					</tr>
 					<tr>
+						<td>UK VAT validation via HMRC for accurate invoicing</td>
+						<td>Contract performance (Art. 6(1)(b))</td>
+					</tr>
+					<tr>
+						<td>Norwegian MVA validation via Brreg for accurate invoicing</td>
+						<td>Contract performance (Art. 6(1)(b))</td>
+					</tr>
+					<tr>
+						<td>Tax audit logging (per-order tax decision records)</td>
+						<td>Legal obligation (Art. 6(1)(c)) &mdash; Bulgarian Accounting Act and tax compliance obligations</td>
+					</tr>
+					<tr>
 						<td>Retaining subscription payment records</td>
 						<td>Legal obligation (Art. 6(1)(c)) &mdash; Bulgarian Accounting Act</td>
 					</tr>
@@ -347,12 +347,13 @@
 						<td>Legitimate interests (Art. 6(1)(f))</td>
 					</tr>
 					<tr>
-							<td>Recording Terms of Service and Rules acceptance for all platform users</td>
-							<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing proof that users agreed to Platform Terms before transacting, and maintaining an evidence record for dispute resolution</td>
-						</tr>
-						<tr>
-							<td>Linking a buyer&rsquo;s PayPal email to their Platform Terms acceptance record (obtained from invoice payment confirmation)</td>
-							<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing a complete identity evidence chain for dispute resolution; the buyer&rsquo;s interest in not having this data processed does not override the legitimate interest given the minimal scope of data and legal purpose</td>
+						<td>Recording Terms of Service and Rules acceptance for all platform users</td>
+						<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing proof that users agreed to Platform Terms before transacting, and maintaining an evidence record for dispute resolution</td>
+					</tr>
+					<tr>
+						<td>Linking a buyer&rsquo;s PayPal email to their Platform Terms acceptance record (obtained from invoice payment confirmation)</td>
+						<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing a complete identity evidence chain for dispute resolution; the buyer&rsquo;s interest in not having this data processed does not override the legitimate interest given the minimal scope of data and legal purpose</td>
+					</tr>
 				</tbody>
 			</table>
 
@@ -361,8 +362,10 @@
 			<ul>
 				<li>To verify that your PayPal email address is valid and belongs to you (OTP verification process);</li>
 				<li>To create PayPal payment links for your subscription billing;</li>
-				<li>To automatically calculate and remove VAT from invoices for EU VAT-registered sellers (via VIES);</li>
-				<li>To display and manage your seller shipping profile, rates, and active listings;</li>
+				<li>To automatically calculate VAT for transactions across multiple tax schemes &mdash; including EU VAT (via VIES), UK VAT (via HMRC), Norwegian MVA (via Brreg), OSS, IOSS (Import One-Stop Shop), and VOEC (VAT on E-Commerce);</li>
+				<li>To remove or apply VAT on invoices for VAT-registered business sellers and buyers, including B2B reverse-charge exemptions;</li>
+				<li>To maintain a per-order tax audit log for compliance with Bulgarian accounting legislation and EU VAT directives;</li>
+				<li>To display and manage your seller shipping profile, rates, tax scheme settings, and active listings;</li>
 				<li>To maintain subscription and payment records as required by Bulgarian accounting legislation;</li>
 				<li>To enforce platform rules, resolve disputes, and prevent abuse;</li>
 				<li>To respond to your support requests and legal rights enquiries;</li>
@@ -373,9 +376,12 @@
 			<h2>5. Data Sharing</h2>
 			<p>We share personal data only as strictly necessary:</p>
 			<ul>
-				<li><strong>PayPal:</strong> We use the PayPal Orders API to create subscription payment links. Payment capture and processing is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
+				<li><strong>PayPal:</strong> We use the PayPal Orders API to create payment links. Payment capture and processing is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
 				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
+				<li><strong>HMRC (UK Revenue &amp; Customs):</strong> UK sellers&rsquo; VAT numbers are submitted to the HMRC VAT validation API in real-time for validation. See <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/about/personal-information-charter" target="_blank" rel="noopener">HMRC&rsquo;s Personal Information Charter</a>;</li>
+				<li><strong>Brreg (Brønnøysund Register Centre):</strong> Norwegian sellers&rsquo; organisation numbers are submitted to the Brreg API in real-time for MVA number validation. See <a href="https://www.brreg.no/en/about-brreg/privacy-policy/" target="_blank" rel="noopener">Brreg&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>ECB (European Central Bank):</strong> We fetch daily exchange rates from the ECB for currency conversion (e.g., for VOEC threshold calculation). No personal data is transmitted;</li>
 				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Platform data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Cloudflare:</strong> Our website (partcollector.com) is served via Cloudflare for security and CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Legal Authorities:</strong> Where we are legally obliged to disclose data (e.g., court orders, government requests).</li>
@@ -385,7 +391,7 @@
 			<!-- 6 -->
 			<h2>6. Data Storage &amp; Location</h2>
 			<p>All personal data collected by Part Collector is stored exclusively on servers located within the <strong>European Economic Area</strong> (OCI Turin, Italy). We do not transfer your personal data outside the EEA for our own processing purposes.</p>
-			<p>PayPal, Brevo, and VIES operate as independent data controllers under their own privacy policies; please refer to those policies for information about their own data storage and international transfer practices.</p>
+			<p>PayPal, Brevo, HMRC, Brreg, and VIES operate as independent data controllers under their own privacy policies; please refer to those policies for information about their own data storage and international transfer practices.</p>
 
 			<!-- 7 -->
 			<h2>7. Data Retention</h2>
@@ -398,8 +404,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>Seller profile (PayPal email, VAT details, shipping profile, listings)</td>
+						<td>Seller profile (PayPal email, VAT details, seller type, tax scheme flags, shipping profile, listings)</td>
 						<td>Until seller deletes their account via the &ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo; feature in Discord, or upon written request</td>
+					</tr>
+					<tr>
+						<td>Tax audit log (per-order tax decision records)</td>
+						<td>10 years (Bulgarian Accounting Act, Art. 38 &mdash; accounting documents retention obligation)</td>
 					</tr>
 					<tr>
 						<td>Subscription and payment records</td>
@@ -423,7 +433,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<p>When a seller deletes their account via the Discord bot (&ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo;), all seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. Subscription payment records are retained solely to satisfy our legal obligations under Bulgarian accounting law and are not used for any other purpose.</p>
+			<p>When a seller deletes their account via the Discord bot (&ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo;), all seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. Subscription payment records and tax audit log entries are retained solely to satisfy our legal obligations under Bulgarian accounting law and are not used for any other purpose.</p>
 
 			<!-- 8 -->
 			<h2>8. Your Rights</h2>
@@ -439,7 +449,7 @@
 				</div>
 				<div class="rights-item">
 					<strong>Right to Erasure (Art. 17)</strong>
-					<p><strong>Sellers:</strong> Use &ldquo;Delete Account&rdquo; in the Discord bot for immediate self-service deletion of all profile, listing, and PayPal data. <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy). Note: Terms of Service consent records may be retained for up to 5 years under Art. 17(3)(e) GDPR where necessary to establish or defend legal claims, regardless of an erasure request.</p>
+					<p><strong>Sellers:</strong> Use &ldquo;Delete Account&rdquo; in the Discord bot for immediate self-service deletion of all profile, listing, and PayPal data. <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy). Note: Tax audit log entries and Terms of Service consent records may be retained for up to 10 and 5 years respectively under Art. 17(3)(e) GDPR where necessary to establish or defend legal claims, regardless of an erasure request.</p>
 				</div>
 				<div class="rights-item">
 					<strong>Right to Restriction (Art. 18)</strong>
@@ -507,7 +517,7 @@
 					<span style="opacity:0.3">&middot;</span>
 					<a href="/refund-policy">Refund &amp; Cancellation</a>
 				</div>
-				<p class="page-copyright">&copy; 2025 Part Collector Ltd. All rights reserved.</p>
+				<p class="page-copyright">&copy; 2026 Part Collector Ltd. All rights reserved.</p>
 			</div>
 
 		</div>

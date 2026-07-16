@@ -10,7 +10,6 @@
 	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
 	<style>
 		body, html { height: 100%; }
-
 		.legal-page {
 			position: relative;
 			z-index: 3;
@@ -22,7 +21,6 @@
 			padding: 3rem 2rem 4rem;
 			width: 100%;
 		}
-
 		.legal-card {
 			background-color: rgba(27, 31, 34, 0.93);
 			border-radius: 6px;
@@ -32,17 +30,9 @@
 			width: 100%;
 			margin: 0 auto;
 		}
-
-		.legal-logo {
-			text-align: center;
-			margin-bottom: 2rem;
-		}
-		.legal-logo img {
-			max-width: 180px;
-			height: auto;
-		}
+		.legal-logo { text-align: center; margin-bottom: 2rem; }
+		.legal-logo img { max-width: 180px; height: auto; }
 		.legal-logo a { border-bottom: none; }
-
 		.legal-card h1 {
 			font-size: 1.6rem;
 			letter-spacing: 0.5rem;
@@ -52,7 +42,6 @@
 			padding-bottom: 0.75rem;
 			margin-bottom: 0.5rem;
 		}
-
 		.legal-meta {
 			text-align: center;
 			font-size: 0.7rem;
@@ -61,7 +50,6 @@
 			opacity: 0.55;
 			margin-bottom: 2.5rem;
 		}
-
 		.legal-card h2 {
 			font-size: 0.85rem;
 			letter-spacing: 0.3rem;
@@ -71,9 +59,7 @@
 			border-bottom: solid 1px rgba(255,255,255,0.12);
 			padding-bottom: 0.4rem;
 		}
-
 		.legal-card h2:first-of-type { margin-top: 0; }
-
 		.legal-card p {
 			font-size: 0.88rem;
 			line-height: 1.8;
@@ -81,7 +67,6 @@
 			opacity: 0.9;
 			margin: 0 0 1rem 0;
 		}
-
 		.legal-card ul {
 			list-style: disc;
 			padding-left: 1.4rem;
@@ -95,7 +80,6 @@
 			padding-left: 0.4rem;
 			margin-bottom: 0.25rem;
 		}
-
 		.legal-card ol {
 			list-style: decimal;
 			padding-left: 1.4rem;
@@ -109,7 +93,6 @@
 			padding-left: 0.4rem;
 			margin-bottom: 0.25rem;
 		}
-
 		.legal-highlight {
 			background: rgba(255,255,255,0.04);
 			border: 1px solid rgba(255,255,255,0.14);
@@ -121,13 +104,11 @@
 			letter-spacing: 0.04rem;
 		}
 		.legal-highlight strong { color: rgba(255,255,255,0.95); }
-
 		.legal-divider {
 			border: none;
 			border-top: solid 1px rgba(255,255,255,0.12);
 			margin: 2rem 0;
 		}
-
 		.legal-footer {
 			text-align: center;
 			margin-top: 2.5rem;
@@ -140,7 +121,6 @@
 			height: 2.4rem;
 			line-height: 2.4rem;
 		}
-
 		.policy-links {
 			display: flex;
 			flex-wrap: wrap;
@@ -158,7 +138,6 @@
 			transition: color 0.2s;
 		}
 		.policy-links a:hover { color: #ffffff; border-bottom-color: transparent; }
-
 		.page-copyright {
 			margin-top: 1.5rem;
 			font-size: 0.62rem;
@@ -166,7 +145,6 @@
 			text-transform: uppercase;
 			opacity: 0.45;
 		}
-
 		@media screen and (max-width: 600px) {
 			.legal-card { padding: 2rem 1.25rem; }
 			.legal-card h1 { font-size: 1.2rem; }
@@ -189,7 +167,7 @@
 
 			<!-- Title -->
 			<h1>Seller Terms &amp; Conditions</h1>
-			<p class="legal-meta">Last updated: April 2026 &nbsp;&middot;&nbsp; Part Collector Ltd</p>
+			<p class="legal-meta">Last updated: July 2026 &nbsp;&middot;&nbsp; Part Collector Ltd</p>
 
 			<div class="legal-highlight">
 				<strong>Important.</strong> These Seller Terms govern your use of the Part Collector platform. By registering as a seller or submitting a listing, you confirm acceptance of these terms and agree to comply with them at all times.
@@ -208,12 +186,25 @@
 				<li>Hold a valid Discord account;</li>
 				<li>Have a verified PayPal account connected to your Discord profile;</li>
 				<li>Be legally entitled to sell the items you list (own them or hold authorised reseller rights);</li>
-				<li>Comply with all applicable laws in your jurisdiction, including consumer protection, product safety, and VAT rules where applicable.</li>
+				<li>Comply with all applicable laws in your jurisdiction, including consumer protection, product safety, and VAT rules where applicable;</li>
+				<li>Accurately declare your seller type (<strong>Company</strong> or <strong>Private individual</strong>) during setup &mdash; this classification affects VAT treatment of your sales and is verified through government tax authorities where applicable.</li>
 			</ul>
 			<p>Your account is personal to you. You must not allow third parties to use your seller account.</p>
 
 			<!-- 3 -->
-			<h2>3. Listing Requirements</h2>
+			<h2>3. VAT &amp; Tax Compliance</h2>
+			<p>Part Collector facilitates automated VAT calculation and collection at checkout for applicable transactions. As a seller, you acknowledge and agree to the following:</p>
+			<ul>
+				<li><strong>Seller Type:</strong> If you register as a <strong>Company seller</strong>, your VAT/MVA registration number will be validated in real-time against the relevant government authority &mdash; VIES (EU), HMRC (UK), or Brreg (Norway). Private sellers are not subject to VAT on their sales and will not be charged VAT by the Platform.</li>
+				<li><strong>Tax Scheme Declarations:</strong> You may be asked to declare eligibility for tax schemes such as OSS (One-Stop Shop), IOSS (Import One-Stop Shop), UK VAT registration, or VOEC (VAT on E-Commerce) for Norway. These declarations affect how VAT is calculated at checkout. You must provide accurate declarations; providing false information may result in account suspension.</li>
+				<li><strong>VAT Obligations:</strong> If you are a VAT-registered business seller, you remain solely responsible for accounting for and remitting the correct VAT to your tax authority for all transactions, including those where the Platform applies reverse-charge mechanisms or collects VAT on your behalf.</li>
+				<li><strong>Buyer VAT Data:</strong> When a buyer provides a valid VAT number for B2B reverse-charge purposes, the Platform will apply the reverse charge and you will not collect VAT from that buyer. You must retain evidence of the VAT exemption for your own records.</li>
+				<li><strong>Audit Records:</strong> A tax audit log is generated for every transaction and retained for 10 years as required by Bulgarian accounting law.</li>
+			</ul>
+			<p>Part Collector does not provide legal or tax advice. If you are unsure of your VAT obligations, you should seek independent professional advice.</p>
+
+			<!-- 4 -->
+			<h2>4. Listing Requirements</h2>
 			<p>Every listing must:</p>
 			<ul>
 				<li>Accurately and honestly describe the item, including its condition, brand, model compatibility, part number (where available), and any known defects;</li>
@@ -223,13 +214,13 @@
 			</ul>
 			<p>You are solely responsible for the accuracy of your listings. Misleading listings will result in immediate removal and may lead to account suspension.</p>
 
-			<!-- 4 -->
-			<h2>4. Subscription Fees</h2>
-			<p>Part Collector operates on a <strong>subscription-only</strong> model. There are <strong>no platform commissions or transaction fees</strong> on completed sales. Sellers pay a fixed subscription tier to access the Platform. Current tier pricing is visible within the Subscription Setup section of the Discord server and is incorporated into these terms by reference. We reserve the right to amend tier pricing on <strong>30 days' notice</strong>.</p>
-			<p>You are responsible for all applicable taxes on your sales revenue, including VAT or equivalent, in your jurisdiction. Part Collector Ltd does not collect or remit these taxes on your behalf unless required by law.</p>
-
 			<!-- 5 -->
-			<h2>5. Order Fulfilment Obligations</h2>
+			<h2>5. Subscription Fees</h2>
+			<p>Part Collector operates on a <strong>subscription-only</strong> model. There are <strong>no platform commissions or transaction fees</strong> on completed sales. Sellers pay a fixed subscription tier to access the Platform. Current tier pricing is visible within the Subscription Setup section of the Discord server and is incorporated into these terms by reference. We reserve the right to amend tier pricing on <strong>30 days' notice</strong>.</p>
+			<p>You are responsible for all applicable taxes on your sales revenue, including VAT or equivalent, in your jurisdiction. Part Collector Ltd may collect VAT at checkout in certain circumstances (e.g., OSS, IOSS, UK VAT, VOEC schemes) and remit it to the relevant tax authority as required by law. Outside these schemes, Part Collector does not collect or remit taxes on your behalf.</p>
+
+			<!-- 6 -->
+			<h2>6. Order Fulfilment Obligations</h2>
 			<p>When a buyer completes payment, you must:</p>
 			<ol>
 				<li>Confirm the order within the response window specified in our Seller Rules;</li>
@@ -239,8 +230,8 @@
 			</ol>
 			<p>Failure to fulfil confirmed orders without reasonable cause may result in dispute awards against you, financial penalties, and/or account suspension.</p>
 
-			<!-- 6 -->
-			<h2>6. Prohibited Items and Conduct</h2>
+			<!-- 7 -->
+			<h2>7. Prohibited Items and Conduct</h2>
 			<p>You must not list or sell:</p>
 			<ul>
 				<li>Counterfeit, fake, or misrepresented parts;</li>
@@ -252,8 +243,8 @@
 			</ul>
 			<p>You must not engage in shill bidding, feedback manipulation, price-fixing with other sellers, or any other conduct that distorts the marketplace or harms buyers.</p>
 
-			<!-- 7 -->
-			<h2>7. Buyer Protections and Returns</h2>
+			<!-- 8 -->
+			<h2>8. Buyer Protections and Returns</h2>
 			<p>You acknowledge that buyers have statutory rights including, where applicable, the EU Consumer Rights Directive. Where a buyer is a consumer purchasing from you as a business seller, you must honour:</p>
 			<ul>
 				<li>The <strong>14-day right of withdrawal</strong> for distance sales (unless a valid statutory exception applies);</li>
@@ -262,8 +253,8 @@
 			</ul>
 			<p>For peer-to-peer (private seller) transactions, withdrawal rights may differ. It remains your responsibility to understand your legal obligations in your jurisdiction.</p>
 
-			<!-- 8 -->
-			<h2>8. Disputes</h2>
+			<!-- 9 -->
+			<h2>9. Disputes</h2>
 			<p>Part Collector's moderation team may intervene in buyer&ndash;seller disputes. You agree to:</p>
 			<ul>
 				<li>Engage honestly and promptly with our dispute process;</li>
@@ -272,13 +263,13 @@
 			</ul>
 			<p>Our dispute process does not override any statutory rights of the buyer or applicable court jurisdiction.</p>
 
-			<!-- 9 -->
-			<h2>9. Intellectual Property</h2>
+			<!-- 10 -->
+			<h2>10. Intellectual Property</h2>
 			<p>You retain ownership of content you upload (photographs, descriptions). By submitting a listing you grant Part Collector Ltd a non-exclusive, royalty-free, worldwide licence to display, reproduce, and distribute that content for the purpose of operating and promoting the Platform.</p>
 			<p>You warrant that your listing content does not infringe any third-party intellectual property rights.</p>
 
-			<!-- 10 -->
-			<h2>10. Account Suspension and Termination</h2>
+			<!-- 11 -->
+			<h2>11. Account Suspension and Termination</h2>
 			<p>We reserve the right to suspend or permanently terminate your seller account, with or without prior notice, if you:</p>
 			<ul>
 				<li>Breach these terms or our Seller Rules;</li>
@@ -289,25 +280,25 @@
 			</ul>
 			<p>On termination, any pending payments will be handled in accordance with the dispute resolution process. We are not liable for loss of earnings following a lawful suspension.</p>
 
-			<!-- 11 -->
-			<h2>11. Data Protection</h2>
+			<!-- 12 -->
+			<h2>12. Data Protection</h2>
 			<p>We process your personal data as a seller in accordance with our <a href="/privacy">Privacy Policy</a>. You may receive buyer contact details and delivery information solely for the purpose of fulfilling orders; you must not use this data for any other purpose, and must handle it in compliance with EU GDPR.</p>
 
-			<!-- 12 -->
-			<h2>12. Limitation of Liability</h2>
+			<!-- 13 -->
+			<h2>13. Limitation of Liability</h2>
 			<p>Part Collector Ltd acts as a marketplace facilitator. We are not responsible for the quality, safety, legality, or suitability of listed items. Our liability to you as a seller (in contract, tort, or otherwise) is limited to the subscription fees you have paid in the 12 months preceding the event giving rise to the claim.</p>
 			<p>Nothing in these terms limits liability for gross negligence, wilful misconduct, or any liability that cannot be excluded by law.</p>
 
-			<!-- 13 -->
-			<h2>13. Changes to These Terms</h2>
+			<!-- 14 -->
+			<h2>14. Changes to These Terms</h2>
 			<p>We may update these Seller Terms at any time. Material changes will be communicated with at least <strong>30 days' notice</strong> via the Discord server. Continued use of the Platform after that date constitutes acceptance of the updated terms. If you do not accept the changes, you must cease selling and close your account.</p>
 
-			<!-- 14 -->
-			<h2>14. Governing Law and Jurisdiction</h2>
+			<!-- 15 -->
+			<h2>15. Governing Law and Jurisdiction</h2>
 			<p>These terms are governed by the laws of <strong>Bulgaria</strong>. Any dispute arising from these terms shall be subject to the exclusive jurisdiction of the Bulgarian courts, unless mandatory local consumer or business protection law in your country of residence requires otherwise.</p>
 
-			<!-- 15 -->
-			<h2>15. Contact</h2>
+			<!-- 16 -->
+			<h2>16. Contact</h2>
 			<p>Seller queries should be submitted via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>).</p>
 
 			<!-- Footer -->
@@ -326,7 +317,7 @@
 					<span style="opacity:0.3">&middot;</span>
 					<a href="/refund-policy">Refund &amp; Cancellation</a>
 				</div>
-				<p class="page-copyright">&copy; 2025 Part Collector Ltd. All rights reserved.</p>
+				<p class="page-copyright">&copy; 2026 Part Collector Ltd. All rights reserved.</p>
 			</div>
 
 		</div>
@@ -338,4 +329,3 @@
 
 </body>
 </html>
-

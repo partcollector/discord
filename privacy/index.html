@@ -254,9 +254,9 @@
 					</tr>
 					<tr>
 						<td><strong>Business / Tax Identity</strong></td>
-						<td>VAT/MVA registration number, company name, VAT country code; seller type classification (Company or Private); tax scheme flags (OSS, IOSS, UK VAT, VOEC)</td>
-						<td>Seller-provided; validated in real-time via EU VIES, UK HMRC, or Norwegian Brreg systems</td>
-						<td>Business sellers (EU, UK, Norway &mdash; as applicable)</td>
+						<td>VAT/MVA registration number, ABN, NZBN, company name, tax country code; seller type classification (Company or Private); tax scheme flags (OSS, IOSS, UK VAT, VOEC)</td>
+						<td>Seller-provided; validated in real-time via EU VIES, UK HMRC, Norwegian Brreg, Australian ABR, or NZBN API systems</td>
+						<td>Business sellers (EU, UK, Norway, Australia, New Zealand &mdash; as applicable)</td>
 					</tr>
 					<tr>
 						<td><strong>Seller Profile</strong></td>
@@ -380,6 +380,8 @@
 				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
 				<li><strong>HMRC (UK Revenue &amp; Customs):</strong> UK sellers&rsquo; VAT numbers are submitted to the HMRC VAT validation API in real-time for validation. See <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/about/personal-information-charter" target="_blank" rel="noopener">HMRC&rsquo;s Personal Information Charter</a>;</li>
 				<li><strong>Brreg (Brønnøysund Register Centre):</strong> Norwegian sellers&rsquo; organisation numbers are submitted to the Brreg API in real-time for MVA number validation. See <a href="https://www.brreg.no/en/about-brreg/privacy-policy/" target="_blank" rel="noopener">Brreg&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>ABR (Australian Business Register):</strong> Australian sellers&rsquo; ABNs are validated via the ABR XML SOAP API. See <a href="https://abr.business.gov.au/" target="_blank" rel="noopener">ABR Privacy</a>;</li>
+				<li><strong>NZBN API (New Zealand Business Number):</strong> New Zealand sellers&rsquo; NZBNs are validated via the NZBN API. See <a href="https://www.nzbn.govt.nz/privacy/" target="_blank" rel="noopener">NZBN Privacy</a>;</li>
 				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>ECB (European Central Bank):</strong> We fetch daily exchange rates from the ECB for currency conversion (e.g., for VOEC threshold calculation). No personal data is transmitted;</li>
 				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Platform data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>

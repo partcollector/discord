@@ -541,8 +541,8 @@
 			}
 			if (!country) return;
 
-			var cc = country.cc, name = country.name, cont = country.cont, flag = flagEmoji(cc);
-			title.textContent = flag + ' ' + name;
+			var cc = country.cc, name = country.name, cont = country.cont;
+			title.textContent = name;
 
 			var canSell = SELLER_COUNTRIES.has(cc);
 			var canBuy = true;
@@ -563,15 +563,15 @@
 
 			var schemes = [];
 			schemes.push({label:'VAT / GST Registration',avail:true,desc:'Available for business sellers with a valid tax number'});
-			if (isEU) schemes.push({label:'\uD83C\uDDEA\uD83C\uDDFA OSS',avail:canSell,desc:'One-Stop Shop \u2014 EU sellers selling to other EU countries'});
-			if (!isEU && canSell) schemes.push({label:'\uD83C\uDDEA\uD83C\uDDFA IOSS',avail:true,desc:'Import One-Stop Shop \u2014 Non-EU sellers selling to EU (\u2264\u20AC150)'});
-			schemes.push({label:'\uD83C\uDDEC\uD83C\uDDE7 UK VAT',avail:canSell,desc:'Register for UK VAT to sell to UK buyers'});
-			schemes.push({label:'\uD83C\uDDF3\uD83C\uDDF4 Norway VOEC',avail:canSell,desc:'Register for VOEC to sell to Norwegian buyers'});
-			if (cc === 'GB') schemes.push({label:'\u2705 UK VAT (Domestic)',avail:true,desc:'UK VAT registration available \u2014 20% standard rate'});
-			if (cc === 'NO') schemes.push({label:'\u2705 Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
-			if (cc === 'AU') schemes.push({label:'\uD83C\uDDE6\uD83C\uDDFA Australian GST',avail:canSell,desc:'GST registration available \u2014 10% rate'});
-			if (cc === 'NZ') schemes.push({label:'\uD83C\uDDF3\uD83C\uDDFF New Zealand GST',avail:canSell,desc:'GST registration available \u2014 15% rate'});
-			schemes.push({label:'\uD83D\uDD11 Private Seller VAT',avail:canSell,desc:'Private sellers can opt into VAT/GST registration for domestic sales'});
+			if (isEU) schemes.push({label:'EU OSS',avail:canSell,desc:'One-Stop Shop \u2014 EU sellers selling to other EU countries'});
+			if (!isEU && canSell) schemes.push({label:'EU IOSS',avail:true,desc:'Import One-Stop Shop \u2014 Non-EU sellers selling to EU (\u2264\u20AC150)'});
+			schemes.push({label:'UK VAT',avail:canSell,desc:'Register for UK VAT to sell to UK buyers'});
+			schemes.push({label:'Norway VOEC',avail:canSell,desc:'Register for VOEC to sell to Norwegian buyers'});
+			if (cc === 'GB') schemes.push({label:'UK VAT (Domestic)',avail:true,desc:'UK VAT registration available \u2014 20% standard rate'});
+			if (cc === 'NO') schemes.push({label:'Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
+			if (cc === 'AU') schemes.push({label:'Australian GST',avail:canSell,desc:'GST registration available \u2014 10% rate'});
+			if (cc === 'NZ') schemes.push({label:'New Zealand GST',avail:canSell,desc:'GST registration available \u2014 15% rate'});
+			schemes.push({label:'Private Seller VAT',avail:canSell,desc:'Private sellers can opt into VAT/GST registration for domestic sales'});
 
 			var hasProvince = PROVINCE_COUNTRIES.has(cc);
 

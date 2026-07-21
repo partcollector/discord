@@ -162,7 +162,7 @@
 			border: 1px solid rgba(255,255,255,0.08);
 		}
 		.scheme-item.available { border-color: rgba(76,175,80,0.3); }
-		.scheme-item.unavailable { opacity: 0.7; }
+		.scheme-item.unavailable { }
 		.scheme-item .scheme-label { font-weight: 600; text-transform: uppercase; letter-spacing: 0.08rem; font-size: 0.7rem; }
 		.scheme-item .scheme-desc { font-size: 0.68rem; opacity: 0.85; margin-top: 0.2rem; }
 		.scheme-item .scheme-check { float: right; font-size: 1rem; }
@@ -577,7 +577,7 @@
 			schemeHtml += '<div class="scheme-grid">';
 			schemes.forEach(function(s) {
 				var cls = s.avail ? 'available' : 'unavailable';
-				var check = s.avail ? '<span class="scheme-check" style="color:#4caf50;">\u2713</span>' : '<span class="scheme-check" style="color:#666;">\u2014</span>';
+				var check = s.avail ? '<span class="scheme-check" style="color:#4caf50;">\u2713</span>' : '<span class="scheme-check" style="color:#ff4903;">\u2717</span>';
 				schemeHtml += '<div class="scheme-item ' + cls + '">' + check + '<div class="scheme-label">' + s.label + '</div><div class="scheme-desc">' + s.desc + '</div></div>';
 			});
 			schemeHtml += '</div>';

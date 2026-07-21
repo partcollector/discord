@@ -1,34 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
-      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="0%" stop-color="rgba(255,73,3,0.08)"/>
+      <stop offset="100%" stop-color="rgba(255,73,3,0)"/>
     </radialGradient>
   </defs>
   <circle cx="400" cy="250" r="220" fill="url(#glow)"/>
-  <circle cx="400" cy="250" r="180" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
-  <circle cx="400" cy="250" r="140" stroke="rgba(255,255,255,0.08)" stroke-width="0.5" fill="none" stroke-dasharray="3,5"/>
-  <circle cx="400" cy="250" r="100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none" stroke-dasharray="2,6"/>
-  <ellipse cx="400" cy="250" rx="180" ry="70" stroke="rgba(255,255,255,0.07)" stroke-width="0.5" fill="none"/>
-  <ellipse cx="400" cy="250" rx="70" ry="180" stroke="rgba(255,255,255,0.07)" stroke-width="0.5" fill="none"/>
-  <line x1="220" y1="250" x2="580" y2="250" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
-  <line x1="400" y1="70" x2="400" y2="430" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
-  <circle cx="400" cy="200" r="3" fill="rgba(255,255,255,0.25)"/><circle cx="390" cy="195" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="408" cy="198" r="2.5" fill="rgba(255,255,255,0.22)"/><circle cx="395" cy="205" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="405" cy="208" r="1.8" fill="rgba(255,255,255,0.15)"/><circle cx="412" cy="203" r="1.5" fill="rgba(255,255,255,0.15)"/><circle cx="385" cy="200" r="1.5" fill="rgba(255,255,255,0.12)"/><circle cx="382" cy="190" r="2" fill="rgba(255,255,255,0.2)"/><circle cx="400" cy="185" r="1.8" fill="rgba(255,255,255,0.18)"/><circle cx="395" cy="182" r="1.5" fill="rgba(255,255,255,0.15)"/>
-  <circle cx="300" cy="200" r="3" fill="rgba(255,255,255,0.25)"/><circle cx="290" cy="205" r="2.5" fill="rgba(255,255,255,0.22)"/><circle cx="310" cy="198" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="295" cy="195" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="305" cy="208" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="285" cy="200" r="1.8" fill="rgba(255,255,255,0.15)"/><circle cx="315" cy="205" r="1.8" fill="rgba(255,255,255,0.12)"/><circle cx="295" cy="188" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="305" cy="190" r="1.5" fill="rgba(255,255,255,0.15)"/><circle cx="300" cy="220" r="1.5" fill="rgba(255,255,255,0.12)"/>
-  <circle cx="340" cy="255" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="335" cy="260" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="342" cy="250" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="338" cy="268" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="345" cy="258" r="1.8" fill="rgba(255,255,255,0.12)"/><circle cx="332" cy="265" r="1.5" fill="rgba(255,255,255,0.12)"/>
-  <circle cx="420" cy="245" r="3" fill="rgba(255,255,255,0.22)"/><circle cx="415" cy="250" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="425" cy="242" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="418" cy="238" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="422" cy="255" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="428" cy="248" r="1.8" fill="rgba(255,255,255,0.12)"/><circle cx="412" cy="245" r="1.5" fill="rgba(255,255,255,0.12)"/><circle cx="425" cy="270" r="1.5" fill="rgba(255,255,255,0.1)"/>
-  <circle cx="470" cy="205" r="3" fill="rgba(255,255,255,0.22)"/><circle cx="465" cy="210" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="478" cy="202" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="460" cy="200" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="475" cy="212" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="485" cy="208" r="1.8" fill="rgba(255,255,255,0.15)"/><circle cx="455" cy="205" r="1.5" fill="rgba(255,255,255,0.12)"/><circle cx="460" cy="220" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="480" cy="225" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="485" cy="230" r="1.5" fill="rgba(255,255,255,0.12)"/><circle cx="440" cy="215" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="445" cy="220" r="1.5" fill="rgba(255,255,255,0.15)"/>
-  <circle cx="510" cy="285" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="505" cy="290" r="2" fill="rgba(255,255,255,0.18)"/><circle cx="515" cy="282" r="2" fill="rgba(255,255,255,0.15)"/><circle cx="512" cy="292" r="1.5" fill="rgba(255,255,255,0.12)"/><circle cx="518" cy="295" r="1.5" fill="rgba(255,255,255,0.12)"/>
-  <line x1="310" y1="200" x2="385" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
-  <line x1="400" y1="200" x2="420" y2="240" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
-  <line x1="420" y1="245" x2="460" y2="220" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="3,4"/>
-  <line x1="340" y1="255" x2="420" y2="248" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="3,4"/>
-  <line x1="480" y1="225" x2="510" y2="285" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="3,4"/>
-  <line x1="310" y1="205" x2="340" y2="255" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="3,4"/>
-  <text x="270" y="160" fill="rgba(255,255,255,0.12)" font-size="9" font-family="sans-serif" letter-spacing="2">NORTH AMERICA</text>
-  <text x="350" y="290" fill="rgba(255,255,255,0.1)" font-size="8" font-family="sans-serif" letter-spacing="2">SOUTH AMERICA</text>
-  <text x="395" y="165" fill="rgba(255,255,255,0.12)" font-size="8" font-family="sans-serif" letter-spacing="2">EUROPE</text>
-  <text x="400" y="310" fill="rgba(255,255,255,0.1)" font-size="8" font-family="sans-serif" letter-spacing="2">AFRICA</text>
-  <text x="470" y="175" fill="rgba(255,255,255,0.12)" font-size="8" font-family="sans-serif" letter-spacing="2">ASIA</text>
-  <text x="500" y="320" fill="rgba(255,255,255,0.1)" font-size="8" font-family="sans-serif" letter-spacing="2">OCEANIA</text>
+  <circle cx="400" cy="250" r="180" stroke="rgba(255,73,3,0.35)" stroke-width="1.5" fill="none"/>
+  <circle cx="400" cy="250" r="140" stroke="rgba(255,255,255,0.15)" stroke-width="0.8" fill="none" stroke-dasharray="3,5"/>
+  <circle cx="400" cy="250" r="100" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" fill="none" stroke-dasharray="2,6"/>
+  <ellipse cx="400" cy="250" rx="180" ry="70" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" fill="none"/>
+  <ellipse cx="400" cy="250" rx="70" ry="180" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" fill="none"/>
+  <line x1="220" y1="250" x2="580" y2="250" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+  <line x1="400" y1="70" x2="400" y2="430" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
+  <g fill="rgba(255,73,3,0.7)"><circle cx="400" cy="200" r="4"/><circle cx="390" cy="195" r="3"/><circle cx="408" cy="198" r="3.5"/><circle cx="395" cy="205" r="3"/><circle cx="405" cy="208" r="2.5"/><circle cx="412" cy="203" r="2.5"/></g>
+  <g fill="rgba(255,73,3,0.5)"><circle cx="385" cy="200" r="2.5"/><circle cx="382" cy="190" r="3"/><circle cx="400" cy="185" r="2.5"/><circle cx="395" cy="182" r="2"/></g>
+  <g fill="rgba(255,73,3,0.7)"><circle cx="300" cy="200" r="4"/><circle cx="290" cy="205" r="3.5"/><circle cx="310" cy="198" r="3.5"/><circle cx="295" cy="195" r="3"/><circle cx="305" cy="208" r="3"/></g>
+  <g fill="rgba(255,73,3,0.45)"><circle cx="285" cy="200" r="2.5"/><circle cx="315" cy="205" r="2.5"/><circle cx="295" cy="188" r="3"/><circle cx="305" cy="190" r="2.5"/><circle cx="300" cy="220" r="2.5"/></g>
+  <g fill="rgba(255,73,3,0.55)"><circle cx="340" cy="255" r="3.5"/><circle cx="335" cy="260" r="3"/><circle cx="342" cy="250" r="3"/><circle cx="338" cy="268" r="3"/><circle cx="345" cy="258" r="2.5"/><circle cx="332" cy="265" r="2.5"/></g>
+  <g fill="rgba(255,73,3,0.6)"><circle cx="420" cy="245" r="4"/><circle cx="415" cy="250" r="3.5"/><circle cx="425" cy="242" r="3"/><circle cx="418" cy="238" r="3"/><circle cx="422" cy="255" r="3"/><circle cx="428" cy="248" r="2.5"/></g>
+  <g fill="rgba(255,73,3,0.4)"><circle cx="412" cy="245" r="2.5"/><circle cx="425" cy="270" r="2.5"/></g>
+  <g fill="rgba(255,73,3,0.6)"><circle cx="470" cy="205" r="4"/><circle cx="465" cy="210" r="3.5"/><circle cx="478" cy="202" r="3.5"/><circle cx="460" cy="200" r="3"/><circle cx="475" cy="212" r="3"/></g>
+  <g fill="rgba(255,73,3,0.45)"><circle cx="485" cy="208" r="2.5"/><circle cx="455" cy="205" r="2.5"/><circle cx="460" cy="220" r="3"/><circle cx="480" cy="225" r="3"/><circle cx="485" cy="230" r="2.5"/><circle cx="440" cy="215" r="3"/><circle cx="445" cy="220" r="2.5"/></g>
+  <g fill="rgba(255,73,3,0.55)"><circle cx="510" cy="285" r="3.5"/><circle cx="505" cy="290" r="3"/><circle cx="515" cy="282" r="3"/><circle cx="512" cy="292" r="2.5"/><circle cx="518" cy="295" r="2.5"/></g>
+  <g stroke="rgba(255,73,3,0.15)" stroke-width="0.8" stroke-dasharray="3,4" fill="none"><line x1="310" y1="200" x2="385" y2="192"/><line x1="400" y1="200" x2="420" y2="240"/><line x1="420" y1="245" x2="460" y2="220"/></g>
+  <g stroke="rgba(255,73,3,0.1)" stroke-width="0.8" stroke-dasharray="3,4" fill="none"><line x1="340" y1="255" x2="420" y2="248"/><line x1="480" y1="225" x2="510" y2="285"/><line x1="310" y1="205" x2="340" y2="255"/></g>
+  <g fill="rgba(255,255,255,0.2)" font-size="10" font-family="sans-serif" letter-spacing="3" font-weight="600"><text x="270" y="160">NORTH AMERICA</text><text x="395" y="165">EUROPE</text><text x="470" y="175">ASIA</text></g>
+  <g fill="rgba(255,255,255,0.18)" font-size="9" font-family="sans-serif" letter-spacing="3" font-weight="600"><text x="350" y="290">SOUTH AMERICA</text><text x="400" y="310">AFRICA</text><text x="500" y="320">OCEANIA</text></g>
 </svg>

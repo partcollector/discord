@@ -155,16 +155,16 @@
 			margin: 0.75rem 0 1rem;
 		}
 		.scheme-item {
-			font-size: 0.78rem;
-			padding: 0.5rem 0.75rem;
+			font-size: 0.82rem;
+			padding: 0.6rem 0.85rem;
 			border-radius: 4px;
 			background: rgba(255,255,255,0.04);
 			border: 1px solid rgba(255,255,255,0.08);
 		}
 		.scheme-item.available { border-color: rgba(76,175,80,0.3); }
 		.scheme-item.unavailable { }
-		.scheme-item .scheme-label { font-weight: 600; text-transform: uppercase; letter-spacing: 0.08rem; font-size: 0.7rem; }
-		.scheme-item .scheme-desc { font-size: 0.75rem; opacity: 0.85; margin-top: 0.2rem; }
+		.scheme-item .scheme-label { font-weight: 600; text-transform: uppercase; letter-spacing: 0.08rem; font-size: 0.78rem; }
+		.scheme-item .scheme-desc { font-size: 0.8rem; opacity: 0.85; margin-top: 0.25rem; }
 		.scheme-item .scheme-check { float: right; font-size: 1rem; }
 
 		.scheme-note {
@@ -586,9 +586,9 @@
 			taxArea.innerHTML = contHtml + schemeHtml;
 
 			if (canSell) {
-				ctaMsg.innerHTML = '\u2705 <strong>' + name + '</strong> is fully supported. You can <strong>Sell</strong> and <strong>Buy</strong> on Part Collector.<br>If your country is within this list, you can join \u2014 select your option above and get started.';
+				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Selling</strong> and <strong>Buying</strong>.<br>Ready to get started? Join thousands of sellers and buyers on Part Collector.';
 			} else {
-				ctaMsg.innerHTML = '\uD83D\uDD1C <strong>' + name + '</strong> is supported for <strong>Buying</strong>. We are working to enable selling from your country.<br>In the meantime, you can browse and purchase parts from sellers worldwide.';
+				ctaMsg.innerHTML = '<strong>' + name + '</strong> is supported for <strong>Buying</strong>.<br>You can start purchasing parts today. We are actively expanding — selling from your country may become available soon.';
 			}
 
 			if (canSell) {
@@ -598,7 +598,7 @@
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As a seller from <strong>' + name + '</strong>, you can register for tax schemes like <strong>IOSS</strong>, <strong>UK VAT</strong>, and <strong>VOEC</strong> to expand your reach to buyers across the EU, UK, and Norway.';
 				}
 			} else {
-				extraInfo.innerHTML = '<strong>\uD83C\uDF0D Expanding rapidly.</strong> We are actively working to enable selling from more countries. If <strong>' + name + '</strong> is not yet supported for selling, we are making continuous efforts to support more countries in the future. Please check back soon.';
+				extraInfo.innerHTML = '<strong>\uD83C\uDF0D Expanding coverage.</strong> We continuously evaluate new markets based on demand and regulatory readiness. If <strong>' + name + '</strong> is not yet enabled for selling, check back — new regions are added regularly.';
 			}
 		};
 	})();

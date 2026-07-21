@@ -527,6 +527,8 @@
 
 			if (!value) {
 				card.classList.remove('visible');
+				extraInfo.style.display = '';
+				extraInfo.innerHTML = '';
 				ctaMsg.innerHTML = 'Part Collector connects sellers and buyers across <strong>201 countries</strong> worldwide.<br>Select your country above to see what\'s available for you.';
 				return;
 			}
@@ -586,19 +588,16 @@
 			taxArea.innerHTML = contHtml + schemeHtml;
 
 			if (canSell) {
+				extraInfo.style.display = '';
 				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Selling</strong> and <strong>Buying</strong>.<br>Ready to get started? Join thousands of sellers and buyers on Part Collector.';
-			} else {
-				ctaMsg.innerHTML = '<strong>' + name + '</strong> is supported for <strong>Buying</strong>.<br>You can start purchasing parts today. We are actively expanding — selling from your country may become available soon.';
-			}
-
-			if (canSell) {
 				if (isEU) {
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As an EU seller, you can use <strong>OSS</strong> to charge your buyer\'s country VAT rate on cross-border EU sales, simplifying your compliance. Non-EU sellers can register for <strong>IOSS</strong> to sell to EU buyers under \u20AC150 with ease.';
 				} else {
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As a seller from <strong>' + name + '</strong>, you can register for tax schemes like <strong>IOSS</strong>, <strong>UK VAT</strong>, and <strong>VOEC</strong> to expand your reach to buyers across the EU, UK, and Norway.';
 				}
 			} else {
-				extraInfo.innerHTML = '<strong>\uD83C\uDF0D Expanding coverage.</strong> We continuously evaluate new markets based on demand and regulatory readiness. If <strong>' + name + '</strong> is not yet enabled for selling, check back — new regions are added regularly.';
+				ctaMsg.innerHTML = '<strong>' + name + '</strong> is available for <strong>purchasing</strong>. Selling is not yet enabled in your region \u2014 we evaluate new markets continuously.';
+				extraInfo.style.display = 'none';
 			}
 		};
 	})();

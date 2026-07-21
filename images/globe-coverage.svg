@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
   <circle cx="400" cy="250" r="220" fill="none"/>
-  <circle cx="400" cy="250" r="180" stroke="#ff4903" stroke-width="1.2" fill="none" opacity="0.4"/>
-  <circle cx="400" cy="250" r="140" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" fill="none" stroke-dasharray="3,5"/>
-  <circle cx="400" cy="250" r="100" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" fill="none" stroke-dasharray="2,6"/>
-  <ellipse cx="400" cy="250" rx="180" ry="70" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
-  <ellipse cx="400" cy="250" rx="70" ry="180" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
-  <line x1="220" y1="250" x2="580" y2="250" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-  <line x1="400" y1="70" x2="400" y2="430" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-  <g fill="#ff4903" opacity="0.7"><circle cx="400" cy="200" r="5"/><circle cx="390" cy="195" r="4"/><circle cx="408" cy="198" r="4"/><circle cx="395" cy="205" r="3.5"/><circle cx="405" cy="208" r="3"/><circle cx="412" cy="203" r="3"/></g>
-  <g fill="#ff4903" opacity="0.55"><circle cx="385" cy="200" r="3"/><circle cx="382" cy="190" r="3.5"/><circle cx="400" cy="185" r="3"/><circle cx="395" cy="182" r="2.5"/></g>
-  <g fill="#ff4903" opacity="0.7"><circle cx="300" cy="200" r="5"/><circle cx="290" cy="205" r="4"/><circle cx="310" cy="198" r="4"/><circle cx="295" cy="195" r="3.5"/><circle cx="305" cy="208" r="3.5"/></g>
-  <g fill="#ff4903" opacity="0.55"><circle cx="285" cy="200" r="3"/><circle cx="315" cy="205" r="3"/><circle cx="295" cy="188" r="3.5"/><circle cx="305" cy="190" r="3"/><circle cx="300" cy="220" r="3"/></g>
-  <g fill="#ff4903" opacity="0.6"><circle cx="340" cy="255" r="4.5"/><circle cx="335" cy="260" r="3.5"/><circle cx="342" cy="250" r="3.5"/><circle cx="338" cy="268" r="3.5"/><circle cx="345" cy="258" r="3"/><circle cx="332" cy="265" r="3"/></g>
-  <g fill="#ff4903" opacity="0.65"><circle cx="420" cy="245" r="5"/><circle cx="415" cy="250" r="4"/><circle cx="425" cy="242" r="3.5"/><circle cx="418" cy="238" r="3.5"/><circle cx="422" cy="255" r="3.5"/><circle cx="428" cy="248" r="3"/></g>
-  <g fill="#ff4903" opacity="0.5"><circle cx="412" cy="245" r="3"/><circle cx="425" cy="270" r="3"/></g>
-  <g fill="#ff4903" opacity="0.65"><circle cx="470" cy="205" r="5"/><circle cx="465" cy="210" r="4"/><circle cx="478" cy="202" r="4"/><circle cx="460" cy="200" r="3.5"/><circle cx="475" cy="212" r="3.5"/></g>
-  <g fill="#ff4903" opacity="0.5"><circle cx="485" cy="208" r="3"/><circle cx="455" cy="205" r="3"/><circle cx="460" cy="220" r="3.5"/><circle cx="480" cy="225" r="3.5"/><circle cx="485" cy="230" r="3"/><circle cx="440" cy="215" r="3.5"/><circle cx="445" cy="220" r="3"/></g>
-  <g fill="#ff4903" opacity="0.6"><circle cx="510" cy="285" r="4"/><circle cx="505" cy="290" r="3.5"/><circle cx="515" cy="282" r="3.5"/><circle cx="512" cy="292" r="3"/><circle cx="518" cy="295" r="3"/></g>
-  <g stroke="#ff4903" stroke-width="0.8" stroke-dasharray="3,4" fill="none" opacity="0.3"><line x1="310" y1="200" x2="385" y2="192"/><line x1="400" y1="200" x2="420" y2="240"/><line x1="420" y1="245" x2="460" y2="220"/></g>
-  <g stroke="#ff4903" stroke-width="0.8" stroke-dasharray="3,4" fill="none" opacity="0.2"><line x1="340" y1="255" x2="420" y2="248"/><line x1="480" y1="225" x2="510" y2="285"/><line x1="310" y1="205" x2="340" y2="255"/></g>
-  <g fill="rgba(255,255,255,0.3)" font-size="10" font-family="sans-serif" letter-spacing="3" font-weight="600"><text x="270" y="160">NORTH AMERICA</text><text x="395" y="165">EUROPE</text><text x="470" y="175">ASIA</text></g>
-  <g fill="rgba(255,255,255,0.25)" font-size="9" font-family="sans-serif" letter-spacing="3" font-weight="600"><text x="350" y="290">SOUTH AMERICA</text><text x="400" y="310">AFRICA</text><text x="500" y="320">OCEANIA</text></g>
+  <circle cx="400" cy="250" r="180" stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <circle cx="400" cy="250" r="140" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none" stroke-dasharray="3,5"/>
+  <circle cx="400" cy="250" r="100" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" fill="none" stroke-dasharray="2,6"/>
+  <ellipse cx="400" cy="250" rx="180" ry="70" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" fill="none"/>
+  <ellipse cx="400" cy="250" rx="70" ry="180" stroke="rgba(255,255,255,0.3)" stroke-width="0.8" fill="none"/>
+  <line x1="220" y1="250" x2="580" y2="250" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+  <line x1="400" y1="70" x2="400" y2="430" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+  <g fill="#ff4903" opacity="0.9"><circle cx="400" cy="200" r="5.5"/><circle cx="390" cy="195" r="4.5"/><circle cx="408" cy="198" r="4.5"/><circle cx="395" cy="205" r="4"/><circle cx="405" cy="208" r="3.5"/><circle cx="412" cy="203" r="3.5"/></g>
+  <g fill="#ff4903" opacity="0.7"><circle cx="385" cy="200" r="3.5"/><circle cx="382" cy="190" r="4"/><circle cx="400" cy="185" r="3.5"/><circle cx="395" cy="182" r="3"/></g>
+  <g fill="#ff4903" opacity="0.9"><circle cx="300" cy="200" r="5.5"/><circle cx="290" cy="205" r="4.5"/><circle cx="310" cy="198" r="4.5"/><circle cx="295" cy="195" r="4"/><circle cx="305" cy="208" r="4"/></g>
+  <g fill="#ff4903" opacity="0.7"><circle cx="285" cy="200" r="3.5"/><circle cx="315" cy="205" r="3.5"/><circle cx="295" cy="188" r="4"/><circle cx="305" cy="190" r="3.5"/><circle cx="300" cy="220" r="3.5"/></g>
+  <g fill="#ff4903" opacity="0.8"><circle cx="340" cy="255" r="5"/><circle cx="335" cy="260" r="4"/><circle cx="342" cy="250" r="4"/><circle cx="338" cy="268" r="4"/><circle cx="345" cy="258" r="3.5"/><circle cx="332" cy="265" r="3.5"/></g>
+  <g fill="#ff4903" opacity="0.85"><circle cx="420" cy="245" r="5.5"/><circle cx="415" cy="250" r="4.5"/><circle cx="425" cy="242" r="4"/><circle cx="418" cy="238" r="4"/><circle cx="422" cy="255" r="4"/><circle cx="428" cy="248" r="3.5"/></g>
+  <g fill="#ff4903" opacity="0.7"><circle cx="412" cy="245" r="3.5"/><circle cx="425" cy="270" r="3.5"/></g>
+  <g fill="#ff4903" opacity="0.85"><circle cx="470" cy="205" r="5.5"/><circle cx="465" cy="210" r="4.5"/><circle cx="478" cy="202" r="4.5"/><circle cx="460" cy="200" r="4"/><circle cx="475" cy="212" r="4"/></g>
+  <g fill="#ff4903" opacity="0.7"><circle cx="485" cy="208" r="3.5"/><circle cx="455" cy="205" r="3.5"/><circle cx="460" cy="220" r="4"/><circle cx="480" cy="225" r="4"/><circle cx="485" cy="230" r="3.5"/><circle cx="440" cy="215" r="4"/><circle cx="445" cy="220" r="3.5"/></g>
+  <g fill="#ff4903" opacity="0.8"><circle cx="510" cy="285" r="4.5"/><circle cx="505" cy="290" r="4"/><circle cx="515" cy="282" r="4"/><circle cx="512" cy="292" r="3.5"/><circle cx="518" cy="295" r="3.5"/></g>
+  <g stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3,4" fill="none" opacity="0.2"><line x1="310" y1="200" x2="385" y2="192"/><line x1="400" y1="200" x2="420" y2="240"/><line x1="420" y1="245" x2="460" y2="220"/></g>
+  <g stroke="#ffffff" stroke-width="0.8" stroke-dasharray="3,4" fill="none" opacity="0.15"><line x1="340" y1="255" x2="420" y2="248"/><line x1="480" y1="225" x2="510" y2="285"/><line x1="310" y1="205" x2="340" y2="255"/></g>
+  <g fill="rgba(255,255,255,0.5)" font-size="10" font-family="sans-serif" letter-spacing="3" font-weight="600"><text x="270" y="160">NORTH AMERICA</text><text x="395" y="165">EUROPE</text><text x="470" y="175">ASIA</text></g>
+  <g fill="rgba(255,255,255,0.4)" font-size="9" font-family="sans-serif" letter-spacing="3" font-weight="600"><text x="350" y="290">SOUTH AMERICA</text><text x="400" y="310">AFRICA</text><text x="500" y="320">OCEANIA</text></g>
 </svg>

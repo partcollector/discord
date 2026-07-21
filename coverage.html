@@ -162,9 +162,9 @@
 			border: 1px solid rgba(255,255,255,0.08);
 		}
 		.scheme-item.available { border-color: rgba(76,175,80,0.3); }
-		.scheme-item.unavailable { opacity: 0.35; }
+		.scheme-item.unavailable { opacity: 0.55; }
 		.scheme-item .scheme-label { font-weight: 600; text-transform: uppercase; letter-spacing: 0.08rem; font-size: 0.7rem; }
-		.scheme-item .scheme-desc { font-size: 0.68rem; opacity: 0.6; margin-top: 0.2rem; }
+		.scheme-item .scheme-desc { font-size: 0.68rem; opacity: 0.75; margin-top: 0.2rem; }
 		.scheme-item .scheme-check { float: right; font-size: 1rem; }
 
 		.scheme-note {
@@ -557,7 +557,7 @@
 			badgeArea.innerHTML = badges;
 
 			var contLabel = continentLabel(cont);
-			var contHtml = '<div style="font-size:0.72rem;opacity:0.5;letter-spacing:0.1rem;margin-bottom:1rem;">' + contLabel + '</div>';
+			var contHtml = '<div style="font-size:0.72rem;opacity:0.8;letter-spacing:0.1rem;margin-bottom:1rem;">' + contLabel + '</div>';
 
 			var schemes = [];
 			schemes.push({label:'VAT / GST Registration',avail:true,desc:'Available for business sellers with a valid tax number'});
@@ -573,7 +573,7 @@
 
 			var hasProvince = PROVINCE_COUNTRIES.has(cc);
 
-			var schemeHtml = '<div style="margin:0.75rem 0 0.25rem;font-size:0.7rem;letter-spacing:0.15rem;text-transform:uppercase;opacity:0.6;">Tax Schemes &amp; Registration</div>';
+			var schemeHtml = '<div style="margin:0.75rem 0 0.25rem;font-size:0.7rem;letter-spacing:0.15rem;text-transform:uppercase;opacity:0.85;">Tax Schemes &amp; Registration</div>';
 			schemeHtml += '<div class="scheme-grid">';
 			schemes.forEach(function(s) {
 				var cls = s.avail ? 'available' : 'unavailable';

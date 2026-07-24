@@ -544,6 +544,20 @@
 						'  <a href="index.html" class="button" style="font-size:0.72rem;">&#8592; Back to Home</a>',
 						'</div>'
 					].join('');
+
+				} else if (status === 'disabled') {
+					card.innerHTML = [
+						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<h2 class="major" style="color:#f0ad4e;">Joining Temporarily Disabled</h2>',
+						'<div class="why-banner" style="border-color:rgba(240,173,78,0.5);background:rgba(240,173,78,0.08);">',
+						'  <strong style="color:#f0ad4e;">New member registration is currently paused.</strong><br>',
+						'  We are performing scheduled maintenance to improve your experience. ',
+						'  Please check back soon &mdash; we will be ready to welcome you shortly.',
+						'</div>',
+						'<div class="back-wrap">',
+						'  <a href="index.html" class="button primary">&#8592; Back to Home</a>',
+						'</div>'
+					].join('');
 				}
 			})();
 		</script>

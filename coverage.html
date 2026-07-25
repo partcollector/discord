@@ -316,15 +316,15 @@
 
 			<div class="stats-row">
 				<div class="stat-box">
-					<div class="stat-num" style="color:#4caf50;">201</div>
+					<div class="stat-num" style="color:#4caf50;">199</div>
 					<div class="stat-label">Countries Covered</div>
 				</div>
 				<div class="stat-box">
-					<div class="stat-num" style="color:#2196f3;">129</div>
+					<div class="stat-num" style="color:#2196f3;">93</div>
 					<div class="stat-label">Sell From</div>
 				</div>
 				<div class="stat-box">
-					<div class="stat-num" style="color:#ff9800;">201</div>
+					<div class="stat-num" style="color:#ff9800;">199</div>
 					<div class="stat-label">Buy From</div>
 				</div>
 			</div>
@@ -391,14 +391,16 @@
 		var SELLER_COUNTRIES = new Set([
 			'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT',
 			'LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',
-			'AD','BA','GE','IS','LI','MD','MC','ME','NO','SM','RS','CH','UA','GB','VA',
-			'FO','GI','SJ','DZ','BW','EG','SZ','GA','KE','LS','MG','MW','MU','MA','MZ',
-			'NA','SN','SC','ZA','TN','UG','AM','AZ','BH','BT','KH','CN','IN','ID','IL',
-			'JP','JO','KZ','KW','KG','MY','MV','OM','PH','QA','SA','SG','KR','LK','TW',
-			'TH','AE','HK','AG','BS','BB','BZ','CA','CR','DM','DO','SV','GD','JM','PA',
-			'KN','LC','VC','TT','US','AI','BM','KY','MS','VG','AR','BR','CL','CO','EC',
-			'GY','PY','PE','SR','UY','VE','AU','FJ','NZ','WS','SB','TO','VU','CK','NC','PF'
+			'AD','FO','GE','GI','GL','IS','LI','MD','MC','NO','SM','RS','CH',
+			'GB','BW','KE','LS','MU','MA','MZ','RE','SN','ZA',
+			'BH','CN','HK','IN','ID','IL','JP','JO','KZ','KW','MY','OM','PH','QA',
+			'SA','SG','TR','AE','VN',
+			'BS','BM','CA','KY','CR','DO','SV','GT','HN','JM','MX','NI','PA','US',
+			'AU','NZ',
+			'AR','BR','CL','CO','EC','PE','UY','VE'
 		]);
+
+		var CROSS_BORDER_ONLY = new Set(['CN','CO','MC']);
 
 		var PROVINCE_COUNTRIES = new Set(['CA','US','BR']);
 
@@ -448,7 +450,7 @@
 			{cc:'YT',name:'Mayotte',cont:'AF'},{cc:'ZM',name:'Zambia',cont:'AF'},{cc:'ZW',name:'Zimbabwe',cont:'AF'},
 			{cc:'AF',name:'Afghanistan',cont:'AS'},{cc:'BH',name:'Bahrain',cont:'AS'},{cc:'BD',name:'Bangladesh',cont:'AS'},
 			{cc:'BT',name:'Bhutan',cont:'AS'},{cc:'BN',name:'Brunei',cont:'AS'},{cc:'KH',name:'Cambodia',cont:'AS'},
-			{cc:'CN',name:'China',cont:'AS'},{cc:'HK',name:'Hong Kong',cont:'AS'},{cc:'IN',name:'India',cont:'AS'},
+			{cc:'CN',name:'Mainland China',cont:'AS'},{cc:'HK',name:'Hong Kong SAR',cont:'AS'},{cc:'IN',name:'India',cont:'AS'},
 			{cc:'ID',name:'Indonesia',cont:'AS'},{cc:'IR',name:'Iran',cont:'AS'},{cc:'IQ',name:'Iraq',cont:'AS'},
 			{cc:'IL',name:'Israel',cont:'AS'},{cc:'JP',name:'Japan',cont:'AS'},{cc:'JO',name:'Jordan',cont:'AS'},
 			{cc:'KZ',name:'Kazakhstan',cont:'AS'},{cc:'KW',name:'Kuwait',cont:'AS'},{cc:'KG',name:'Kyrgyzstan',cont:'AS'},
@@ -556,6 +558,12 @@
 			var contLabel = continentLabel(cont);
 			var contHtml = '<div style="font-size:0.72rem;opacity:0.9;letter-spacing:0.1rem;margin-bottom:1rem;">' + contLabel + '</div>';
 
+			// ── Cross-border-only warning for CN/CO/MC ──
+			var cbWarning = '';
+			if (canSell && CROSS_BORDER_ONLY.has(cc)) {
+				cbWarning = '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">⚠️ <strong>International Sales Only</strong> — PayPal only supports cross-border payouts for this country. Sellers from this country can sell to international buyers but <strong>not</strong> domestically.</div>';
+			}
+
 			var schemes = [];
 			schemes.push({label:'VAT / GST Registration',avail:true,desc:'Available for business sellers with a valid tax number'});
 			if (isEU) schemes.push({label:'EU OSS',avail:canSell,desc:'One-Stop Shop \u2014 EU sellers selling to other EU countries'});
@@ -580,7 +588,7 @@
 			schemeHtml += '</div>';
 			if (hasProvince) schemeHtml += '<div class="scheme-note">' + PROVINCE_INFO[cc] + '</div>';
 
-			taxArea.innerHTML = contHtml + schemeHtml;
+			taxArea.innerHTML = contHtml + cbWarning + schemeHtml;
 
 			if (canSell) {
 				extraInfo.style.display = '';

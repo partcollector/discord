@@ -698,6 +698,8 @@
 			if (cc === 'AU') schemes.push({label:'Australian GST',avail:canSell,desc:'GST registration available \u2014 10% rate'});
 			if (cc === 'NZ') schemes.push({label:'New Zealand GST',avail:canSell,desc:'GST registration available \u2014 15% rate'});
 			schemes.push({label:'Private Seller VAT',avail:canSell,desc:'Private sellers can opt into VAT/GST registration for domestic sales'});
+			if (cc === 'CA') schemes.push({label:'Canadian GST/HST',avail:canSell,desc:'GST/HST registration available — 5% federal GST plus provincial PST/HST/QST varying by province'});
+			schemes.push({label:'Canada GST/HST (Import)',avail:canSell && cc !== 'CA',desc:'Register for Canadian GST/HST to charge Canadian buyers — 5% GST plus provincial HST/PST'});
 
 			var hasProvince = PROVINCE_COUNTRIES.has(cc);
 

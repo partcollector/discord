@@ -278,9 +278,9 @@
 					</tr>
 					<tr>
 						<td><strong>Business / Tax Identity</strong></td>
-						<td>VAT registration number, company name (as validated by VIES)</td>
-						<td>Seller-provided; validated in real-time via EU VIES system</td>
-						<td>EU business sellers only</td>
+						<td>VAT registration number, company name (as validated by VIES); for individual (private) sellers: first name, last name, date of birth, personal Tax Identification Number (TIN); for company sellers: company registration number, corporate TIN; for all EU sellers: full street address, city, postal code, country of residence &mdash; collected under EU Directive 2021/514 (DAC7) for mandatory tax reporting</td>
+						<td>Seller-provided during DAC7 compliance flow in Discord; validated in real-time where applicable</td>
+						<td>EU sellers only (DAC7 requirement)</td>
 					</tr>
 					<tr>
 						<td><strong>Seller Profile</strong></td>
@@ -327,6 +327,10 @@
 				</thead>
 				<tbody>
 					<tr>
+						<td>DAC7 seller data collection and reporting (EU Directive 2021/514)</td>
+						<td>Legal obligation (Art. 6(1)(c)) &mdash; EU Directive 2021/514 (DAC7) requires platform operators to collect, verify, and annually report seller identity, tax, and transaction data to the Bulgarian National Revenue Agency</td>
+					</tr>
+					<tr>
 						<td>Verifying seller PayPal email ownership via OTP</td>
 						<td>Consent (Art. 6(1)(a))</td>
 					</tr>
@@ -367,6 +371,7 @@
 				<li>To enforce platform rules, resolve disputes, and prevent abuse;</li>
 				<li>To respond to your support requests and legal rights enquiries;</li>
 				<li>For buyers who complete a payment: to link the PayPal email address from the payment confirmation to your Platform Terms acceptance record, solely for the purpose of dispute resolution and enforcement of the Terms of Service you accepted.</li>
+				<li>To comply with EU DAC7 reporting obligations (Directive 2021/514) by collecting, verifying, and annually reporting seller identity information, tax identification numbers, financial identifiers, and quarterly transaction data to the Bulgarian National Revenue Agency.</li>
 			</ul>
 
 			<!-- 5 -->
@@ -379,6 +384,7 @@
 				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Platform data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Cloudflare:</strong> Our website (partcollector.com) is served via Cloudflare for security and CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>17TRACK (17track.net):</strong> When a seller provides a tracking number for an order, a link to 17TRACK&rsquo;s public tracking page is automatically generated so the buyer can monitor delivery. Clicking this link takes you to 17TRACK&rsquo;s website, which is governed by their own <a href="https://www.17track.net/en/about/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://www.17track.net/en/about/licensing" target="_blank" rel="noopener">Terms</a>. No personal data is transmitted to 17TRACK by us — the tracking number is embedded in the URL, and any data sent to 17TRACK occurs only when the buyer voluntarily clicks the link.</li>
+				<li><strong>Bulgarian National Revenue Agency (NRA):</strong> Under EU DAC7 (Directive 2021/514), we are legally required to report seller identity, tax identification numbers, address, financial identifiers, and quarterly transaction data annually to the Bulgarian NRA. Reports are submitted by 31 January following the end of each reporting year.</li>
 				<li><strong>Legal Authorities:</strong> Where we are legally obliged to disclose data (e.g., court orders, government requests).</li>
 			</ul>
 			<p style="color:#ff4903;">We do <strong>not</strong> sell your personal data to third parties, use it for advertising profiling, or share it with any other party.</p>
@@ -415,6 +421,10 @@
 						<td>5 years from the date of last transaction, or 5 years from date of acceptance where no transaction was completed; erasure requests accepted via our <a href="https://partcollector.com/#contact">contact form</a>; may be retained under Art. 17(3)(e) GDPR where necessary to defend legal claims</td>
 					</tr>
 					<tr>
+						<td>DAC7 seller data (identity, TIN, date of birth, address, financial identifiers, transaction records &mdash; EU Directive 2021/514)</td>
+						<td>10 years from the end of the calendar year in which the reporting period ends (Art. 6(3) of EU Directive 2021/514). This retention period overrides account deletion &mdash; DAC7 data cannot be deleted before this period expires, even if you delete your account.</td>
+					</tr>
+					<tr>
 						<td>Discord identity (user ID, username)</td>
 						<td>Until account deletion request is processed</td>
 					</tr>
@@ -424,7 +434,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<p>When a seller deletes their account via the Discord bot (&ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo;), all seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. Subscription payment records are retained solely to satisfy our legal obligations under Bulgarian accounting law and are not used for any other purpose.</p>
+			<p>When a seller deletes their account via the Discord bot (&ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo;), all non-DAC7 seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. DAC7-related data (identity, TIN, address, financial identifiers, and transaction records) is retained for 10 years under EU Directive 2021/514 regardless of account deletion. Subscription payment records are retained solely to satisfy our legal obligations under Bulgarian accounting law and are not used for any other purpose.</p>
 
 			<!-- 8 -->
 			<h2>8. Your Rights</h2>
@@ -440,7 +450,8 @@
 				</div>
 				<div class="rights-item">
 					<strong>Right to Erasure (Art. 17)</strong>
-					<p><strong>Sellers:</strong> Use &ldquo;Delete Account&rdquo; in the Discord bot for immediate self-service deletion of all profile, listing, and PayPal data. <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy). Note: Terms of Service consent records may be retained for up to 5 years under Art. 17(3)(e) GDPR where necessary to establish or defend legal claims, regardless of an erasure request.</p>
+					<p><strong>Sellers:</strong> Use &ldquo;Delete Account&rdquo; in the Discord bot for immediate self-service deletion of all non-DAC7 profile, listing, and PayPal data. <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy).</p>
+					<p style="color:#ff4903;"><strong>Important limitation:</strong> Under EU DAC7 regulations (Directive 2021/514), certain seller data (identity, TIN, date of birth, address, financial identifiers, and transaction records) must be retained for <strong>10 years</strong> from the end of the relevant reporting year. This data <strong>cannot be deleted</strong> before that period expires, even if you delete your account. Other non-DAC7 data (listings, shipping profiles, etc.) is deleted immediately upon account deletion. Terms of Service consent records may be retained for up to 5 years under Art. 17(3)(e) GDPR where necessary to establish or defend legal claims, regardless of an erasure request.</p>
 				</div>
 				<div class="rights-item">
 					<strong>Right to Restriction (Art. 18)</strong>

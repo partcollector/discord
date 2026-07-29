@@ -410,6 +410,23 @@
 			'BR': 'Brazil applies ICMS state tax at rates of 17\u201318% depending on the state of destination.'
 		};
 
+		var CURRENCIES = {
+			'AD':'EUR','AE':'USD','AR':'USD','AT':'EUR','AU':'AUD','BE':'EUR','BG':'EUR',
+			'BH':'USD','BM':'USD','BR':'BRL','BS':'USD','BW':'USD','CA':'USD','CH':'EUR',
+			'CL':'USD','CN':'USD','CO':'USD','CR':'USD','CY':'EUR','CZ':'EUR','DE':'EUR',
+			'DK':'EUR','DO':'USD','EC':'USD','EE':'EUR','ES':'EUR','FI':'EUR','FO':'EUR',
+			'FR':'EUR','GB':'GBP','GE':'USD','GI':'EUR','GL':'EUR','GR':'EUR','GT':'USD',
+			'HK':'USD','HN':'USD','HR':'EUR','HU':'EUR','ID':'USD','IE':'EUR','IL':'USD',
+			'IN':'USD','IS':'EUR','IT':'EUR','JM':'USD','JO':'USD','JP':'JPY','KE':'USD',
+			'KW':'USD','KY':'USD','KZ':'USD','LI':'EUR','LS':'USD','LT':'EUR','LU':'EUR',
+			'LV':'EUR','MA':'EUR','MC':'EUR','MD':'EUR','MT':'EUR','MU':'USD','MX':'USD',
+			'MY':'MYR','MZ':'USD','NI':'USD','NL':'EUR','NO':'EUR','NZ':'AUD','OM':'USD',
+			'PA':'USD','PE':'USD','PH':'USD','PL':'EUR','PT':'EUR','QA':'USD','RE':'EUR',
+			'RO':'EUR','RS':'EUR','SA':'USD','SE':'EUR','SG':'USD','SI':'EUR','SK':'EUR',
+			'SM':'EUR','SN':'EUR','SV':'USD','TR':'USD','US':'USD','UY':'USD','VE':'USD',
+			'VN':'USD','ZA':'USD'
+		};
+
 		var COUNTRIES = [
 			{cc:'AL',name:'Albania',cont:'EUR'},
 			{cc:'DZ',name:'Algeria',cont:'AF'},
@@ -727,7 +744,16 @@
 
 			if (canSell) {
 				extraInfo.style.display = '';
-				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Selling</strong> and <strong>Buying</strong>.<br>Ready to get started? Join thousands of sellers and buyers on Part Collector.';
+				var currency = CURRENCIES[cc] || 'USD';
+				var currencyNote = '';
+				if (cc === 'BR') {
+					currencyNote = ' (with USD as the default selling currency for international and BRL for domestic)';
+				} else if (cc === 'MY') {
+					currencyNote = ' (with USD as the default selling currency for international and MYR for domestic)';
+				} else {
+					currencyNote = ' (with ' + currency + ' as the default selling currency)';
+				}
+				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Buying</strong> and <strong>Selling</strong>' + currencyNote + '.<br>Ready to get started? Join thousands of sellers and buyers on Part Collector.';
 				if (isEU) {
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As an EU seller, you can use <strong>OSS</strong> to charge your buyer\'s country VAT rate on cross-border EU sales, simplifying your compliance. Non-EU sellers can register for <strong>IOSS</strong> to sell to EU buyers under \u20AC150 with ease.';
 				} else {

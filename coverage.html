@@ -691,15 +691,25 @@
 			schemes.push({label:'VAT / GST Registration',avail:true,desc:'Available for business sellers with a valid tax number'});
 			if (isEU) schemes.push({label:'EU OSS',avail:canSell,desc:'One-Stop Shop \u2014 EU sellers selling to other EU countries'});
 			if (!isEU && canSell) schemes.push({label:'EU IOSS',avail:true,desc:'Import One-Stop Shop \u2014 Non-EU sellers selling to EU (\u2264\u20AC150)'});
-			schemes.push({label:'UK VAT',avail:canSell,desc:'Register for UK VAT to sell to UK buyers'});
-			schemes.push({label:'Norway VOEC',avail:canSell,desc:'Register for VOEC to sell to Norwegian buyers'});
-			if (cc === 'GB') schemes.push({label:'UK VAT (Domestic)',avail:true,desc:'UK VAT registration available \u2014 20% standard rate'});
-			if (cc === 'NO') schemes.push({label:'Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
-			if (cc === 'AU') schemes.push({label:'Australian GST',avail:canSell,desc:'GST registration available \u2014 10% rate'});
-			if (cc === 'NZ') schemes.push({label:'New Zealand GST',avail:canSell,desc:'GST registration available \u2014 15% rate'});
+			schemes.push({label:'UK VAT',avail:canSell,desc:'Register for UK VAT to sell to UK buyers \u2014 20% standard rate'});
+			schemes.push({label:'Norway VOEC',avail:canSell,desc:'Register for VOEC to sell to Norwegian buyers \u2014 up to 3,000 NOK per item'});
+			schemes.push({label:'Australian GST',avail:canSell && cc !== 'AU',desc:'Register for Australian GST to sell to Australian buyers \u2014 10% rate'});
+			schemes.push({label:'New Zealand GST',avail:canSell && cc !== 'NZ',desc:'Register for New Zealand GST to sell to New Zealand buyers \u2014 15% rate'});
+			schemes.push({label:'Swiss Import VAT',avail:canSell && cc !== 'CH',desc:'Register for Swiss Import VAT to sell to Swiss buyers \u2014 8.1% rate'});
+			schemes.push({label:'Singapore OVR',avail:canSell && cc !== 'SG',desc:'Register for Singapore OVR to sell to Singapore buyers \u2014 9% rate'});
+			schemes.push({label:'Malaysia LVG',avail:canSell && cc !== 'MY',desc:'Register for Malaysia LVG to sell to Malaysian buyers \u2014 up to 500 MYR per item'});
+			schemes.push({label:'Chile VAT',avail:canSell,desc:'Register for Chile VAT to sell to Chilean buyers \u2014 19% rate'});
 			schemes.push({label:'Private Seller VAT',avail:canSell,desc:'Private sellers can opt into VAT/GST registration for domestic sales'});
-			if (cc === 'CA') schemes.push({label:'Canadian GST/HST',avail:canSell,desc:'GST/HST registration available — 5% federal GST plus provincial PST/HST/QST varying by province'});
-			schemes.push({label:'Canada GST/HST (Import)',avail:canSell && cc !== 'CA',desc:'Register for Canadian GST/HST to charge Canadian buyers — 5% GST plus provincial HST/PST'});
+			if (cc === 'GB') schemes.push({label:'UK VAT (Domestic)',avail:true,desc:'UK VAT registration \u2014 20% standard rate'});
+			if (cc === 'NO') schemes.push({label:'Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
+			if (cc === 'AU') schemes.push({label:'Australian GST (Domestic)',avail:true,desc:'Australian GST \u2014 10% rate, automatically applied to domestic sales'});
+			if (cc === 'NZ') schemes.push({label:'New Zealand GST (Domestic)',avail:true,desc:'New Zealand GST \u2014 15% rate, automatically applied to domestic sales'});
+			if (cc === 'CH') schemes.push({label:'Swiss VAT (Domestic)',avail:true,desc:'Swiss VAT \u2014 8.1% rate, automatically applied to domestic sales'});
+			if (cc === 'SG') schemes.push({label:'Singapore GST (Domestic)',avail:true,desc:'Singapore GST \u2014 9% rate, automatically applied to domestic sales'});
+			if (cc === 'MY') schemes.push({label:'Malaysia SST (Domestic)',avail:true,desc:'Malaysia sales tax \u2014 10% rate, automatically applied to domestic sales'});
+			if (cc === 'CL') schemes.push({label:'Chile VAT (Domestic)',avail:true,desc:'Chile VAT \u2014 19% rate, automatically applied to domestic sales'});
+			if (cc === 'CA') schemes.push({label:'Canadian GST/HST (Domestic)',avail:true,desc:'5% federal GST plus provincial PST/HST/QST varying by province \u2014 automatically applied to domestic sales'});
+			schemes.push({label:'Canada GST/HST (Import)',avail:canSell && cc !== 'CA',desc:'Register for Canadian GST/HST to charge Canadian buyers \u2014 5% GST plus provincial HST/PST'});
 
 			var hasProvince = PROVINCE_COUNTRIES.has(cc);
 

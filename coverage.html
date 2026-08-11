@@ -189,13 +189,15 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			gap: 0.45rem;
-			padding: 0 1.6rem;
-			height: 3rem;
-			border-radius: 6px;
-			font-size: 0.85rem;
+			gap: 0.4rem;
+			height: 2.2rem;
+			padding: 0 1rem;
+			box-sizing: border-box;
+			border-radius: 4px;
+			font-size: 0.78rem;
 			font-weight: 600;
-			letter-spacing: 0.1rem;
+			line-height: 1.2;
+			letter-spacing: 0.08rem;
 			text-transform: uppercase;
 			color: #fff;
 			background: #ff4903;
@@ -687,20 +689,6 @@
 			return String.fromCodePoint(a) + String.fromCodePoint(b);
 		}
 
-		// Fetch and display the running total so it is visible to all users.
-		window.loadUkVoteTotal = function() {
-			var msg = document.getElementById('uk-vote-msg');
-			if (!msg) return;
-			fetch('https://webhooks.partcollector.com/api/coverage/vote', { method: 'GET' })
-				.then(function (r) { return r.json(); })
-				.then(function (d) {
-					if (d && typeof d.total === 'number') {
-						msg.textContent = 'Running total: ' + d.total + ' votes';
-					}
-				})
-				.catch(function () { /* leave blank if total unavailable */ });
-		};
-
 		// Exposed on window so the inline onclick (injected into innerHTML) can call it.
 		window.voteUkPrivates = function() {
 			var btn = document.getElementById('uk-vote-btn');
@@ -714,9 +702,8 @@
 					btn.setAttribute('data-voted', '1');
 					var msg = document.getElementById('uk-vote-msg');
 					if (msg) {
-						if (d && d.already) { msg.textContent = 'You\'ve already voted today — thank you! 🗳️'; }
-						else if (d && typeof d.total === 'number') { msg.textContent = 'Thanks for voting! 🗳️ Running total: ' + d.total + ' votes'; }
-						else { msg.textContent = 'Thank you for voting! 🗳️'; }
+						if (d && d.already) { msg.textContent = 'You\'ve already voted today — thank you!'; }
+						else { msg.textContent = 'Thanks for voting!'; }
 					}
 				})
 				.catch(function () {
@@ -818,7 +805,6 @@
 			if (hasProvince) schemeHtml += '<div class="scheme-note">' + PROVINCE_INFO[cc] + '</div>';
 
 			taxArea.innerHTML = contHtml + cbWarning + schemeHtml;
-			if (cc === 'GB' && canSell) { window.loadUkVoteTotal(); }
 
 			if (canSell) {
 				extraInfo.style.display = '';

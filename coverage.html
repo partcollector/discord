@@ -654,6 +654,26 @@
 			return String.fromCodePoint(a) + String.fromCodePoint(b);
 		}
 
+		function voteUkPrivates() {
+			var btn = document.getElementById('uk-vote-btn');
+			if (!btn || btn.getAttribute('data-voted')) return;
+			btn.disabled = true;
+			fetch('https://webhooks.partcollector.com/api/coverage/vote', { method: 'POST' })
+				.then(function (r) { return r.json(); })
+				.then(function (d) {
+					btn.textContent = '✅ Voted!';
+					btn.setAttribute('data-voted', '1');
+					var msg = document.getElementById('uk-vote-msg');
+					if (msg && d && typeof d.total === 'number') {
+						msg.textContent = 'Total votes: ' + d.total;
+					}
+				})
+				.catch(function () {
+					btn.disabled = false;
+					btn.textContent = '⚠️ Could not vote — please try again';
+				});
+		}
+
 		window.onCountryChange = function(value) {
 			var card = document.getElementById('result-card');
 			var title = document.getElementById('result-title');
@@ -705,6 +725,7 @@
 			}
 			if (cc === 'GB' && canSell) {
 				cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Part Collector. Private sellers are not accepted for UK-based selling.</div>';
+				cbWarning += '<div style="margin-top:0.5rem;"><button id="uk-vote-btn" type="button" onclick="voteUkPrivates()" style="padding:0.55rem 1rem;border-radius:6px;border:1px solid #4caf50;background:#eafaf1;color:#1a7f37;cursor:pointer;font-size:0.9rem;">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" style="margin-top:0.35rem;font-size:0.75rem;opacity:0.85;"></div></div>';
 			}
 
 			var schemes = [];

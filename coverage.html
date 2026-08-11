@@ -199,16 +199,19 @@
 			line-height: 1.2;
 			letter-spacing: 0.08rem;
 			text-transform: uppercase;
-			color: #fff;
-			background: #ff4903;
-			border: none;
+			color: #2196f3 !important;
+			background: rgba(33, 150, 243, 0.15);
+			border: 1px solid rgba(33, 150, 243, 0.35);
 			cursor: pointer;
-			transition: background 0.2s, opacity 0.2s;
+			transition: background 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
 		}
-		.vote-btn:hover { background: #e04000; }
+		.vote-btn:hover {
+			background: rgba(33, 150, 243, 0.25);
+			border-color: rgba(33, 150, 243, 0.55);
+		}
 		.vote-btn.voted {
 			background: rgba(76,175,80,0.15);
-			color: #4caf50;
+			color: #4caf50 !important;
 			border: 1px solid rgba(76,175,80,0.35);
 			cursor: default;
 		}

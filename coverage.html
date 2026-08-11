@@ -185,6 +185,37 @@
 		}
 		.coverage-highlight strong { color: rgba(255,255,255,0.92); }
 
+		.vote-btn {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			padding: 0.7rem 1.5rem;
+			border-radius: 6px;
+			font-size: 0.82rem;
+			font-weight: 600;
+			letter-spacing: 0.12rem;
+			text-transform: uppercase;
+			color: #fff;
+			background: #ff4903;
+			border: 1px solid rgba(255,73,3,0.6);
+			cursor: pointer;
+			transition: background 0.2s, opacity 0.2s;
+		}
+		.vote-btn:hover { background: #e04000; }
+		.vote-btn.voted {
+			background: rgba(76,175,80,0.15);
+			color: #4caf50;
+			border-color: rgba(76,175,80,0.35);
+			cursor: default;
+		}
+		.vote-btn:disabled { opacity: 0.8; cursor: default; }
+		.vote-note {
+			margin-top: 0.5rem;
+			font-size: 0.72rem;
+			opacity: 0.55;
+			font-style: italic;
+		}
+
 		.cta-section {
 			text-align: center;
 			margin: 2rem 0 0.5rem;
@@ -654,25 +685,31 @@
 			return String.fromCodePoint(a) + String.fromCodePoint(b);
 		}
 
-		function voteUkPrivates() {
+		// Exposed on window so the inline onclick (injected into innerHTML) can call it.
+		window.voteUkPrivates = function() {
 			var btn = document.getElementById('uk-vote-btn');
 			if (!btn || btn.getAttribute('data-voted')) return;
 			btn.disabled = true;
 			fetch('https://webhooks.partcollector.com/api/coverage/vote', { method: 'POST' })
 				.then(function (r) { return r.json(); })
 				.then(function (d) {
-					btn.textContent = '✅ Voted!';
+					btn.textContent = '✅ Voted';
+					btn.classList.add('voted');
 					btn.setAttribute('data-voted', '1');
 					var msg = document.getElementById('uk-vote-msg');
-					if (msg && d && typeof d.total === 'number') {
-						msg.textContent = 'Total votes: ' + d.total;
+					if (msg) {
+						if (d && d.already) { msg.textContent = 'You already voted today — total: ' + d.total; }
+						else if (d && typeof d.total === 'number') { msg.textContent = 'Thank you! Total votes: ' + d.total; }
+						else { msg.textContent = 'Thank you for voting!'; }
 					}
 				})
 				.catch(function () {
 					btn.disabled = false;
-					btn.textContent = '⚠️ Could not vote — please try again';
+					btn.textContent = '🗳️ Vote to enable Private sellers in the future';
+					var msg = document.getElementById('uk-vote-msg');
+					if (msg) msg.textContent = 'Could not vote right now — please try again.';
 				});
-		}
+		};
 
 		window.onCountryChange = function(value) {
 			var card = document.getElementById('result-card');
@@ -725,7 +762,7 @@
 			}
 			if (cc === 'GB' && canSell) {
 				cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Part Collector. Private sellers are not accepted for UK-based selling.</div>';
-				cbWarning += '<div style="margin-top:0.5rem;"><button id="uk-vote-btn" type="button" onclick="voteUkPrivates()" style="padding:0.55rem 1rem;border-radius:6px;border:1px solid #4caf50;background:#eafaf1;color:#1a7f37;cursor:pointer;font-size:0.9rem;">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" style="margin-top:0.35rem;font-size:0.75rem;opacity:0.85;"></div></div>';
+				cbWarning += '<div style="margin-top:1rem;"><button id="uk-vote-btn" type="button" class="vote-btn" onclick="voteUkPrivates()">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" class="vote-note"></div></div>';
 			}
 
 			var schemes = [];

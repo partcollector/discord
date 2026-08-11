@@ -189,41 +189,33 @@
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
-			gap: 0.5rem;
-			padding: 1.05rem 2.1rem;
-			border-radius: 10px;
-			font-size: 1.02rem;
-			font-weight: 700;
-			letter-spacing: 0.14rem;
+			gap: 0.45rem;
+			padding: 0 1.6rem;
+			height: 3rem;
+			border-radius: 6px;
+			font-size: 0.85rem;
+			font-weight: 600;
+			letter-spacing: 0.18rem;
 			text-transform: uppercase;
 			color: #fff;
-			background: linear-gradient(135deg, #ff7a1a 0%, #ff4903 55%, #e04000 100%);
-			border: 1px solid rgba(255,130,60,0.95);
-			box-shadow: 0 5px 22px rgba(255,73,3,0.5), inset 0 1px 0 rgba(255,255,255,0.28);
+			background: #ff4903;
+			border: none;
 			cursor: pointer;
-			text-shadow: 0 1px 2px rgba(0,0,0,0.25);
-			transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+			transition: background 0.2s, opacity 0.2s;
 		}
-		.vote-btn:hover {
-			background: linear-gradient(135deg, #ff8a30 0%, #ff5c1a 55%, #f04e00 100%);
-			box-shadow: 0 8px 28px rgba(255,73,3,0.65), inset 0 1px 0 rgba(255,255,255,0.35);
-			transform: translateY(-2px);
-		}
+		.vote-btn:hover { background: #e04000; }
 		.vote-btn.voted {
-			background: linear-gradient(135deg, #2e9e4f 0%, #26a14b 60%, #1f8f41 100%);
-			color: #fff;
-			border-color: rgba(76,175,80,0.95);
-			box-shadow: 0 5px 18px rgba(76,175,80,0.5);
+			background: rgba(76,175,80,0.15);
+			color: #4caf50;
+			border: 1px solid rgba(76,175,80,0.35);
 			cursor: default;
-			transform: none;
 		}
-		.vote-btn:disabled { opacity: 0.85; cursor: default; }
+		.vote-btn:disabled { opacity: 0.8; cursor: default; }
 		.vote-note {
-			margin-top: 0.6rem;
-			font-size: 0.8rem;
-			opacity: 0.65;
+			margin-top: 0.55rem;
+			font-size: 0.76rem;
+			opacity: 0.6;
 			font-style: italic;
-			color: rgba(255,255,255,0.78);
 		}
 
 		.cta-section {
@@ -695,6 +687,20 @@
 			return String.fromCodePoint(a) + String.fromCodePoint(b);
 		}
 
+		// Fetch and display the running total so it is visible to all users.
+		window.loadUkVoteTotal = function() {
+			var msg = document.getElementById('uk-vote-msg');
+			if (!msg) return;
+			fetch('https://webhooks.partcollector.com/api/coverage/vote', { method: 'GET' })
+				.then(function (r) { return r.json(); })
+				.then(function (d) {
+					if (d && typeof d.total === 'number') {
+						msg.textContent = 'Running total: ' + d.total + ' votes';
+					}
+				})
+				.catch(function () { /* leave blank if total unavailable */ });
+		};
+
 		// Exposed on window so the inline onclick (injected into innerHTML) can call it.
 		window.voteUkPrivates = function() {
 			var btn = document.getElementById('uk-vote-btn');
@@ -709,7 +715,7 @@
 					var msg = document.getElementById('uk-vote-msg');
 					if (msg) {
 						if (d && d.already) { msg.textContent = 'You\'ve already voted today — thank you! 🗳️'; }
-						else if (d && typeof d.total === 'number') { msg.textContent = 'Thanks for voting! 🗳️ Running total: ' + d.total; }
+						else if (d && typeof d.total === 'number') { msg.textContent = 'Thanks for voting! 🗳️ Running total: ' + d.total + ' votes'; }
 						else { msg.textContent = 'Thank you for voting! 🗳️'; }
 					}
 				})
@@ -812,6 +818,7 @@
 			if (hasProvince) schemeHtml += '<div class="scheme-note">' + PROVINCE_INFO[cc] + '</div>';
 
 			taxArea.innerHTML = contHtml + cbWarning + schemeHtml;
+			if (cc === 'GB' && canSell) { window.loadUkVoteTotal(); }
 
 			if (canSell) {
 				extraInfo.style.display = '';

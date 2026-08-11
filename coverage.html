@@ -703,6 +703,9 @@
 			if (canSell && CROSS_BORDER_ONLY.has(cc)) {
 				cbWarning = '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">⚠️ <strong>International Sales Only</strong> — PayPal only supports cross-border payouts for this country. Sellers from this country can sell to international buyers but <strong>not</strong> domestically.</div>';
 			}
+			if (cc === 'GB' && canSell) {
+				cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Part Collector. Private sellers are not accepted for UK-based selling.</div>';
+			}
 
 			var schemes = [];
 			schemes.push({label:'VAT / GST Registration',avail:true,desc:'Available for business sellers with a valid tax number'});

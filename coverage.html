@@ -188,32 +188,42 @@
 		.vote-btn {
 			display: inline-flex;
 			align-items: center;
-			gap: 0.4rem;
-			padding: 0.7rem 1.5rem;
-			border-radius: 6px;
-			font-size: 0.82rem;
-			font-weight: 600;
-			letter-spacing: 0.12rem;
+			justify-content: center;
+			gap: 0.5rem;
+			padding: 1.05rem 2.1rem;
+			border-radius: 10px;
+			font-size: 1.02rem;
+			font-weight: 700;
+			letter-spacing: 0.14rem;
 			text-transform: uppercase;
 			color: #fff;
-			background: #ff4903;
-			border: 1px solid rgba(255,73,3,0.6);
+			background: linear-gradient(135deg, #ff7a1a 0%, #ff4903 55%, #e04000 100%);
+			border: 1px solid rgba(255,130,60,0.95);
+			box-shadow: 0 5px 22px rgba(255,73,3,0.5), inset 0 1px 0 rgba(255,255,255,0.28);
 			cursor: pointer;
-			transition: background 0.2s, opacity 0.2s;
+			text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+			transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 		}
-		.vote-btn:hover { background: #e04000; }
+		.vote-btn:hover {
+			background: linear-gradient(135deg, #ff8a30 0%, #ff5c1a 55%, #f04e00 100%);
+			box-shadow: 0 8px 28px rgba(255,73,3,0.65), inset 0 1px 0 rgba(255,255,255,0.35);
+			transform: translateY(-2px);
+		}
 		.vote-btn.voted {
-			background: rgba(76,175,80,0.15);
-			color: #4caf50;
-			border-color: rgba(76,175,80,0.35);
+			background: linear-gradient(135deg, #2e9e4f 0%, #26a14b 60%, #1f8f41 100%);
+			color: #fff;
+			border-color: rgba(76,175,80,0.95);
+			box-shadow: 0 5px 18px rgba(76,175,80,0.5);
 			cursor: default;
+			transform: none;
 		}
-		.vote-btn:disabled { opacity: 0.8; cursor: default; }
+		.vote-btn:disabled { opacity: 0.85; cursor: default; }
 		.vote-note {
-			margin-top: 0.5rem;
-			font-size: 0.72rem;
-			opacity: 0.55;
+			margin-top: 0.6rem;
+			font-size: 0.8rem;
+			opacity: 0.65;
 			font-style: italic;
+			color: rgba(255,255,255,0.78);
 		}
 
 		.cta-section {
@@ -698,9 +708,9 @@
 					btn.setAttribute('data-voted', '1');
 					var msg = document.getElementById('uk-vote-msg');
 					if (msg) {
-						if (d && d.already) { msg.textContent = 'You already voted today — total: ' + d.total; }
-						else if (d && typeof d.total === 'number') { msg.textContent = 'Thank you! Total votes: ' + d.total; }
-						else { msg.textContent = 'Thank you for voting!'; }
+						if (d && d.already) { msg.textContent = 'You\'ve already voted today — thank you! 🗳️'; }
+						else if (d && typeof d.total === 'number') { msg.textContent = 'Thanks for voting! 🗳️ Running total: ' + d.total; }
+						else { msg.textContent = 'Thank you for voting! 🗳️'; }
 					}
 				})
 				.catch(function () {

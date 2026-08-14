@@ -4,6 +4,3 @@
 /privacy        /privacy/index.html        200
 /seller-rules   /seller-rules/index.html   200
 /refund-policy  /refund-policy/index.html  200
-
-# Invoice downloads — proxy signed /invoice/... links to the webhook server
-/invoice/*    https://webhooks.partcollector.com/invoice/:splat    200

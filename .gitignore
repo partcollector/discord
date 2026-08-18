@@ -1,2 +1,5 @@
 # Local-only vote counter file (never commit/deploy publicly)
 data/uk_private_votes.txt
+
+# Runtime PID files (never commit)
+*.pid

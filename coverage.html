@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Country Availability | Part Collector</title>
+	<title>Country Availability | Spare Parts Community for Discord</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="Check if Part Collector supports your country for buying and selling spare parts. Global coverage information with tax scheme details." />
+	<meta name="description" content="Check if Spare Parts Community supports your country for buying and selling spare parts. Global coverage information with tax scheme details." />
 	<link rel="canonical" href="https://www.partcollector.com/coverage" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
@@ -384,7 +384,7 @@
 
 			<div class="cta-section">
 				<p id="cta-message">
-					Part Collector connects sellers and buyers across <strong>199 countries</strong> worldwide.<br>
+					Spare Parts Community connects sellers and buyers across <strong>199 countries</strong> worldwide.<br>
 					Select your country above to see what's available for you.
 				</p>
 				<a href="/success.html" class="btn-join">Join Now →</a>
@@ -730,7 +730,7 @@
 				card.classList.remove('visible');
 				extraInfo.style.display = '';
 				extraInfo.innerHTML = '';
-				ctaMsg.innerHTML = 'Part Collector connects sellers and buyers across <strong>199 countries</strong> worldwide.<br>Select your country above to see what\'s available for you.';
+				ctaMsg.innerHTML = 'Spare Parts Community connects sellers and buyers across <strong>199 countries</strong> worldwide.<br>Select your country above to see what\'s available for you.';
 				return;
 			}
 
@@ -768,7 +768,7 @@
 				cbWarning = '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">⚠️ <strong>International Sales Only</strong> — PayPal only supports cross-border payouts for this country. Sellers from this country can sell to international buyers but <strong>not</strong> domestically.</div>';
 			}
 			if (cc === 'GB' && canSell) {
-				cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Part Collector. Private sellers are not accepted for UK-based selling.</div>';
+				cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Spare Parts Community. Private sellers are not accepted for UK-based selling.</div>';
 				cbWarning += '<div style="margin-top:1rem;"><button id="uk-vote-btn" type="button" class="vote-btn" onclick="voteUkPrivates()">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" class="vote-note"></div></div>';
 			}
 
@@ -821,7 +821,7 @@
 				} else {
 					currencyNote = ' (with ' + currency + ' as the default selling currency)';
 				}
-				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Buying</strong> and <strong>Selling</strong>' + currencyNote + '.<br>Ready to get started? Join thousands of sellers and buyers on Part Collector.';
+				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Buying</strong> and <strong>Selling</strong>' + currencyNote + '.<br>Ready to get started? Join thousands of sellers and buyers on Spare Parts Community.';
 				if (isEU) {
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As an EU seller, you can use <strong>OSS</strong> to charge your buyer\'s country VAT rate on cross-border EU sales, simplifying your compliance. Non-EU sellers can register for <strong>IOSS</strong> to sell to EU buyers under \u20AC150 with ease.';
 				} else {

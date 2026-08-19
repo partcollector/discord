@@ -361,7 +361,8 @@
 			<h2>4. How We Use Your Data</h2>
 			<ul>
 				<li>To verify that your PayPal email address is valid and belongs to you (OTP verification process);</li>
-				<li>To create PayPal payment links for your subscription billing;</li>
+				<li>To create PayPal payment links for your subscription billing (where Part Collector is the merchant and receives the tier fee via PayPal);</li>
+				<li>To create PayPal checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee so the buyer pays the seller directly via PayPal. Funds go directly to the seller&rsquo;s PayPal account and never pass through Part Collector; Part Collector takes no fee on these orders;</li>
 				<li>To automatically calculate VAT for transactions across multiple tax schemes &mdash; including EU VAT (via VIES), UK VAT (via HMRC), Norwegian MVA (via Brreg), OSS, IOSS (Import One-Stop Shop), and VOEC (VAT on E-Commerce);</li>
 				<li>To remove or apply VAT on invoices for VAT-registered business sellers and buyers, including B2B reverse-charge exemptions;</li>
 				<li>To maintain a per-order tax audit log for compliance with Bulgarian accounting legislation and EU VAT directives;</li>
@@ -376,7 +377,7 @@
 			<h2>5. Data Sharing</h2>
 			<p>We share personal data only as strictly necessary:</p>
 			<ul>
-				<li><strong>PayPal:</strong> We use the PayPal Orders API to create payment links. Payment capture and processing is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
+				<li><strong>PayPal:</strong> We use PayPal for two distinct purposes. (1) <strong>Subscriptions:</strong> we use the PayPal Subscriptions/Billing API to collect tier fees &mdash; here Part Collector is the merchant and receives the payment. (2) <strong>Orders:</strong> we use the PayPal Orders API to create checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee &mdash; the buyer pays the seller directly, funds go straight to the seller&rsquo;s PayPal account, and Part Collector neither receives nor touches those funds and charges no fee. Payment capture and processing in both cases is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
 				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
 				<li><strong>HMRC (UK Revenue &amp; Customs):</strong> UK sellers&rsquo; VAT numbers are submitted to the HMRC VAT validation API in real-time for validation. See <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/about/personal-information-charter" target="_blank" rel="noopener">HMRC&rsquo;s Personal Information Charter</a>;</li>
 				<li><strong>Brreg (Brønnøysund Register Centre):</strong> Norwegian sellers&rsquo; organisation numbers are submitted to the Brreg API in real-time for MVA number validation. See <a href="https://www.brreg.no/en/about-brreg/privacy-policy/" target="_blank" rel="noopener">Brreg&rsquo;s Privacy Policy</a>;</li>

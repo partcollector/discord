@@ -374,7 +374,8 @@
 			<h2>4. How We Use Your Data</h2>
 			<ul>
 				<li>To verify that your PayPal email address is valid and belongs to you (OTP verification process);</li>
-				<li>To create PayPal payment links for your subscription billing;</li>
+				<li>To create PayPal payment links for your subscription billing (where Part Collector is the merchant and receives the tier fee via PayPal);</li>
+				<li>To create PayPal checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee so the buyer pays the seller directly via PayPal. Funds go directly to the seller&rsquo;s PayPal account and never pass through Part Collector; Part Collector takes no fee on these orders;</li>
 				<li>To automatically calculate and remove VAT from invoices for EU VAT-registered sellers (via VIES);</li>
 				<li>To display and manage your seller shipping profile, rates, and active listings;</li>
 				<li>To maintain subscription and payment records as required by Bulgarian accounting legislation;</li>
@@ -388,7 +389,7 @@
 			<h2>5. Data Sharing</h2>
 			<p>We share personal data only as strictly necessary:</p>
 			<ul>
-				<li><strong>PayPal:</strong> We use the PayPal Orders API to create subscription payment links. Payment capture and processing is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
+				<li><strong>PayPal:</strong> We use PayPal for two distinct purposes. (1) <strong>Subscriptions:</strong> we use the PayPal Subscriptions/Billing API to collect tier fees &mdash; here Part Collector is the merchant and receives the payment. (2) <strong>Orders:</strong> we use the PayPal Orders API to create checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee &mdash; the buyer pays the seller directly, funds go straight to the seller&rsquo;s PayPal account, and Part Collector neither receives nor touches those funds and charges no fee. Payment capture and processing in both cases is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>, and PayPal acts as an independent data controller;</li>
 				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
 				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Tool data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>

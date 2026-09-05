@@ -426,12 +426,81 @@
 					</div>
 				</div>
 
-				<!-- Step 3 -->
+				<!-- Step 3 — Enable 2FA -->
 				<div class="step-block">
-					<h3><span class="step-num">3</span>Join the server</h3>
+					<h3><span class="step-num">3</span>Enable 2FA (Multi-Factor Authentication) on your Discord account</h3>
+
+					<div class="why-banner">
+						<strong>Why do we ask for 2FA?</strong><br>
+						Your Discord account is the key to your shop &mdash; it holds your orders, invoices and buyer/seller messages.
+						Two-Factor Authentication (2FA &mdash; Discord calls it <strong>Multi-Factor Authentication, or MFA</strong>) adds a
+						second security check beyond your password: even if your password is ever stolen or leaked, no one else can get into
+						your account. We require it so that every member who joins &mdash; and every buyer or seller you trade with &mdash;
+						is protected by this baseline security standard.<br><br>
+						It is free, takes about two minutes, and we <strong>never see your codes</strong> &mdash; 2FA is a security setting
+						on your own Discord account, and we only check that it is turned on.
+					</div>
+
+					<div class="platform-tabs">
+						<button class="active" onclick="showTab('2fa-desktop', this)">Desktop App</button>
+						<button onclick="showTab('2fa-mobile', this)">Mobile App</button>
+						<button onclick="showTab('2fa-browser', this)">Web Browser</button>
+					</div>
+
+					<!-- Desktop -->
+					<div id="tab-2fa-desktop" class="tab-panel active">
+						<ul class="instruction-steps">
+						<li>Open the <span class="key">Discord Desktop App</span> on your computer and log in</li>
+						<li>Click the <span class="path">⚙ gear icon</span> (User Settings) at the bottom left, next to your username</li>
+						<li>On the <span class="path">My Account</span> page, scroll down to the <span class="path">Password and Authentication</span> section</li>
+						<li>Click <span class="key">Enable Two-Factor Auth</span> (or <span class="key">Enable Authenticator App</span>) and enter your password when prompted</li>
+						<li>Choose <span class="key">Authenticator App</span> — Discord will show a QR code</li>
+						<li>On your phone, open an authenticator app (<span class="key">Google Authenticator</span>, <span class="key">Authy</span> or your password manager) and scan the QR code</li>
+						<li>Enter the <span class="key">6-digit code</span> your app generates, then click <span class="path">Activate</span></li>
+						<li>Save the <span class="key">backup codes</span> Discord gives you somewhere safe</li>
+						<li>Done — <span class="path">Two-Factor Auth</span> now shows as enabled under Password and Authentication</li>
+						</ul>
+					</div>
+
+					<!-- Mobile -->
+					<div id="tab-2fa-mobile" class="tab-panel">
+						<ul class="instruction-steps">
+						<li>Open the <span class="key">Discord Mobile App</span> on your phone</li>
+						<li>Tap your <span class="path">profile picture</span> at the bottom right</li>
+						<li>Tap the <span class="path">⚙ gear icon</span> at the top right to open Settings</li>
+						<li>Tap <span class="path">Account</span></li>
+						<li>Under <span class="path">Password and Authentication</span>, tap <span class="key">Enable Two-Factor Auth</span> (or <span class="key">Enable Authenticator App</span>) and enter your password when prompted</li>
+						<li>Install an authenticator app (<span class="key">Google Authenticator</span>, <span class="key">Authy</span> or your password manager) and use it to scan the QR code Discord shows</li>
+						<li>Enter the <span class="key">6-digit code</span> your app generates, then tap <span class="path">Enable</span></li>
+						<li>Save the <span class="key">backup codes</span> Discord gives you somewhere safe</li>
+						<li>Done — <span class="path">Two-Factor Auth</span> now shows as enabled on your account</li>
+						</ul>
+					</div>
+
+					<!-- Browser -->
+					<div id="tab-2fa-browser" class="tab-panel">
+						<ul class="instruction-steps">
+						<li>Go to <span class="path">discord.com</span> in your browser and log in</li>
+						<li>Click the <span class="path">⚙ gear icon</span> (User Settings) at the bottom left</li>
+						<li>On the <span class="path">My Account</span> page, scroll down to the <span class="path">Password and Authentication</span> section</li>
+						<li>Click <span class="key">Enable Two-Factor Auth</span> (or <span class="key">Enable Authenticator App</span>) and enter your password when prompted</li>
+						<li>Choose <span class="key">Authenticator App</span> — Discord will show a QR code</li>
+						<li>Scan the QR code with an authenticator app on your phone (<span class="key">Google Authenticator</span>, <span class="key">Authy</span> or your password manager)</li>
+						<li>Enter the <span class="key">6-digit code</span> your app generates, then click <span class="path">Activate</span></li>
+						<li>Save the <span class="key">backup codes</span> Discord gives you somewhere safe</li>
+						<li>Done — <span class="path">Two-Factor Auth</span> now shows as enabled under Password and Authentication</li>
+						</ul>
+					</div>
+
+					<p class="dl-note">Already have 2FA turned on? Nothing to do — continue to step 4.</p>
+				</div>
+
+				<!-- Step 4 -->
+				<div class="step-block">
+					<h3><span class="step-num">4</span>Join the server</h3>
 					<p style="font-size:0.88rem; line-height:1.65; opacity:0.85; margin-bottom:0;">
-						Once PayPal is linked, click the button below. Discord will ask you to authorise our app —
-						this grants us permission to verify your connections and add you to the server automatically.
+						Once PayPal is linked and 2FA is enabled, click the button below. Discord will ask you to authorise our app —
+						this grants us permission to verify your PayPal connection and 2FA status, and add you to the server automatically.
 						<strong>No password or payment information is ever shared with us.</strong>
 					</p>
 				</div>
@@ -440,7 +509,7 @@
 
 				<!-- CTA -->
 				<div class="cta-section">
-					<p>Ready? Your PayPal is linked — let's go.</p>
+					<p>Ready? PayPal linked &amp; 2FA enabled — let's go.</p>
 					<a href="https://discord.com/oauth2/authorize?client_id=1489871883062087831&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.partcollector.com%2Fdiscord%2Fcallback&scope=identify+connections+guilds.join"
 					   class="btn-join">
 						Ready? Join!
@@ -467,14 +536,18 @@
 
 		<script>
 			function showTab(name, btn) {
-				document.querySelectorAll('.tab-panel').forEach(function(p) {
-					p.classList.remove('active');
-				});
-				btn.closest('.platform-tabs').querySelectorAll('button').forEach(function(b) {
+				// Scope to the .step-block that owns the clicked tabs so the PayPal
+				// and 2FA instruction sets never switch each other's panels.
+				var block = btn.closest('.step-block') || document;
+				block.querySelectorAll('.platform-tabs button').forEach(function(b) {
 					b.classList.remove('active');
 				});
-				document.getElementById('tab-' + name).classList.add('active');
 				btn.classList.add('active');
+				block.querySelectorAll('.tab-panel').forEach(function(p) {
+					p.classList.remove('active');
+				});
+				var panel = block.querySelector('#tab-' + name);
+				if (panel) panel.classList.add('active');
 			}
 
 			/* ΓöÇΓöÇ Handle post-OAuth redirect status ΓöÇΓöÇ */
@@ -522,6 +595,25 @@
 						'</div>',							'<p style="font-size:0.82rem;color:rgba(255,255,255,0.85);margin:1.25rem 0 0;line-height:1.75;">',
 							'  Still having problems? <a href="index.html#contact" style="color:#ff4903;border-bottom:1px solid rgba(255,73,3,0.4); font-weight: bold;">Contact us</a> and select <strong>Problems Joining</strong> — we will assist you.',
 							'</p>',						'<div class="back-wrap">',
+						'  <a href="success.html" class="button primary">&#8592; Back to Instructions</a>',
+						'</div>',
+						'<div class="back-wrap" style="margin-top:1rem;">',
+						'  <a href="index.html" class="button" style="font-size:0.72rem;">&#8592; Back to Home</a>',
+						'</div>'
+					].join('');
+
+				} else if (status === 'no_2fa') {
+					card.innerHTML = [
+						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<h2 class="major" style="color:#ff4903;">2FA Not Enabled</h2>',
+						'<div class="why-banner">',
+						'  <strong>We could not detect Two-Factor Authentication (2FA) on your Discord account.</strong><br>',
+						'  2FA is required for security before you can join. Please follow the instructions below, enable 2FA in Discord, then try again.',
+						'</div>',
+						'<p style="font-size:0.82rem;color:rgba(255,255,255,0.85);margin:1.25rem 0 0;line-height:1.75;">',
+						'  Still having problems? <a href="index.html#contact" style="color:#ff4903;border-bottom:1px solid rgba(255,73,3,0.4); font-weight: bold;">Contact us</a> and select <strong>Problems Joining</strong> — we will assist you.',
+						'</p>',
+						'<div class="back-wrap">',
 						'  <a href="success.html" class="button primary">&#8592; Back to Instructions</a>',
 						'</div>',
 						'<div class="back-wrap" style="margin-top:1rem;">',

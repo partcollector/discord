@@ -36,10 +36,11 @@
 			/* ΓöÇΓöÇ Logo area ΓöÇΓöÇ */
 			.join-logo {
 				text-align: center;
-				margin-bottom: 2rem;
+				margin-bottom: 2.9rem;
 			}
 			.join-logo img {
-				max-width: 220px;
+				width: 100%;
+				max-width: 620px;
 				height: auto;
 			}
 
@@ -324,7 +325,7 @@
 
 				<!-- Logo -->
 				<div class="join-logo">
-					<img src="images/logo.png" alt="Part Collector" />
+					<img src="images/logo-join.png" alt="Part Collector" />
 				</div>
 
 				<h2 class="major">Before You Join</h2>
@@ -560,7 +561,7 @@
 
 				if (status === 'joined') {
 					card.innerHTML = [
-						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<div class="join-logo"><img src="images/logo-join.png" alt="Part Collector" /></div>',
 						'<h2 class="major" style="color:#4caf50;">Almost There!</h2>',
 						'<div class="why-banner" style="border-color:rgba(76,175,80,0.5);background:rgba(76,175,80,0.1);">',
 					'  <strong style="color:#4caf50;">You are eligible to join our Spare Parts Community Discord server.</strong><br>',
@@ -587,7 +588,7 @@
 
 				} else if (status === 'no_paypal') {
 					card.innerHTML = [
-						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<div class="join-logo"><img src="images/logo-join.png" alt="Part Collector" /></div>',
 						'<h2 class="major" style="color:#ff4903;">PayPal Not Found</h2>',
 						'<div class="why-banner">',
 						'  <strong>We could not detect a PayPal connection on your Discord account.</strong><br>',
@@ -604,7 +605,7 @@
 
 				} else if (status === 'no_2fa') {
 					card.innerHTML = [
-						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<div class="join-logo"><img src="images/logo-join.png" alt="Part Collector" /></div>',
 						'<h2 class="major" style="color:#ff4903;">2FA Not Enabled</h2>',
 						'<div class="why-banner">',
 						'  <strong>We could not detect Two-Factor Authentication (2FA) on your Discord account.</strong><br>',
@@ -623,7 +624,7 @@
 
 				} else if (status === 'error') {
 					card.innerHTML = [
-						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<div class="join-logo"><img src="images/logo-join.png" alt="Part Collector" /></div>',
 						'<h2 class="major" style="color:#ff4903;">Something Went Wrong</h2>',
 						'<div class="why-banner">',
 						'  <strong>The authorisation could not be completed.</strong><br>',
@@ -639,7 +640,7 @@
 
 				} else if (status === 'disabled') {
 					card.innerHTML = [
-						'<div class="join-logo"><img src="images/logo.png" alt="Part Collector" /></div>',
+						'<div class="join-logo"><img src="images/logo-join.png" alt="Part Collector" /></div>',
 						'<h2 class="major" style="color:#f0ad4e;">Joining Temporarily Disabled</h2>',
 						'<div class="why-banner" style="border-color:rgba(240,173,78,0.5);background:rgba(240,173,78,0.08);">',
 						'  <strong style="color:#f0ad4e;">New member registration is currently paused.</strong><br>',

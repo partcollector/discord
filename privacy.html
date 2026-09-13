@@ -354,7 +354,7 @@
 					</tr>
 					<tr>
 						<td>Retaining subscription payment records</td>
-						<td>Legal obligation (Art. 6(1)(c)) &mdash; Bulgarian Accounting Act</td>
+						<td>Legal obligation (Art. 6(1)(c)) &mdash; Bulgarian Tax Procedure Code (&#1044;&#1054;&#1055;&#1050;), retention of tax documents</td>
 					</tr>
 					<tr>
 						<td>Fraud prevention and Community integrity</td>
@@ -367,6 +367,7 @@
 						<tr>
 							<td>Linking a buyer&rsquo;s PayPal email to their Community Terms acceptance record (obtained from invoice payment confirmation)</td>
 							<td>Legitimate interests (Art. 6(1)(f)) &mdash; establishing a complete identity evidence chain for dispute resolution; the buyer&rsquo;s interest in not having this data processed does not override the legitimate interest given the minimal scope of data and legal purpose</td>
+						</tr>
 				</tbody>
 			</table>
 
@@ -392,7 +393,10 @@
 				<li><strong>PayPal:</strong> We use PayPal for two distinct purposes. (1) <strong>Subscriptions:</strong> we use the PayPal Subscriptions/Billing API to collect tier fees &mdash; here Part Collector is the merchant and receives the payment. (2) <strong>Orders:</strong> we use the PayPal Orders API to create checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee &mdash; the buyer pays the seller directly, funds go straight to the seller&rsquo;s PayPal account, and Part Collector neither receives nor touches those funds and charges no fee. Payment capture and processing in both cases is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>, and PayPal acts as an independent data controller;</li>
 				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
 				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
-				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Tool data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Tool data is hosted on OCI servers in Turin, Italy (EU). This includes our archive storage (<code>pc-archive</code>, encrypted at rest) which holds order conversation transcripts, tier invoices and DAC7 reports. Oracle acts as our <strong>processor</strong> under the Oracle Services Data Processing Agreement incorporated into the Oracle Cloud Services Agreement. See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>Google (Workspace):</strong> Our business mailbox <code>info@partcollector.org</code> runs on Google Workspace, so e-mail you send us (including contact-form messages) is processed by Google as our processor under the Google Cloud Data Processing Addendum. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a>;</li>
+				<li><strong>Carrier integrations (Sendcloud, Shippo, EasyPost):</strong> A paid seller may connect <em>their own</em> carrier account to print shipping labels. The delivery name and address are then transmitted to the carrier the seller uses, under that carrier&rsquo;s own terms; the API credentials stay encrypted in our database. If a seller never connects a carrier account, no data is sent to these providers;</li>
+				<li><strong>GitHub:</strong> Used for our source code and for a rolling off-site technical backup (application code and database backups). Archive copies of order-chat transcripts, invoices and DAC7 reports have been moved to OCI, and the database backup <strong>no longer contains order-chat messages</strong>. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub&rsquo;s Privacy Statement</a>;</li>
 				<li><strong>Cloudflare:</strong> Our website (partcollector.com) is served via Cloudflare for security and CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>17TRACK (17track.net):</strong> When a seller provides a tracking number for an order, a link to 17TRACK&rsquo;s public tracking page is automatically generated so the buyer can monitor delivery. Clicking this link takes you to 17TRACK&rsquo;s website, which is governed by their own <a href="https://www.17track.net/en/about/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://www.17track.net/en/about/licensing" target="_blank" rel="noopener">Terms</a>. No personal data is transmitted to 17TRACK by us — the tracking number is embedded in the URL, and any data sent to 17TRACK occurs only when the buyer voluntarily clicks the link.</li>
 							<li><strong>Sellers (order fulfilment):</strong> When you place an order, your delivery name and address are shared with the seller solely so they can ship the item. Sellers may use this data only to fulfil the order and must not use it for any other purpose.</li>
@@ -400,11 +404,12 @@
 							<li><strong>Other tax authorities (automatic exchange of information):</strong> In line with the OECD Model Rules for Reporting by Platform Operators and analogous national implementations (e.g. HMRC, the Norwegian tax administration, the Australian Taxation Office, the Canada Revenue Agency, New Zealand Inland Revenue and other authorities), seller data collected during account setup may be reported to the tax authority of the seller's country of residence &mdash; directly where we are registered, or through automatic exchange of information via the Bulgarian NRA.</li>
 				<li><strong>Legal Authorities:</strong> Where we are legally obliged to disclose data (e.g., court orders, government requests).</li>
 			</ul>
+			<p><strong>Processors and sub-processors.</strong> The providers that process personal data on our instructions and under a data-processing agreement are: Oracle (OCI hosting + archive storage), Cloudflare (website delivery/security), Brevo (verification e-mail), Google (Workspace mailbox) and &mdash; only where a seller connects one &mdash; that seller&rsquo;s chosen carrier integration. A current list of sub-processors can be requested at any time via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>).</p>
 			<p style="color:#ff4903;">We do <strong>not</strong> sell your personal data to third parties, use it for advertising profiling, or share it with any other party.</p>
 
 			<!-- 6 -->
 			<h2>6. Data Storage &amp; Location</h2>
-			<p>All personal data collected by Part Collector is stored exclusively on servers located within the <strong>European Economic Area</strong> (OCI Turin, Italy). We do not transfer your personal data outside the EEA for our own processing purposes.</p>					<p><strong>International transfers for tax reporting.</strong> Where we are legally required to do so (EU DAC7 Directive 2021/514 and the OECD platform-reporting framework / national laws implementing it), seller tax-identification and identity data may be transferred to the tax authority of the seller's country of residence, including authorities located outside the EEA. Such transfers are made only under a legal obligation or for the establishment, exercise or defence of legal claims (GDPR Art. 49(1)(e) / 49(1)(d)) and are limited to what the applicable reporting rules require.</p>			<p>PayPal, Brevo, and VIES operate as independent data controllers under their own privacy policies; please refer to those policies for information about their own data storage and international transfer practices.</p>
+			<p>All personal data collected by Part Collector is stored on servers located within the <strong>European Economic Area</strong> (OCI Turin, Italy). For our own processing purposes we do not transfer your personal data outside the EEA, with two limited exceptions that we disclose here: (a) our business e-mail mailbox is provided by Google Workspace and (b) a rolling technical backup of our code and database is mirrored to GitHub, Inc. (USA) &mdash; both under the standard contractual clauses of their data-processing terms. Personal-data archives (chat transcripts, invoices, DAC7 reports) are deliberately kept in the EEA on OCI. Transfers required by tax reporting are described below.</p>					<p><strong>International transfers for tax reporting.</strong> Where we are legally required to do so (EU DAC7 Directive 2021/514 and the OECD platform-reporting framework / national laws implementing it), seller tax-identification and identity data may be transferred to the tax authority of the seller's country of residence, including authorities located outside the EEA. Such transfers are made only under a legal obligation or for the establishment, exercise or defence of legal claims (GDPR Art. 49(1)(e) / 49(1)(d)) and are limited to what the applicable reporting rules require.</p>			<p>PayPal, Brevo, and VIES operate as independent data controllers under their own privacy policies; please refer to those policies for information about their own data storage and international transfer practices.</p>
 
 			<!-- 7 -->
 			<h2>7. Data Retention</h2>
@@ -418,11 +423,19 @@
 				<tbody>
 					<tr>
 						<td>Seller profile (PayPal email, VAT details, shipping profile, listings)</td>
-						<td>Until seller deletes their account via the &ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo; feature in Discord, or upon written request</td>
+						<td>Until you delete your account in Discord (either &ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete My Account&rdquo; or &ldquo;&#9878;&#65039; Legal &amp; Privacy&rdquo; &rarr; &ldquo;Request Deletion&rdquo;), or upon written request</td>
+					</tr>
+					<tr>
+						<td>Buyer&#8596;seller order conversation messages (in the live database and in the archived transcripts)</td>
+						<td><strong>180 days</strong> from the last message of that conversation &mdash; the PayPal buyer-protection / dispute window. Your own messages are removed earlier when you delete your account or request erasure and nothing you wrote is newer than 180 days and no dispute is open. The other party&rsquo;s own messages are their data and are not removed on your request.</td>
+					</tr>
+					<tr>
+						<td>Order, dispute and shipping-address records (buyer/seller name, address, e-mail, dispute text)</td>
+						<td>10 years from the transaction (tax, accounting and payment-dispute evidence)</td>
 					</tr>
 					<tr>
 						<td>Subscription and payment records</td>
-						<td>10 years (Bulgarian Accounting Act, Art. 38 &mdash; accounting documents retention obligation)</td>
+						<td>10 years (Bulgarian Tax Procedure Code, &#1044;&#1054;&#1055;&#1050; Art. 38 &mdash; retention of tax documents; EU VAT Directive Art. 242)</td>
 					</tr>
 					<tr>
 						<td>Terms of Service consent records &mdash; sellers (Discord ID, username, timestamp, policy version, PayPal email)</td>
@@ -434,7 +447,7 @@
 					</tr>
 					<tr>
 						<td>DAC7 seller data (identity, TIN, date of birth, address, financial identifiers, transaction records &mdash; EU Directive 2021/514)</td>
-						<td>10 years from the end of the calendar year in which the reporting period ends (Art. 6(3) of EU Directive 2021/514). This retention period overrides account deletion &mdash; DAC7 data cannot be deleted before this period expires, even if you delete your account.</td>
+						<td>10 years from the end of the calendar year in which the reporting period ends (Art. 6(3) of EU Directive 2021/514). This retention period overrides account deletion &mdash; DAC7 data cannot be deleted before this period expires, even if you delete your account. When you delete your account this identity data is moved to a dedicated retention archive used only for the statutory quarterly reports, and it is deleted when the 10-year period expires.</td>
 					</tr>
 					<tr>
 						<td>Discord identity (user ID, username)</td>
@@ -446,7 +459,8 @@
 					</tr>
 				</tbody>
 			</table>
-			<p>When a seller deletes their account via the Discord bot (&ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete Account&rdquo;), all non-DAC7 seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. DAC7-related data (identity, TIN, address, financial identifiers, and transaction records) is retained for 10 years under EU Directive 2021/514 regardless of account deletion. Subscription payment records are retained solely to satisfy our legal obligations under Bulgarian accounting law and are not used for any other purpose.</p>
+			<p>When you delete your account in Discord &mdash; from either &ldquo;&#9881;&#65039; Setup Shipping&rdquo; &rarr; &ldquo;Delete My Account&rdquo; or &ldquo;&#9878;&#65039; Legal &amp; Privacy&rdquo; &rarr; &ldquo;Request Deletion&rdquo; &mdash; all non-DAC7 seller profile data, listings, shipping credentials, and PayPal details are <strong>permanently and immediately deleted</strong>. DAC7-related data (identity, TIN, address, financial identifiers, and transaction records) is retained for 10 years under EU Directive 2021/514 regardless of account deletion; the identity data is moved to a dedicated retention archive used only for the statutory reports. Subscription payment records are retained solely to satisfy our legal obligations under Bulgarian tax law and are not used for any other purpose.</p>
+			<p><strong>Conversation messages.</strong> Order conversations are kept for <strong>180 days</strong> from the last message (the PayPal dispute window). When you delete your account or request erasure, <strong>your own</strong> messages are deleted &mdash; immediately when nothing you wrote is newer than 180 days and no dispute is open, otherwise automatically as soon as the dispute window closes with no open dispute; the archived transcript copy is redacted at the same time. The other party&rsquo;s messages are their own data and are not removed on your request, and buyers keep access to their order history.</p>
 
 			<!-- 8 -->
 			<h2>8. Your Rights</h2>
@@ -462,7 +476,7 @@
 				</div>
 				<div class="rights-item">
 					<strong>Right to Erasure (Art. 17)</strong>
-					<p><strong>Sellers:</strong> Use &ldquo;Delete Account&rdquo; in the Discord bot for immediate self-service deletion of all non-DAC7 profile, listing, and PayPal data. <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy).</p>
+					<p><strong>Sellers:</strong> Use &ldquo;Delete My Account&rdquo; (&#9881;&#65039; Setup Shipping) or &ldquo;Request Deletion&rdquo; (&#9878;&#65039; Legal &amp; Privacy) in the Discord bot for immediate self-service deletion of all non-DAC7 profile, listing and PayPal data, and of <strong>your own</strong> conversation messages (subject to the 180-day PayPal dispute window). <strong>Buyers:</strong> Submit a written request via our <a href="https://partcollector.com/#contact">contact form</a> (select Legal &amp; Privacy).</p>
 					<p style="color:#ff4903;"><strong>Important limitation:</strong> Under EU DAC7 regulations (Directive 2021/514), certain seller data (identity, TIN, date of birth, address, financial identifiers, and transaction records) must be retained for <strong>10 years</strong> from the end of the relevant reporting year. This data <strong>cannot be deleted</strong> before that period expires, even if you delete your account. Other non-DAC7 data (listings, shipping profiles, etc.) is deleted immediately upon account deletion. Terms of Service consent records may be retained for up to 5 years under Art. 17(3)(e) GDPR where necessary to establish or defend legal claims, regardless of an erasure request.</p>
 				</div>
 				<div class="rights-item">
@@ -486,7 +500,7 @@
 					<p>Lodge a complaint with the CPDP (Bulgaria) or your national supervisory authority (EU).</p>
 				</div>
 			</div>
-			<p>To exercise any of the above rights, use the self-service &ldquo;Delete Account&rdquo; feature in the Discord bot, or submit a request via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>). We will respond within <strong>30 days</strong>.</p>
+<p>To exercise any of the above rights, use the self-service deletion in the Discord bot (&ldquo;Delete My Account&rdquo; under Setup Shipping, or &ldquo;Request Deletion&rdquo; under Legal &amp; Privacy), or submit a request via our <a href="https://partcollector.com/#contact">contact form</a> (select <strong>Legal &amp; Privacy</strong>). We will respond within <strong>30 days</strong>.</p>
 
 			<!-- 9 -->
 			<h2>9. Cookies and Tracking</h2>

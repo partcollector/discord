@@ -808,7 +808,18 @@
 			schemes.push({label:'Singapore OVR',avail:canSell && cc !== 'SG',desc:'Register for Singapore OVR to sell to Singapore buyers \u2014 9% rate'});
 			schemes.push({label:'Malaysia LVG',avail:canSell && cc !== 'MY',desc:'Register for Malaysia LVG to sell to Malaysian buyers \u2014 up to 500 MYR per item'});
 			schemes.push({label:'Chile VAT',avail:canSell,desc:'Register for Chile VAT to sell to Chilean buyers \u2014 19% rate'});
-			schemes.push({label:'Private Seller VAT',avail:canSell,desc:'Private sellers can opt into VAT/GST registration for domestic sales'});
+			// 2026-09-20 — the EU does not let a private (non-business) account hold a
+			// VIES VAT, so cross-border B2B selling there needs a Company account.
+			// Every other row in this grid is a cross-border scheme we collect and remit
+			// for, so the old one-line description promised something we cannot deliver
+			// for the EU. Outside the EU, voluntary domestic registration is a real option.
+			schemes.push({
+				label:'Private Seller VAT',
+				avail:canSell,
+				desc: isEU
+					? 'Private sellers cannot be VAT-registered for cross-border sales - an EU business (Company) account is required'
+					: 'Private sellers can register voluntarily for domestic VAT/GST'
+			});
 			if (cc === 'GB') schemes.push({label:'UK VAT (Domestic)',avail:true,desc:'UK VAT registration \u2014 20% standard rate'});
 			if (cc === 'NO') schemes.push({label:'Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
 			if (cc === 'AU') schemes.push({label:'Australian GST (Domestic)',avail:true,desc:'Australian GST \u2014 10% rate, automatically applied to domestic sales'});

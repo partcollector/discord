@@ -217,6 +217,10 @@
 			cursor: default;
 		}
 		.vote-btn:disabled { opacity: 0.8; cursor: default; }
+		/* .vote-btn and .vote-note are UNUSED as of 2026-09-20: the UK vote block
+		   that was their only consumer was removed from this page. Kept on purpose
+		   so the markup can be reused elsewhere — see the REMOVED note in the
+		   country-render function. */
 		.vote-note {
 			margin-top: 0.55rem;
 			font-size: 0.76rem;
@@ -693,6 +697,11 @@
 			return String.fromCodePoint(a) + String.fromCodePoint(b);
 		}
 
+		// UNUSED as of 2026-09-20 — its only caller (the UK vote button on this page)
+		// was removed when the UK became open to private sellers. Kept intact so the
+		// button can be dropped into another page; render
+		//   <button id="uk-vote-btn" class="vote-btn" onclick="voteUkPrivates()">…</button>
+		//   <div id="uk-vote-msg" class="vote-note"></div>
 		// Exposed on window so the inline onclick (injected into innerHTML) can call it.
 		window.voteUkPrivates = function() {
 			var btn = document.getElementById('uk-vote-btn');
@@ -767,10 +776,25 @@
 			if (canSell && CROSS_BORDER_ONLY.has(cc)) {
 				cbWarning = '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">⚠️ <strong>International Sales Only</strong> — PayPal only supports cross-border payouts for this country. Sellers from this country can sell to international buyers but <strong>not</strong> domestically.</div>';
 			}
-			if (cc === 'GB' && canSell) {
-				cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Spare Parts Community. Private sellers are not accepted for UK-based selling.</div>';
-				cbWarning += '<div style="margin-top:1rem;"><button id="uk-vote-btn" type="button" class="vote-btn" onclick="voteUkPrivates()">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" class="vote-note"></div></div>';
-			}
+			// ── REMOVED 2026-09-20 — the UK is no longer company-only ────────
+			// This block rendered, for GB only:
+			//   * "🇬🇧 UK Sellers must be a company registered with UK VAT …" and
+			//   * the "🗳️ Vote to enable Private sellers in the future" button.
+			// UK private sellers — and UK companies without a verified VAT number — may
+			// now onboard like everyone else. Where they may BUY is enforced inside the
+			// platform instead: a UK seller without a verified HMRC VAT number buys
+			// through the Discord Premium App (see core/uk_vat_gate.py).
+			//
+			// The vote machinery is deliberately KEPT in this file for reuse elsewhere:
+			// the .vote-btn/.vote-note rules near the top of the stylesheet and
+			// window.voteUkPrivates() further down. Nothing calls them now, so they
+			// render nothing.
+			//
+			// To drop this block into another page, restore it verbatim:
+			//   if (cc === 'GB' && canSell) {
+			//     cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Spare Parts Community. Private sellers are not accepted for UK-based selling.</div>';
+			//     cbWarning += '<div style="margin-top:1rem;"><button id="uk-vote-btn" type="button" class="vote-btn" onclick="voteUkPrivates()">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" class="vote-note"></div></div>';
+			//   }
 
 			var schemes = [];
 			schemes.push({label:'VAT / GST Registration',avail:true,desc:'Available for business sellers with a valid tax number'});

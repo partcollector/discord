@@ -445,6 +445,47 @@
 
 		var CROSS_BORDER_ONLY = new Set(['CN','CO','MC']);
 
+		// ── VAT margin scheme for second-hand goods (2026-09-26) ──────────────────────
+		// The EU's "special arrangements for second-hand goods" (Directive 2006/112/EC
+		// Arts. 311–325) let a registered dealer pay VAT only on their profit margin, so
+		// the VAT sits inside their price and no VAT is added on top of it. The UK,
+		// Norway, Switzerland and Singapore have their own equivalents. Only the
+		// countries in this map get the box on the page, each under its own local name
+		// so a dealer recognises it. Mirrors core/margin_scheme.py in the platform.
+		var MARGIN_SCHEME_LOCAL = {
+			'AT':'Differenzbesteuerung',
+			'BE':'régime de la marge',
+			'BG':'специален режим на облагане с марж',
+			'HR':'oporezivanje marže',
+			'CY':'καθεστώς του περιθωρίου',
+			'CZ':'režim přirážky',
+			'DE':'Differenzbesteuerung',
+			'DK':'brugtmomsordningen',
+			'EE':'kasumimarginaali maksustamine',
+			'ES':'Régimen especial de bienes usados',
+			'FI':'voittomarginaalimenettely',
+			'FR':'régime de la marge',
+			'GR':'καθεστώς του περιθωρίου',
+			'HU':'különbözeti adózás',
+			'IE':'Margin scheme',
+			'IT':'regime del margine',
+			'LT':'maržos apmokestinimas',
+			'LU':'régime de la marge',
+			'LV':'peļņas normas režīms',
+			'MT':'skema tal-marġni',
+			'NL':'Margeregeling',
+			'PL':'procedura marży',
+			'PT':'regime da margem',
+			'RO':'regimul bunurilor de ocazie',
+			'SE':'vinstmarginalbeskattning',
+			'SI':'posebna ureditev marže',
+			'SK':'režim zdanenia prirážky',
+			'GB':'margin scheme',
+			'CH':'margin taxation',
+			'NO':'margin/advance method',
+			'SG':'Gross Margin Scheme'
+		};
+
 		var PROVINCE_COUNTRIES = new Set(['CA','US','BR']);
 
 		var PROVINCE_INFO = {
@@ -820,6 +861,16 @@
 					? 'Private sellers cannot be VAT-registered for cross-border sales - an EU business (Company) account is required'
 					: 'Private sellers can register voluntarily for domestic VAT/GST'
 			});
+			// 2026-09-26 (owner) — the box right under Private Seller VAT, and only where the
+			// scheme actually exists (EU + UK, Norway, Switzerland, Singapore). A dealer who
+			// sells used parts on the margin scheme gets no VAT added on top of their price:
+			// they account for the VAT on their own margin, in their own country. The local
+			// name is shown so they recognise their own regime (e.g. Differenzbesteuerung).
+			if (MARGIN_SCHEME_LOCAL[cc]) schemes.push({
+				label:'Used VAT Margin Scheme (' + MARGIN_SCHEME_LOCAL[cc] + ')',
+				avail:canSell,
+				desc:'Second-hand parts only \u2014 your price already contains the VAT you pay on your margin, so no VAT is added at checkout'
+			});
 			if (cc === 'GB') schemes.push({label:'UK VAT (Domestic)',avail:true,desc:'UK VAT registration \u2014 20% standard rate'});
 			if (cc === 'NO') schemes.push({label:'Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
 			if (cc === 'AU') schemes.push({label:'Australian GST (Domestic)',avail:true,desc:'Australian GST \u2014 10% rate, automatically applied to domestic sales'});
@@ -858,7 +909,7 @@
 				}
 				ctaMsg.innerHTML = '<strong>' + name + '</strong> is fully supported for both <strong>Buying</strong> and <strong>Selling</strong>' + currencyNote + '.<br>Ready to get started? Join thousands of sellers and buyers on Spare Parts Community.';
 				if (isEU) {
-					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As an EU seller, you can use <strong>OSS</strong> to charge your buyer\'s country VAT rate on cross-border EU sales, simplifying your compliance. Non-EU sellers can register for <strong>IOSS</strong> to sell to EU buyers under \u20AC150 with ease.';
+					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As an EU seller, you can use <strong>OSS</strong> to charge your buyer\'s country VAT rate on cross-border EU sales, simplifying your compliance. Non-EU sellers can register for <strong>IOSS</strong> to sell to EU buyers under \u20AC150 with ease.' + (MARGIN_SCHEME_LOCAL[cc] ? '<br><br><strong>\u267B\uFE0F Selling used parts?</strong> If you are a registered dealer buying second-hand parts from private individuals, you can sell them under the <strong>VAT margin scheme (' + MARGIN_SCHEME_LOCAL[cc] + ')</strong> \u2014 declare it in Account Setup, then mark each part <strong>Used</strong> or <strong>For Parts Only</strong>. No VAT is added on top of your price; you account for the VAT on your margin.' : '');
 				} else {
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As a seller from <strong>' + name + '</strong>, you can register for tax schemes like <strong>IOSS</strong>, <strong>UK VAT</strong>, and <strong>VOEC</strong> to expand your reach to buyers across the EU, UK, and Norway.';
 				}

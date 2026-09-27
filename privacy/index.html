@@ -254,7 +254,7 @@
 					</tr>
 					<tr>
 						<td><strong>Business / Tax Identity</strong></td>
-						<td>VAT/MVA registration number, ABN, NZBN, company name, tax country code; seller type classification (Company or Private); tax scheme flags (OSS, IOSS, UK VAT, VOEC)</td>
+						<td>VAT/MVA registration number, ABN, NZBN, company name, tax country code; seller type classification (Company or Private); tax scheme flags (OSS, IOSS, UK VAT, VOEC); declared small-business exemption (national scheme, or EU SME &ldquo;EX&rdquo; number) and the date it was declared</td>
 						<td>Seller-provided; validated in real-time via EU VIES, UK HMRC, Norwegian Brreg, Australian ABR, or NZBN API systems</td>
 						<td>Business sellers (EU, UK, Norway, Australia, New Zealand &mdash; as applicable)</td>
 					</tr>
@@ -296,7 +296,7 @@
 					</tr>
 					<tr>
 						<td><strong>Tax Audit Log</strong></td>
-						<td>Per-order: invoice ID, seller and buyer IDs and countries, tax scheme applied, VAT rate, VAT amount, subtotal, shipping cost, total, currency, exemption reason, IOSS/VOEC threshold check results</td>
+						<td>Per-order: invoice ID, seller and buyer IDs and countries, tax scheme applied, VAT rate, VAT amount, subtotal, shipping cost, total, currency, exemption reason, IOSS/VOEC threshold check results, the buyer's and the seller's VAT identification numbers used on the sale, and any EU customs duty charged on an IOSS consignment</td>
 						<td>Generated automatically at checkout for every transaction; stored for compliance and dispute resolution</td>
 						<td>All Community users (buyers and sellers) &mdash; per-transaction</td>
 					</tr>

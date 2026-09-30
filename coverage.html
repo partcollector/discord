@@ -819,7 +819,7 @@
 			}
 			// ── REMOVED 2026-09-20 — the UK is no longer company-only ────────
 			// This block rendered, for GB only:
-			//   * "🇬🇧 UK Sellers must be a company registered with UK VAT …" and
+			//   * the UK-sellers company-only warning and
 			//   * the "🗳️ Vote to enable Private sellers in the future" button.
 			// UK private sellers — and UK companies without a verified VAT number — may
 			// now onboard like everyone else. Where they may BUY is enforced inside the
@@ -833,7 +833,7 @@
 			//
 			// To drop this block into another page, restore it verbatim:
 			//   if (cc === 'GB' && canSell) {
-			//     cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company registered with UK VAT.</strong> Only companies with a valid UK VAT number (verified via HMRC) can sell from the United Kingdom on Spare Parts Community. Private sellers are not accepted for UK-based selling.</div>';
+			//     cbWarning += '<div class="coverage-highlight" style="margin-top:0;margin-bottom:1rem;">🇬🇧 <strong>UK Sellers must be a company.</strong> Only companies can sell from the United Kingdom on Spare Parts Community. Private sellers are not accepted for UK-based selling.</div>';
 			//     cbWarning += '<div style="margin-top:1rem;"><button id="uk-vote-btn" type="button" class="vote-btn" onclick="voteUkPrivates()">🗳️ Vote to enable Private sellers in the future</button><div id="uk-vote-msg" class="vote-note"></div></div>';
 			//   }
 
@@ -892,7 +892,7 @@
 				if (isEU) {
 					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As an EU seller, you can use <strong>OSS</strong> to charge your buyer\'s country VAT rate on cross-border EU sales, simplifying your compliance. Non-EU sellers can register for <strong>IOSS</strong> to sell to EU buyers under \u20AC150 with ease.' + (MARGIN_SCHEME_LOCAL[cc] ? '<br><br><strong>\u267B\uFE0F Selling used parts?</strong> If you are a registered dealer buying second-hand parts from private individuals, you can sell them under the <strong>VAT margin scheme (' + MARGIN_SCHEME_LOCAL[cc] + ')</strong> \u2014 declare it in Account Setup, then mark each part <strong>Used</strong> or <strong>For Parts Only</strong>. No VAT is added on top of your price; you account for the VAT on your margin.' : '');
 				} else {
-					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As a seller from <strong>' + name + '</strong>, you can register for tax schemes like <strong>IOSS</strong>, <strong>UK VAT</strong>, and <strong>VOEC</strong> to expand your reach to buyers across the EU, UK, and Norway.';
+					extraInfo.innerHTML = '<strong>\uD83D\uDCA1 Did you know?</strong> As a seller from <strong>' + name + '</strong>, you can register for the <strong>EU OSS</strong> scheme to expand your reach to buyers across the EU, UK, and Norway.';
 				}
 			} else {
 				ctaMsg.innerHTML = '<strong>' + name + '</strong> is available for <strong>purchasing</strong>. Selling is not yet enabled in your region \u2014 we evaluate new markets continuously.';

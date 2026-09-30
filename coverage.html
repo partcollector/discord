@@ -862,15 +862,6 @@
 				avail:canSell,
 				desc:'Second-hand parts only \u2014 your price already contains the VAT you pay on your margin, so no VAT is added at checkout'
 			});
-			if (cc === 'GB') schemes.push({label:'UK VAT (Domestic)',avail:true,desc:'UK VAT registration \u2014 20% standard rate'});
-			if (cc === 'NO') schemes.push({label:'Norwegian MVA',avail:true,desc:'Norwegian VAT registration \u2014 25% standard rate'});
-			if (cc === 'AU') schemes.push({label:'Australian GST (Domestic)',avail:true,desc:'Australian GST \u2014 10% rate, automatically applied to domestic sales'});
-			if (cc === 'NZ') schemes.push({label:'New Zealand GST (Domestic)',avail:true,desc:'New Zealand GST \u2014 15% rate, automatically applied to domestic sales'});
-			if (cc === 'CH') schemes.push({label:'Swiss VAT (Domestic)',avail:true,desc:'Swiss VAT \u2014 8.1% rate, automatically applied to domestic sales'});
-			if (cc === 'SG') schemes.push({label:'Singapore GST (Domestic)',avail:true,desc:'Singapore GST \u2014 9% rate, automatically applied to domestic sales'});
-			if (cc === 'MY') schemes.push({label:'Malaysia SST (Domestic)',avail:true,desc:'Malaysia sales tax \u2014 10% rate, automatically applied to domestic sales'});
-			if (cc === 'CL') schemes.push({label:'Chile VAT (Domestic)',avail:true,desc:'Chile VAT \u2014 19% rate, automatically applied to domestic sales'});
-			if (cc === 'CA') schemes.push({label:'Canadian GST/HST (Domestic)',avail:true,desc:'5% federal GST plus provincial PST/HST/QST varying by province \u2014 automatically applied to domestic sales'});
 
 			var hasProvince = PROVINCE_COUNTRIES.has(cc);
 

@@ -254,7 +254,7 @@
 					</tr>
 					<tr>
 						<td><strong>Business / Tax Identity</strong></td>
-						<td>VAT/MVA registration number, ABN, NZBN, company name, tax country code; seller type classification (Company or Private); tax scheme flags (OSS, IOSS, UK VAT, VOEC); declared small-business exemption (national scheme, or EU SME &ldquo;EX&rdquo; number) and the date it was declared</td>
+						<td>VAT/MVA registration number, ABN, NZBN, company name, tax country code; seller type classification (Company or Private); the EU OSS declaration; declared small-business exemption (national scheme, or EU SME &ldquo;EX&rdquo; number) and the date it was declared</td>
 						<td>Seller-provided; validated in real-time via EU VIES, UK HMRC, Norwegian Brreg, Australian ABR, or NZBN API systems</td>
 						<td>Business sellers (EU, UK, Norway, Australia, New Zealand &mdash; as applicable)</td>
 					</tr>
@@ -296,7 +296,7 @@
 					</tr>
 					<tr>
 						<td><strong>Tax Audit Log</strong></td>
-						<td>Per-order: invoice ID, seller and buyer IDs and countries, tax scheme applied, VAT rate, VAT amount, subtotal, shipping cost, total, currency, exemption reason, IOSS/VOEC threshold check results, the buyer's and the seller's VAT identification numbers used on the sale, and any EU customs duty charged on an IOSS consignment</td>
+						<td>Per-order: invoice ID, seller and buyer IDs and countries, tax scheme applied, VAT rate, VAT amount, subtotal, shipping cost, total, currency, exemption reason, the buyer's and the seller's VAT identification numbers used on the sale, and any EU customs duty charged on an IOSS consignment</td>
 						<td>Generated automatically at checkout for every transaction; stored for compliance and dispute resolution</td>
 						<td>All Community users (buyers and sellers) &mdash; per-transaction</td>
 					</tr>
@@ -363,7 +363,7 @@
 				<li>To verify that your PayPal email address is valid and belongs to you (OTP verification process);</li>
 				<li>To create PayPal payment links for your subscription billing (where Part Collector is the merchant and receives the tier fee via PayPal);</li>
 				<li>To create PayPal checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee so the buyer pays the seller directly via PayPal. Funds go directly to the seller&rsquo;s PayPal account and never pass through Part Collector; Part Collector takes no fee on these orders;</li>
-				<li>To automatically calculate VAT for transactions across multiple tax schemes &mdash; including EU VAT (via VIES), UK VAT (via HMRC), Norwegian MVA (via Brreg), OSS, IOSS (Import One-Stop Shop), and VOEC (VAT on E-Commerce);</li>
+				<li>To automatically calculate VAT for transactions across multiple tax schemes &mdash; including EU VAT (validated via VIES) and the EU OSS scheme;</li>
 				<li>To remove or apply VAT on invoices for VAT-registered business sellers and buyers, including B2B reverse-charge exemptions;</li>
 				<li>To maintain a per-order tax audit log for compliance with Bulgarian accounting legislation and EU VAT directives;</li>
 				<li>To display and manage your seller shipping profile, rates, tax scheme settings, and active listings;</li>
@@ -384,7 +384,7 @@
 				<li><strong>ABR (Australian Business Register):</strong> Australian sellers&rsquo; ABNs are validated via the ABR XML SOAP API. See <a href="https://abr.business.gov.au/" target="_blank" rel="noopener">ABR Privacy</a>;</li>
 				<li><strong>NZBN API (New Zealand Business Number):</strong> New Zealand sellers&rsquo; NZBNs are validated via the NZBN API. See <a href="https://www.nzbn.govt.nz/privacy/" target="_blank" rel="noopener">NZBN Privacy</a>;</li>
 				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
-				<li><strong>ECB (European Central Bank):</strong> We fetch daily exchange rates from the ECB for currency conversion (e.g., for VOEC threshold calculation). No personal data is transmitted;</li>
+				<li><strong>ECB (European Central Bank):</strong> We fetch daily exchange rates from the ECB for currency conversion. No personal data is transmitted;</li>
 				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Tool data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Cloudflare:</strong> Our website (partcollector.com) is served via Cloudflare for security and CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Legal Authorities:</strong> Where we are legally obliged to disclose data (e.g., court orders, government requests).</li>

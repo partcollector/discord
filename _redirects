@@ -4,3 +4,10 @@
 /privacy        /privacy/index.html        200
 /seller-rules   /seller-rules/index.html   200
 /refund-policy  /refund-policy/index.html  200
+# Retired 2026-10-01 (owner) — the root *.html duplicates are GONE. These rewrites keep
+# every existing link to the old URLs working while serving the single live copy.
+/terms.html          /terms/index.html          200
+/seller-rules.html   /seller-rules/index.html   200
+/buyer-terms.html    /buyer-terms/index.html    200
+/privacy.html        /privacy/index.html        200
+/refund-policy.html  /refund-policy/index.html  200

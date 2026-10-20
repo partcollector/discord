@@ -248,14 +248,14 @@
 					</tr>
 					<tr>
 						<td><strong>Seller Payment Email</strong></td>
-						<td>PayPal email address (manually entered by the seller and verified via OTP)</td>
-						<td>Seller-provided; OTP delivered via Brevo email</td>
+						<td>PayPal email address (entered by the seller)</td>
+						<td>Seller-provided</td>
 						<td>Sellers only</td>
 					</tr>
 					<tr>
 						<td><strong>Business / Tax Identity</strong></td>
 						<td>VAT/MVA registration number, ABN, NZBN, company name, tax country code; seller type classification (Company or Private); the EU OSS declaration; declared small-business exemption (national scheme, or EU SME &ldquo;EX&rdquo; number) and the date it was declared</td>
-						<td>Seller-provided; validated in real-time via EU VIES, UK HMRC, Norwegian Brreg, Australian ABR, or NZBN API systems</td>
+						<td>Seller-provided and stored exactly as typed; not checked by us</td>
 						<td>Business sellers (EU, UK, Norway, Australia, New Zealand &mdash; as applicable)</td>
 					</tr>
 					<tr>
@@ -335,10 +335,6 @@
 						<td>Until the account is deleted</td>
 					</tr>
 					<tr>
-						<td>OTP verification logs</td>
-						<td>30 days</td>
-					</tr>
-					<tr>
 						<td>Chat messages exchanged through the messenger</td>
 						<td>Until either side deletes them. Deletion is immediate &mdash; nothing is held back for a payment dispute: we do not monitor, open or close disputes</td>
 					</tr>
@@ -348,10 +344,9 @@
 			<!-- 4 -->
 			<h2>4. How We Use Your Data</h2>
 			<ul>
-				<li>To verify that your PayPal email address is valid and belongs to you (OTP verification process);</li>
 				<li>To create PayPal payment links for your subscription billing (where Part Collector is the merchant and receives the tier fee via PayPal);</li>
 				<li>To create PayPal checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee so the buyer pays the seller directly via PayPal. Funds go directly to the seller&rsquo;s PayPal account and never pass through Part Collector; Part Collector takes no fee on these orders;</li>
-				<li>To automatically calculate VAT for transactions across multiple tax schemes &mdash; including EU VAT (validated via VIES) and the EU OSS scheme;</li>
+				<li>To automatically calculate the tax on a sale from the declarations the seller has made and the figures the seller accepted or entered &mdash; EU VAT, EU OSS, IOSS, UK VAT, Norway VOEC, GST and the rest;</li>
 				<li>To remove or apply VAT on invoices for VAT-registered business sellers and buyers, including B2B reverse-charge exemptions;</li>
 				<li>To keep a record of how the tax on each order was calculated, so the order, the invoice and any question about it can be answered. It is not a statutory tax archive and is not reported to any tax authority;</li>
 				<li>To display and manage your seller shipping profile, rates, tax scheme settings, and active listings;</li>
@@ -366,12 +361,7 @@
 			<p>We share personal data only as strictly necessary:</p>
 			<ul>
 				<li><strong>PayPal:</strong> We use PayPal for two distinct purposes. (1) <strong>Subscriptions:</strong> we use the PayPal Subscriptions/Billing API to collect tier fees &mdash; here Part Collector is the merchant and receives the payment. (2) <strong>Orders:</strong> we use the PayPal Orders API to create checkout orders for purchases from sellers, using the seller&rsquo;s verified PayPal email as the payee &mdash; the buyer pays the seller directly, funds go straight to the seller&rsquo;s PayPal account, and Part Collector neither receives nor touches those funds and charges no fee. Payment capture and processing in both cases is governed entirely by PayPal&rsquo;s own <a href="https://www.paypal.com/uk/legalhub/privacy-full" target="_blank" rel="noopener">Privacy Policy</a>;</li>
-				<li><strong>VIES (EU VAT Information Exchange System):</strong> EU sellers&rsquo; VAT numbers are submitted to the VIES system in real-time for validation. No data is retained from this query beyond what the seller has provided to us;</li>
-				<li><strong>HMRC (UK Revenue &amp; Customs):</strong> UK sellers&rsquo; VAT numbers are submitted to the HMRC VAT validation API in real-time for validation. See <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/about/personal-information-charter" target="_blank" rel="noopener">HMRC&rsquo;s Personal Information Charter</a>;</li>
 				<li><strong>Brreg (Brønnøysund Register Centre):</strong> Norwegian sellers&rsquo; organisation numbers are submitted to the Brreg API in real-time for MVA number validation. See <a href="https://www.brreg.no/en/about-brreg/privacy-policy/" target="_blank" rel="noopener">Brreg&rsquo;s Privacy Policy</a>;</li>
-				<li><strong>ABR (Australian Business Register):</strong> Australian sellers&rsquo; ABNs are validated via the ABR XML SOAP API. See <a href="https://abr.business.gov.au/" target="_blank" rel="noopener">ABR Privacy</a>;</li>
-				<li><strong>NZBN API (New Zealand Business Number):</strong> New Zealand sellers&rsquo; NZBNs are validated via the NZBN API. See <a href="https://www.nzbn.govt.nz/privacy/" target="_blank" rel="noopener">NZBN Privacy</a>;</li>
-				<li><strong>Brevo:</strong> We use Brevo to send OTP verification emails to sellers during PayPal email setup. See <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener">Brevo&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>ECB (European Central Bank):</strong> We fetch daily exchange rates from the ECB for currency conversion. No personal data is transmitted;</li>
 				<li><strong>OCI (Oracle Cloud Infrastructure):</strong> All Tool data is hosted on OCI servers in Turin, Italy (EU). See <a href="https://www.oracle.com/legal/privacy/" target="_blank" rel="noopener">Oracle&rsquo;s Privacy Policy</a>;</li>
 				<li><strong>Cloudflare:</strong> Our website (partcollector.com) is served via Cloudflare for security and CDN. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare&rsquo;s Privacy Policy</a>;</li>
@@ -382,7 +372,7 @@
 			<!-- 6 -->
 			<h2>6. Data Storage &amp; Location</h2>
 			<p>All personal data collected by Part Collector is stored exclusively on servers located within the <strong>European Economic Area</strong> (OCI Turin, Italy). We do not transfer your personal data outside the EEA for our own processing purposes.</p>
-			<p>PayPal, Brevo, HMRC, Brreg, and VIES operate as independent data controllers under their own privacy policies; please refer to those policies for information about their own data storage and international transfer practices.</p>
+                    <p>PayPal operates as an independent data controller under its own privacy policy; please refer to it for information about its own data storage and international transfer practices.</p>
 
 			<!-- 7 -->
 			<h2>7. Data Retention</h2>
@@ -413,10 +403,6 @@
 					<tr>
 						<td>Discord identity (user ID, username)</td>
 						<td>Until the account is deleted</td>
-					</tr>
-					<tr>
-						<td>OTP verification logs</td>
-						<td>30 days</td>
 					</tr>
 					<tr>
 						<td>Chat messages exchanged through the messenger</td>
